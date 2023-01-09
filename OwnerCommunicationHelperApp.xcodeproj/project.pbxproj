@@ -29,6 +29,8 @@
 		7FFA0CCE296BFAD400E2BC27 /* OwnerTopCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CCD296BFAD400E2BC27 /* OwnerTopCore.swift */; };
 		7FFA0CD0296BFB6600E2BC27 /* OwnerSettingTopCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CCF296BFB6600E2BC27 /* OwnerSettingTopCore.swift */; };
 		7FFA0CD2296C00AF00E2BC27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CD1296C00AF00E2BC27 /* Constants.swift */; };
+		7FFA0CD4296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CD3296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift */; };
+		7FFA0CD6296C01DC00E2BC27 /* CommonText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CD5296C01DC00E2BC27 /* CommonText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		7FFA0CCD296BFAD400E2BC27 /* OwnerTopCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerTopCore.swift; sourceTree = "<group>"; };
 		7FFA0CCF296BFB6600E2BC27 /* OwnerSettingTopCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSettingTopCore.swift; sourceTree = "<group>"; };
 		7FFA0CD1296C00AF00E2BC27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7FFA0CD3296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSettingOperatingTimeView.swift; sourceTree = "<group>"; };
+		7FFA0CD5296C01DC00E2BC27 /* CommonText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 				7FFA0C66296BDC3200E2BC27 /* Assets.xcassets */,
 				7FFA0C68296BDC3200E2BC27 /* Preview Content */,
 				7FFA0CD1296C00AF00E2BC27 /* Constants.swift */,
+				7FFA0CD5296C01DC00E2BC27 /* CommonText.swift */,
 			);
 			path = OwnerCommunicationHelperApp;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 				7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */,
 				7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */,
 				7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */,
+				7FFA0CD3296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,12 +230,14 @@
 			files = (
 				7FFA0C7A296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift in Sources */,
 				7FFA0C76296BDF3300E2BC27 /* OwnerSettingTopView.swift in Sources */,
+				7FFA0CD4296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift in Sources */,
 				7FFA0C65296BDC2700E2BC27 /* ContentView.swift in Sources */,
 				7FFA0C78296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift in Sources */,
 				7FFA0CCE296BFAD400E2BC27 /* OwnerTopCore.swift in Sources */,
 				7FFA0CD2296C00AF00E2BC27 /* Constants.swift in Sources */,
 				7FFA0C7C296BDFD200E2BC27 /* OwnerTopView.swift in Sources */,
 				7FFA0CD0296BFB6600E2BC27 /* OwnerSettingTopCore.swift in Sources */,
+				7FFA0CD6296C01DC00E2BC27 /* CommonText.swift in Sources */,
 				7FFA0C63296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift in Sources */,
 				7FFA0C7F296BE1E100E2BC27 /* AltimatorManager.swift in Sources */,
 			);
