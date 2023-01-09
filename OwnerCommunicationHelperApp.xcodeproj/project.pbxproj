@@ -17,6 +17,7 @@
 		7FFA0C78296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */; };
 		7FFA0C7A296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */; };
 		7FFA0C7C296BDFD200E2BC27 /* OwnerTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C7B296BDFD200E2BC27 /* OwnerTopView.swift */; };
+		7FFA0C7F296BE1E100E2BC27 /* AltimatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C7E296BE1E100E2BC27 /* AltimatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerManageStaffTopView.swift; sourceTree = "<group>"; };
 		7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerManageWorkerTopView.swift; sourceTree = "<group>"; };
 		7FFA0C7B296BDFD200E2BC27 /* OwnerTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerTopView.swift; sourceTree = "<group>"; };
+		7FFA0C7E296BE1E100E2BC27 /* AltimatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltimatorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		7FFA0C61296BDC2700E2BC27 /* OwnerCommunicationHelperApp */ = {
 			isa = PBXGroup;
 			children = (
+				7FFA0C7D296BE12000E2BC27 /* FunctionalParts */,
 				7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */,
 				7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */,
 				7FFA0C64296BDC2700E2BC27 /* ContentView.swift */,
@@ -81,6 +84,14 @@
 				7FFA0C69296BDC3200E2BC27 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7FFA0C7D296BE12000E2BC27 /* FunctionalParts */ = {
+			isa = PBXGroup;
+			children = (
+				7FFA0C7E296BE1E100E2BC27 /* AltimatorManager.swift */,
+			);
+			path = FunctionalParts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 				7FFA0C78296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift in Sources */,
 				7FFA0C7C296BDFD200E2BC27 /* OwnerTopView.swift in Sources */,
 				7FFA0C63296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift in Sources */,
+				7FFA0C7F296BE1E100E2BC27 /* AltimatorManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
