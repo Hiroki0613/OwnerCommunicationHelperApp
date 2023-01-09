@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import FirebaseAuthUI
 import SwiftUI
 
 struct OwnerSettingTopView: View {
@@ -29,7 +30,12 @@ struct OwnerSettingTopView: View {
                             .cornerRadius(20)
                         Spacer().frame(height: 30)
                         Button(action: {
-                            viewStore.send(.gotoQrCodeCreateView(true))
+//                            viewStore.send(.gotoQrCodeCreateView(true))
+                            do {
+                                try Auth.auth().signOut()
+                            } catch {
+                                print("error")
+                            }
                         }, label: {
                             Text("Workerの追加")
                                 .fontWeight(.semibold)
