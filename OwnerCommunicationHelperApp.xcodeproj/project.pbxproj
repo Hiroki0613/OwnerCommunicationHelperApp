@@ -34,7 +34,7 @@
 		7FFA0CD8296C03F800E2BC27 /* OwnerSettingPressureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CD7296C03F800E2BC27 /* OwnerSettingPressureView.swift */; };
 		7FFA0CDA296C053700E2BC27 /* OwnerSettingSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CD9296C053700E2BC27 /* OwnerSettingSubscriptionView.swift */; };
 		7FFA0CDC296C0BB500E2BC27 /* FirebaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CDB296C0BB500E2BC27 /* FirebaseUIView.swift */; };
-		7FFA0CDE296C425E00E2BC27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA0CDD296C425900E2BC27 /* GoogleService-Info.plist */; };
+		7FFA0CE0296C47D100E2BC27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA0CDF296C47CD00E2BC27 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +56,8 @@
 		7FFA0CD7296C03F800E2BC27 /* OwnerSettingPressureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSettingPressureView.swift; sourceTree = "<group>"; };
 		7FFA0CD9296C053700E2BC27 /* OwnerSettingSubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSettingSubscriptionView.swift; sourceTree = "<group>"; };
 		7FFA0CDB296C0BB500E2BC27 /* FirebaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUIView.swift; sourceTree = "<group>"; };
-		7FFA0CDD296C425900E2BC27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7FFA0CDF296C47CD00E2BC27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7FFA0CE1296C50C200E2BC27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +100,8 @@
 		7FFA0C61296BDC2700E2BC27 /* OwnerCommunicationHelperApp */ = {
 			isa = PBXGroup;
 			children = (
-				7FFA0CDD296C425900E2BC27 /* GoogleService-Info.plist */,
+				7FFA0CE1296C50C200E2BC27 /* Info.plist */,
+				7FFA0CDF296C47CD00E2BC27 /* GoogleService-Info.plist */,
 				7FFA0CCC296BFA5800E2BC27 /* Core */,
 				7FFA0CCB296BFA4D00E2BC27 /* View */,
 				7FFA0C7D296BE12000E2BC27 /* FunctionalParts */,
@@ -230,7 +232,7 @@
 			files = (
 				7FFA0C6A296BDC3200E2BC27 /* Preview Assets.xcassets in Resources */,
 				7FFA0C67296BDC3200E2BC27 /* Assets.xcassets in Resources */,
-				7FFA0CDE296C425E00E2BC27 /* GoogleService-Info.plist in Resources */,
+				7FFA0CE0296C47D100E2BC27 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +314,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -366,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -387,6 +389,7 @@
 				DEVELOPMENT_TEAM = K6FA22KGKX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OwnerCommunicationHelperApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -417,6 +420,7 @@
 				DEVELOPMENT_TEAM = K6FA22KGKX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OwnerCommunicationHelperApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
