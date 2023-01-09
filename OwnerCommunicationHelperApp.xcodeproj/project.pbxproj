@@ -28,6 +28,7 @@
 		7FFA0C91296BF41500E2BC27 /* FirebaseFunctionsCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7FFA0C90296BF41500E2BC27 /* FirebaseFunctionsCombine-Community */; };
 		7FFA0CCE296BFAD400E2BC27 /* OwnerTopCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CCD296BFAD400E2BC27 /* OwnerTopCore.swift */; };
 		7FFA0CD0296BFB6600E2BC27 /* OwnerSettingTopCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CCF296BFB6600E2BC27 /* OwnerSettingTopCore.swift */; };
+		7FFA0CD2296C00AF00E2BC27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CD1296C00AF00E2BC27 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		7FFA0C7E296BE1E100E2BC27 /* AltimatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltimatorManager.swift; sourceTree = "<group>"; };
 		7FFA0CCD296BFAD400E2BC27 /* OwnerTopCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerTopCore.swift; sourceTree = "<group>"; };
 		7FFA0CCF296BFB6600E2BC27 /* OwnerSettingTopCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSettingTopCore.swift; sourceTree = "<group>"; };
+		7FFA0CD1296C00AF00E2BC27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				7FFA0C64296BDC2700E2BC27 /* ContentView.swift */,
 				7FFA0C66296BDC3200E2BC27 /* Assets.xcassets */,
 				7FFA0C68296BDC3200E2BC27 /* Preview Content */,
+				7FFA0CD1296C00AF00E2BC27 /* Constants.swift */,
 			);
 			path = OwnerCommunicationHelperApp;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				7FFA0C65296BDC2700E2BC27 /* ContentView.swift in Sources */,
 				7FFA0C78296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift in Sources */,
 				7FFA0CCE296BFAD400E2BC27 /* OwnerTopCore.swift in Sources */,
+				7FFA0CD2296C00AF00E2BC27 /* Constants.swift in Sources */,
 				7FFA0C7C296BDFD200E2BC27 /* OwnerTopView.swift in Sources */,
 				7FFA0CD0296BFB6600E2BC27 /* OwnerSettingTopCore.swift in Sources */,
 				7FFA0C63296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift in Sources */,
