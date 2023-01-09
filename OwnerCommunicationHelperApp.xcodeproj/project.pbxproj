@@ -11,6 +11,12 @@
 		7FFA0C65296BDC2700E2BC27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C64296BDC2700E2BC27 /* ContentView.swift */; };
 		7FFA0C67296BDC3200E2BC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA0C66296BDC3200E2BC27 /* Assets.xcassets */; };
 		7FFA0C6A296BDC3200E2BC27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA0C69296BDC3200E2BC27 /* Preview Assets.xcassets */; };
+		7FFA0C72296BDE7200E2BC27 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7FFA0C71296BDE7200E2BC27 /* ComposableArchitecture */; };
+		7FFA0C74296BDE7200E2BC27 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 7FFA0C73296BDE7200E2BC27 /* Dependencies */; };
+		7FFA0C76296BDF3300E2BC27 /* OwnerSettingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */; };
+		7FFA0C78296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */; };
+		7FFA0C7A296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */; };
+		7FFA0C7C296BDFD200E2BC27 /* OwnerTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C7B296BDFD200E2BC27 /* OwnerTopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,10 @@
 		7FFA0C64296BDC2700E2BC27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7FFA0C66296BDC3200E2BC27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FFA0C69296BDC3200E2BC27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSettingTopView.swift; sourceTree = "<group>"; };
+		7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerManageStaffTopView.swift; sourceTree = "<group>"; };
+		7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerManageWorkerTopView.swift; sourceTree = "<group>"; };
+		7FFA0C7B296BDFD200E2BC27 /* OwnerTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerTopView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FFA0C72296BDE7200E2BC27 /* ComposableArchitecture in Frameworks */,
+				7FFA0C74296BDE7200E2BC27 /* Dependencies in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +64,11 @@
 			isa = PBXGroup;
 			children = (
 				7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */,
+				7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */,
 				7FFA0C64296BDC2700E2BC27 /* ContentView.swift */,
+				7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */,
+				7FFA0C7B296BDFD200E2BC27 /* OwnerTopView.swift */,
+				7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */,
 				7FFA0C66296BDC3200E2BC27 /* Assets.xcassets */,
 				7FFA0C68296BDC3200E2BC27 /* Preview Content */,
 			);
@@ -83,6 +99,10 @@
 			dependencies = (
 			);
 			name = OwnerCommunicationHelperApp;
+			packageProductDependencies = (
+				7FFA0C71296BDE7200E2BC27 /* ComposableArchitecture */,
+				7FFA0C73296BDE7200E2BC27 /* Dependencies */,
+			);
 			productName = OwnerCommunicationHelperApp;
 			productReference = 7FFA0C5F296BDC2700E2BC27 /* OwnerCommunicationHelperApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +131,9 @@
 				Base,
 			);
 			mainGroup = 7FFA0C56296BDC2600E2BC27;
+			packageReferences = (
+				7FFA0C70296BDE7200E2BC27 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 7FFA0C60296BDC2700E2BC27 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FFA0C7A296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift in Sources */,
+				7FFA0C76296BDF3300E2BC27 /* OwnerSettingTopView.swift in Sources */,
 				7FFA0C65296BDC2700E2BC27 /* ContentView.swift in Sources */,
+				7FFA0C78296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift in Sources */,
+				7FFA0C7C296BDFD200E2BC27 /* OwnerTopView.swift in Sources */,
 				7FFA0C63296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +368,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7FFA0C70296BDE7200E2BC27 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7FFA0C71296BDE7200E2BC27 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FFA0C70296BDE7200E2BC27 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		7FFA0C73296BDE7200E2BC27 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FFA0C70296BDE7200E2BC27 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = Dependencies;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7FFA0C57296BDC2600E2BC27 /* Project object */;
 }

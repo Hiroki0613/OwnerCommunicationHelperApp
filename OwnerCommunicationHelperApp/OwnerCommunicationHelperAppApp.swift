@@ -35,7 +35,7 @@ struct OwnerCommunicationHelperAppApp: App {
              　9. 通知機能を実装
              　10. 決済機能を実装
              */
-            ContentView()
+            OwnerTopView()
         }
     }
 }
