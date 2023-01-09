@@ -5,6 +5,7 @@
 //  Created by 近藤宏輝 on 2023/01/09.
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 @main
@@ -35,7 +36,15 @@ struct OwnerCommunicationHelperAppApp: App {
              　9. 通知機能を実装
              　10. 決済機能を実装
              */
-            OwnerTopView()
+            OwnerTopView(
+                store: Store(
+                    initialState: OwnerTopState(
+                        settingTopState: OwnerSettingTopState()
+                    ),
+                    reducer: topReducer,
+                    environment: OwnerTopEnvironment()
+                )
+            )
         }
     }
 }

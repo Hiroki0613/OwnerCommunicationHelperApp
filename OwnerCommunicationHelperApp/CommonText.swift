@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CommonText: View{
     var text: String
-    var alignment: TextAlignment
+    var alignment: Alignment
 
-    var body some View {
+    var body: some View {
         Text(text)
             .fontWeight(.semibold)
             .frame(maxWidth: .infinity, alignment: alignment)

@@ -11,7 +11,7 @@ import SwiftUI
 
 struct OwnerSettingPressureView: View {
     @ObservedObject var manager = AltimatorManager()
-    let viewStore: ViewStore<OwnerTopState, OwnerTopAction>
+    let viewStore: ViewStore<OwnerSettingTopState, OwnerSettingTopAction>
     let availabe = CMAltimeter.isRelativeAltitudeAvailable()
 
     var body: some View {
@@ -33,9 +33,9 @@ struct OwnerSettingPressureView_Previews: PreviewProvider {
         OwnerSettingPressureView(
             viewStore: ViewStore(
                 Store(
-                    initialState: OwnerTopState(),
-                    reducer: ownerTopReducer,
-                    environment: OwnerTopEnvironment()
+                    initialState: OwnerSettingTopState(),
+                    reducer: ownerSettingTopReducer,
+                    environment: OwnerSettingTopEnvironment()
                 )
             )
         )

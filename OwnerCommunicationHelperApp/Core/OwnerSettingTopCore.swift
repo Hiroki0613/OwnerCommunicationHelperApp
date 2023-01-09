@@ -9,10 +9,12 @@ import ComposableArchitecture
 
 struct OwnerSettingTopState: Equatable {
     var pressureString = ""
+    var hasShowedQrCode = false
 }
 
 enum OwnerSettingTopAction {
     case setPressure(String)
+    case gotoQrCodeCreateView(Bool)
 }
 
 struct OwnerSettingTopEnvironment {
@@ -23,5 +25,10 @@ let ownerSettingTopReducer = Reducer<OwnerSettingTopState, OwnerSettingTopAction
     switch action {
     case .setPressure(let pressureString):
         state.pressureString = pressureString
+        return .none
+
+    case .gotoQrCodeCreateView(let isActive):
+        state.hasShowedQrCode = isActive
+        return .none
     }
 }
