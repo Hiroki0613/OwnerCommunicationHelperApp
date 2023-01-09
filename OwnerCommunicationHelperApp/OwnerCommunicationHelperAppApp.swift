@@ -5,11 +5,17 @@
 //  Created by 近藤宏輝 on 2023/01/09.
 //
 
-import ComposableArchitecture
+import ComposableArchitectureimport
+import Firebase
 import SwiftUI
 
 @main
 struct OwnerCommunicationHelperAppApp: App {
+
+    init() {
+        FirebaseApp.configure()
+    }
+
     var body: some Scene {
         WindowGroup {
             // TODO: 画面には出さないが、端末管理は無制限に登録させる。作業者のみを課金制にする。
@@ -22,19 +28,12 @@ struct OwnerCommunicationHelperAppApp: App {
              ・出勤、不在が一目でわかるようにすると良さそう。
              ・オーナー側の作業者の削除機能はどうする？名前を変えて、そのまま使い続けるのも構わない。
              ・やるべきことリスト
-             　1. FirebaseUIを実装 ( AuthTestView()を参考に )
-             　　→ 場合によっては、通常のログイン画面でも良さそう。
-             　2. ログインをしているかをチェック
-             　　→ Auth.auth().addStateDidChangeListener
-             　3. ログイン画面しているかどうかで画面の切り替え
-             　　https://www.youtube.com/watch?v=hwbHQf1Mvxk
-             　4. QRリーダーを実装
-             　5. QR作成を実装
-             　6. 気圧計を実装
-             　7. チャット機能を実装(Ownerは選べる)
-             　8. ListViewでスタッフ、作業者のUIを実装
-             　9. 通知機能を実装
-             　10. 決済機能を実装
+             　1. QRリーダーを実装
+             　2. QR作成を実装
+             　3. チャット機能を実装(Ownerは選べる)
+             　4. ListViewでスタッフ、作業者のUIを実装
+             　5. 通知機能を実装
+             　6. 決済機能を実装
              */
             OwnerTopView(
                 store: Store(
