@@ -81,13 +81,11 @@
 		7FFA0C61296BDC2700E2BC27 /* OwnerCommunicationHelperApp */ = {
 			isa = PBXGroup;
 			children = (
+				7FFA0CCC296BFA5800E2BC27 /* Core */,
+				7FFA0CCB296BFA4D00E2BC27 /* View */,
 				7FFA0C7D296BE12000E2BC27 /* FunctionalParts */,
 				7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */,
-				7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */,
 				7FFA0C64296BDC2700E2BC27 /* ContentView.swift */,
-				7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */,
-				7FFA0C7B296BDFD200E2BC27 /* OwnerTopView.swift */,
-				7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */,
 				7FFA0C66296BDC3200E2BC27 /* Assets.xcassets */,
 				7FFA0C68296BDC3200E2BC27 /* Preview Content */,
 			);
@@ -108,6 +106,24 @@
 				7FFA0C7E296BE1E100E2BC27 /* AltimatorManager.swift */,
 			);
 			path = FunctionalParts;
+			sourceTree = "<group>";
+		};
+		7FFA0CCB296BFA4D00E2BC27 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FFA0C7B296BDFD200E2BC27 /* OwnerTopView.swift */,
+				7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */,
+				7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */,
+				7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7FFA0CCC296BFA5800E2BC27 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
