@@ -31,6 +31,7 @@
 		7FFA0CD2296C00AF00E2BC27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CD1296C00AF00E2BC27 /* Constants.swift */; };
 		7FFA0CD4296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CD3296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift */; };
 		7FFA0CD6296C01DC00E2BC27 /* CommonText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CD5296C01DC00E2BC27 /* CommonText.swift */; };
+		7FFA0CD8296C03F800E2BC27 /* OwnerSettingPressureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CD7296C03F800E2BC27 /* OwnerSettingPressureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		7FFA0CD1296C00AF00E2BC27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7FFA0CD3296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSettingOperatingTimeView.swift; sourceTree = "<group>"; };
 		7FFA0CD5296C01DC00E2BC27 /* CommonText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonText.swift; sourceTree = "<group>"; };
+		7FFA0CD7296C03F800E2BC27 /* OwnerSettingPressureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSettingPressureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */,
 				7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */,
 				7FFA0CD3296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift */,
+				7FFA0CD7296C03F800E2BC27 /* OwnerSettingPressureView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				7FFA0CD6296C01DC00E2BC27 /* CommonText.swift in Sources */,
 				7FFA0C63296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift in Sources */,
 				7FFA0C7F296BE1E100E2BC27 /* AltimatorManager.swift in Sources */,
+				7FFA0CD8296C03F800E2BC27 /* OwnerSettingPressureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
