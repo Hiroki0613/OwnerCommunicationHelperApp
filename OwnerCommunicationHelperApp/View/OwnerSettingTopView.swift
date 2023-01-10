@@ -62,8 +62,17 @@ struct OwnerSettingTopView: View {
     }
 }
 
-//struct OwnerSettingTopView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        OwnerSettingTopView()
-//    }
-//}
+struct OwnerSettingTopView_Previews: PreviewProvider {
+    static var previews: some View {
+        OwnerSettingTopView(
+            store: Store(
+                initialState: OwnerSettingTopState(
+                    pressureString: "",
+                    hasShowedQrCode: true
+                ),
+                reducer: ownerSettingTopReducer,
+                environment: OwnerSettingTopEnvironment()
+            )
+        )
+    }
+}

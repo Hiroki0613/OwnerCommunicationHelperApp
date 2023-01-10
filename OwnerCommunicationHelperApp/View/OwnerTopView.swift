@@ -55,8 +55,17 @@ struct OwnerTopView: View {
     }
 }
 
-//struct OwnerTopView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        OwnerTopView()
-//    }
-//}
+struct OwnerTopView_Previews: PreviewProvider {
+    static var previews: some View {
+        OwnerTopView(
+            store: Store(
+                initialState: OwnerTopState(
+                    settingTopState: OwnerSettingTopState()
+                ),
+                reducer: topReducer,
+                environment: OwnerTopEnvironment()
+            ),
+            isShowSheet: true
+        )
+    }
+}
