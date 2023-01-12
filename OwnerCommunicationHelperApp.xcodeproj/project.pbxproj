@@ -35,6 +35,7 @@
 		7FFA0CDA296C053700E2BC27 /* OwnerSettingSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CD9296C053700E2BC27 /* OwnerSettingSubscriptionView.swift */; };
 		7FFA0CDC296C0BB500E2BC27 /* FirebaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CDB296C0BB500E2BC27 /* FirebaseUIView.swift */; };
 		7FFA0CE0296C47D100E2BC27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA0CDF296C47CD00E2BC27 /* GoogleService-Info.plist */; };
+		7FFA0CE3297048BF00E2BC27 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CE2297048BE00E2BC27 /* QRCodeGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		7FFA0CDB296C0BB500E2BC27 /* FirebaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUIView.swift; sourceTree = "<group>"; };
 		7FFA0CDF296C47CD00E2BC27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7FFA0CE1296C50C200E2BC27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7FFA0CE2297048BE00E2BC27 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				7FFA0C7E296BE1E100E2BC27 /* AltimatorManager.swift */,
+				7FFA0CE2297048BE00E2BC27 /* QRCodeGenerator.swift */,
 			);
 			path = FunctionalParts;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				7FFA0CD4296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift in Sources */,
 				7FFA0CDC296C0BB500E2BC27 /* FirebaseUIView.swift in Sources */,
 				7FFA0C65296BDC2700E2BC27 /* ContentView.swift in Sources */,
+				7FFA0CE3297048BF00E2BC27 /* QRCodeGenerator.swift in Sources */,
 				7FFA0C78296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift in Sources */,
 				7FFA0CCE296BFAD400E2BC27 /* OwnerTopCore.swift in Sources */,
 				7FFA0CDA296C053700E2BC27 /* OwnerSettingSubscriptionView.swift in Sources */,
