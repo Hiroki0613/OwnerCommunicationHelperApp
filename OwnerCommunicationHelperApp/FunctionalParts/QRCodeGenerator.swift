@@ -20,6 +20,5 @@ struct QRCodeGenerator {
         let context = CIContext()
         guard let cgImage = context.createCGImage(scaledCiImage, from: scaledCiImage.extent) else { return nil }
         return UIImage(cgImage: cgImage)
-
     }
 }
