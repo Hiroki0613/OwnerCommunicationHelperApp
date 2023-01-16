@@ -10,9 +10,7 @@ import SwiftUI
 struct MessageBubble: View {
     var message: Message
     // TODO: MessageBubbleでのアライメント、色などはpersonalIdで判別すること。
-    var isMessageReceived: Bool {
-        return false
-    }
+    var isMessageReceived = false
 
     // TODO: 身体情報を入れるUIを作成すること personalInformation
     var body: some View {
@@ -20,16 +18,14 @@ struct MessageBubble: View {
             HStack {
                 Text(message.text)
                     .padding()
-                    .background(isMessageReceived ? PrimaryColor.buttonColor : PrimaryColor.buttonColor)
+                    .background(isMessageReceived ? PrimaryColor.buttonColor : PrimaryColor.buttonRed)
                     .cornerRadius(30)
             }
             .frame(maxWidth: 300, alignment: isMessageReceived ? .leading : .trailing)
-            
             Text("\(message.timestamp.formatted(.dateTime.hour().minute()))")
                 .font(.caption2)
                 .foregroundColor(.gray)
                 .padding(isMessageReceived ? .leading : .trailing, 25)
-            
         }
         .frame(maxWidth: .infinity, alignment: isMessageReceived ? .leading : .trailing)
         .padding(isMessageReceived ? .leading : .trailing)

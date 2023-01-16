@@ -1,15 +1,15 @@
 //
-//  OwnerManageStaffTopView.swift
+//  OwnerChatTopView.swift
 //  OwnerCommunicationHelperApp
 //
-//  Created by 近藤宏輝 on 2023/01/09.
+//  Created by 近藤宏輝 on 2023/01/15.
 //
 
 import SwiftUI
 
-struct OwnerManageStaffTopView: View {
+struct OwnerChatTopView: View {
     @StateObject var messagesManager = MessagesManager()
-    
+
     var body: some View {
         ZStack {
             PrimaryColor.buttonColor
@@ -37,11 +37,12 @@ struct OwnerManageStaffTopView: View {
         .onAppear {
             messagesManager.getMessages()
         }
+
     }
 }
 
-struct OwnerManageStaffTopView_Previews: PreviewProvider {
+struct OwnerChatTopView_Previews: PreviewProvider {
     static var previews: some View {
-        OwnerManageStaffTopView()
+        OwnerChatTopView()
     }
 }

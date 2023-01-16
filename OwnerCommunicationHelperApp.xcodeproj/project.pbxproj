@@ -42,6 +42,7 @@
 		7FFA0CEC2972F1DC00E2BC27 /* MessageField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CEB2972F1DC00E2BC27 /* MessageField.swift */; };
 		7FFA0CEF2972F2A400E2BC27 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7FFA0CEE2972F2A400E2BC27 /* FirebaseFirestoreSwift */; };
 		7FFA0CF12972F2C500E2BC27 /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CF02972F2C500E2BC27 /* MessagesManager.swift */; };
+		7FFA0CF3297437B700E2BC27 /* OwnerChatTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CF2297437B700E2BC27 /* OwnerChatTopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		7FFA0CE92972EF5000E2BC27 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		7FFA0CEB2972F1DC00E2BC27 /* MessageField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageField.swift; sourceTree = "<group>"; };
 		7FFA0CF02972F2C500E2BC27 /* MessagesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesManager.swift; sourceTree = "<group>"; };
+		7FFA0CF2297437B700E2BC27 /* OwnerChatTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerChatTopView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				7FFA0C7B296BDFD200E2BC27 /* OwnerTopView.swift */,
+				7FFA0CF2297437B700E2BC27 /* OwnerChatTopView.swift */,
 				7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */,
 				7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */,
 				7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */,
@@ -292,6 +295,7 @@
 				7FFA0C78296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift in Sources */,
 				7FFA0CCE296BFAD400E2BC27 /* OwnerTopCore.swift in Sources */,
 				7FFA0CDA296C053700E2BC27 /* OwnerSettingSubscriptionView.swift in Sources */,
+				7FFA0CF3297437B700E2BC27 /* OwnerChatTopView.swift in Sources */,
 				7FFA0CD2296C00AF00E2BC27 /* Constants.swift in Sources */,
 				7FFA0CEA2972EF5000E2BC27 /* MessageBubble.swift in Sources */,
 				7FFA0C7C296BDFD200E2BC27 /* OwnerTopView.swift in Sources */,
