@@ -14,8 +14,10 @@ struct MessageField: View {
     var body: some View {
         HStack {
             // Custom text field created below
-            CustomTextField(placeholder: Text("Enter your message here"), text: $message)
-                .frame(height: 52)
+            CustomTextField(placeholder: Text("文字を入力してください"), text: $message)
+                .foregroundColor(.black)
+                .font(.caption)
+                .frame(height: 22)
                 .disableAutocorrection(true)
 
             Button {
@@ -24,14 +26,15 @@ struct MessageField: View {
             } label: {
                 Image(systemName: "paperplane.fill")
                     .foregroundColor(.white)
+                    .font(.caption)
                     .padding(10)
-                    .background(Color("Peach"))
-                    .cornerRadius(50)
+                    .background(.cyan)
+                    .cornerRadius(20)
             }
         }
         .padding(.horizontal)
         .padding(.vertical, 10)
-        .background(Color("Gray"))
+        .background(.mint)
         .cornerRadius(50)
         .padding()
     }

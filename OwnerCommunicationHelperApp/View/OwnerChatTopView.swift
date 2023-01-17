@@ -22,7 +22,7 @@ struct OwnerChatTopView: View {
                         }
                     }
                     .padding(.top, 10)
-//                    .background(.white)
+                    .background(.green)
                     .onChange(of: messagesManager.lastMessageId) { id in
                         // When the lastMessageId changes, scroll to the bottom of the conversation
                         withAnimation {
