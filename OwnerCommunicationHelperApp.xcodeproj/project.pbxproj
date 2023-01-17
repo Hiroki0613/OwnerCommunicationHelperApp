@@ -43,6 +43,8 @@
 		7FFA0CEF2972F2A400E2BC27 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7FFA0CEE2972F2A400E2BC27 /* FirebaseFirestoreSwift */; };
 		7FFA0CF12972F2C500E2BC27 /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CF02972F2C500E2BC27 /* MessagesManager.swift */; };
 		7FFA0CF3297437B700E2BC27 /* OwnerChatTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CF2297437B700E2BC27 /* OwnerChatTopView.swift */; };
+		7FFA0CF52976EA5700E2BC27 /* OwnerManageStaffCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CF42976EA5700E2BC27 /* OwnerManageStaffCellView.swift */; };
+		7FFA0CF72976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CF62976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		7FFA0CEB2972F1DC00E2BC27 /* MessageField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageField.swift; sourceTree = "<group>"; };
 		7FFA0CF02972F2C500E2BC27 /* MessagesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesManager.swift; sourceTree = "<group>"; };
 		7FFA0CF2297437B700E2BC27 /* OwnerChatTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerChatTopView.swift; sourceTree = "<group>"; };
+		7FFA0CF42976EA5700E2BC27 /* OwnerManageStaffCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerManageStaffCellView.swift; sourceTree = "<group>"; };
+		7FFA0CF62976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerManageWorkerCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,12 +159,14 @@
 			isa = PBXGroup;
 			children = (
 				7FFA0C7B296BDFD200E2BC27 /* OwnerTopView.swift */,
+				7FFA0CF42976EA5700E2BC27 /* OwnerManageStaffCellView.swift */,
 				7FFA0CF2297437B700E2BC27 /* OwnerChatTopView.swift */,
 				7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */,
 				7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */,
 				7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */,
 				7FFA0CD3296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift */,
 				7FFA0CD7296C03F800E2BC27 /* OwnerSettingPressureView.swift */,
+				7FFA0CF62976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift */,
 				7FFA0CD9296C053700E2BC27 /* OwnerSettingSubscriptionView.swift */,
 				7FFA0CDB296C0BB500E2BC27 /* FirebaseUIView.swift */,
 			);
@@ -286,6 +292,7 @@
 				7FFA0CE529705D1900E2BC27 /* QrCodeScannerView.swift in Sources */,
 				7FFA0C7A296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift in Sources */,
 				7FFA0CEC2972F1DC00E2BC27 /* MessageField.swift in Sources */,
+				7FFA0CF72976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift in Sources */,
 				7FFA0C76296BDF3300E2BC27 /* OwnerSettingTopView.swift in Sources */,
 				7FFA0CE82972EE8C00E2BC27 /* Message.swift in Sources */,
 				7FFA0CD4296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift in Sources */,
@@ -299,6 +306,7 @@
 				7FFA0CD2296C00AF00E2BC27 /* Constants.swift in Sources */,
 				7FFA0CEA2972EF5000E2BC27 /* MessageBubble.swift in Sources */,
 				7FFA0C7C296BDFD200E2BC27 /* OwnerTopView.swift in Sources */,
+				7FFA0CF52976EA5700E2BC27 /* OwnerManageStaffCellView.swift in Sources */,
 				7FFA0CD0296BFB6600E2BC27 /* OwnerSettingTopCore.swift in Sources */,
 				7FFA0CD6296C01DC00E2BC27 /* CommonText.swift in Sources */,
 				7FFA0C63296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift in Sources */,
