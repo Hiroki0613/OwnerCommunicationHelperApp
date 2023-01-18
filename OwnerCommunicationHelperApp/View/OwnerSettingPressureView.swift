@@ -16,7 +16,7 @@ struct OwnerSettingPressureView: View {
 
     var body: some View {
         ZStack {
-            PrimaryColor.buttonColor
+            PrimaryColor.buttonLightGray
             VStack {
                 CommonText(text: availabe ? manager.pressureString : "----", alignment: .leading)
             }

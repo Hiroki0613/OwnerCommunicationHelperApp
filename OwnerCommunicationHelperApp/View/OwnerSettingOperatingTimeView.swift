@@ -13,7 +13,7 @@ struct OwnerSettingOperatingTimeView: View {
 
     var body: some View {
         ZStack {
-            PrimaryColor.buttonColor
+            PrimaryColor.buttonLightGray
             VStack {
                 CommonText(text: "支援者", alignment: .leading)
                 CommonText(text: "開始　" + startTime, alignment: .trailing)

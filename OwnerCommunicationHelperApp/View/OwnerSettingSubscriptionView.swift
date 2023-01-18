@@ -10,7 +10,7 @@ import SwiftUI
 struct OwnerSettingSubscriptionView: View {
     var body: some View {
         ZStack {
-            PrimaryColor.buttonColor
+            PrimaryColor.buttonLightGray
             VStack {
                 CommonText(text: "運用状況", alignment: .leading)
                 CommonText(text: "可能登録人数 12人", alignment: .trailing)

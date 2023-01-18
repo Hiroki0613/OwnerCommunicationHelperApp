@@ -12,7 +12,7 @@ struct OwnerManageStaffCellView: View {
     
     var body: some View {
         ZStack {
-            PrimaryColor.buttonColor
+            PrimaryColor.buttonLightGray
             Text(name + "さん")
                 .fontWeight(.semibold)
                 .font(.system(size: 20))

@@ -12,7 +12,7 @@ struct OwnerManageWorkerTopView: View {
 
     var body: some View {
         ZStack {
-            PrimaryColor.background
+            PrimaryColor.backgroundGreen
             ScrollView {
                 VStack {
                     Spacer().frame(height: 20)

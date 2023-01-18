@@ -17,7 +17,7 @@ struct OwnerSettingTopView: View {
         WithViewStore(store) { viewStore in
             NavigationView {
                 ZStack {
-                    PrimaryColor.background
+                    PrimaryColor.backgroundGreen
                     ScrollView {
                         VStack {
                             Spacer().frame(height: 20)
@@ -32,7 +32,7 @@ struct OwnerSettingTopView: View {
                             Spacer().frame(height: 30)
                             NavigationLink(
                                 destination: {
-                                    OwnerChatTopView()
+                                    OwnerChatTalkListView()
                                 },
                                 label: {
                                     Text("チャット")
@@ -40,7 +40,7 @@ struct OwnerSettingTopView: View {
                                         .font(.system(size: 20))
                                         .foregroundColor(Color.white)
                                         .frame(maxWidth: .infinity, minHeight: 91)
-                                        .background(PrimaryColor.buttonRedColor)
+                                        .background(PrimaryColor.buttonRed)
                                         .cornerRadius(20)
                                 }
                             )
@@ -58,7 +58,7 @@ struct OwnerSettingTopView: View {
                                     .font(.system(size: 20))
                                     .foregroundColor(Color.white)
                                     .frame(maxWidth: .infinity, minHeight: 91)
-                                    .background(PrimaryColor.buttonRedColor)
+                                    .background(PrimaryColor.buttonRed)
                                     .cornerRadius(20)
                             })
                         }

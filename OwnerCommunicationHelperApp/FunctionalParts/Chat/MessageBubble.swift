@@ -20,7 +20,7 @@ struct MessageBubble: View {
                     .font(.caption)
                     .padding()
                     .foregroundColor(.black)
-                    .background(isMessageReceived ? PrimaryColor.buttonColor : PrimaryColor.buttonRed)
+                    .background(isMessageReceived ? PrimaryColor.buttonLightGray : PrimaryColor.buttonRed)
                     .cornerRadius(30)
             }
             .frame(maxWidth: 300, alignment: isMessageReceived ? .leading : .trailing)

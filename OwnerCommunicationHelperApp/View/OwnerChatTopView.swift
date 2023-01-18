@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct OwnerChatTopView: View {
+    var personalId: Int
     @StateObject var messagesManager = MessagesManager()
 
     var body: some View {
         ZStack {
-            PrimaryColor.buttonColor
+            PrimaryColor.buttonLightGray
             VStack {
                 ScrollViewReader { proxy in
                     ScrollView {
@@ -43,6 +44,6 @@ struct OwnerChatTopView: View {
 
 struct OwnerChatTopView_Previews: PreviewProvider {
     static var previews: some View {
-        OwnerChatTopView()
+        OwnerChatTopView(personalId: 0)
     }
 }
