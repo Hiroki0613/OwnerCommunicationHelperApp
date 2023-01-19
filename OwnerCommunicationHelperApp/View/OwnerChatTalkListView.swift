@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OwnerChatTalkListView: View {
-    
+
     var workerArray = [
         Worker(name: "ヤマダ", personalId: 111),
         Worker(name: "スズキ", personalId: 222),

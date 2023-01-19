@@ -31,12 +31,12 @@ struct OwnerChatTopView: View {
                         }
                     }
                 }
-                MessageField()
+                MessageField(personalId: personalId)
                     .environmentObject(messagesManager)
             }
         }
         .onAppear {
-            messagesManager.getMessages()
+            messagesManager.getMessages(personalId: personalId)
         }
 
     }
