@@ -45,6 +45,8 @@
 		7FFA0CF3297437B700E2BC27 /* OwnerChatTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CF2297437B700E2BC27 /* OwnerChatTopView.swift */; };
 		7FFA0CF52976EA5700E2BC27 /* OwnerManageStaffCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CF42976EA5700E2BC27 /* OwnerManageStaffCellView.swift */; };
 		7FFA0CF72976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CF62976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift */; };
+		7FFA0CF92978353B00E2BC27 /* OwnerChatTalkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CF82978353B00E2BC27 /* OwnerChatTalkListView.swift */; };
+		7FFA0CFB2978370D00E2BC27 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CFA2978370D00E2BC27 /* Worker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		7FFA0CF2297437B700E2BC27 /* OwnerChatTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerChatTopView.swift; sourceTree = "<group>"; };
 		7FFA0CF42976EA5700E2BC27 /* OwnerManageStaffCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerManageStaffCellView.swift; sourceTree = "<group>"; };
 		7FFA0CF62976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerManageWorkerCellView.swift; sourceTree = "<group>"; };
+		7FFA0CF82978353B00E2BC27 /* OwnerChatTalkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerChatTalkListView.swift; sourceTree = "<group>"; };
+		7FFA0CFA2978370D00E2BC27 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 				7FFA0C7D296BE12000E2BC27 /* FunctionalParts */,
 				7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */,
 				7FFA0C64296BDC2700E2BC27 /* ContentView.swift */,
+				7FFA0CFA2978370D00E2BC27 /* Worker.swift */,
 				7FFA0C66296BDC3200E2BC27 /* Assets.xcassets */,
 				7FFA0C68296BDC3200E2BC27 /* Preview Content */,
 				7FFA0CD1296C00AF00E2BC27 /* Constants.swift */,
@@ -161,6 +166,7 @@
 				7FFA0C7B296BDFD200E2BC27 /* OwnerTopView.swift */,
 				7FFA0CF42976EA5700E2BC27 /* OwnerManageStaffCellView.swift */,
 				7FFA0CF2297437B700E2BC27 /* OwnerChatTopView.swift */,
+				7FFA0CF82978353B00E2BC27 /* OwnerChatTalkListView.swift */,
 				7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */,
 				7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */,
 				7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */,
@@ -290,6 +296,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FFA0CE529705D1900E2BC27 /* QrCodeScannerView.swift in Sources */,
+				7FFA0CFB2978370D00E2BC27 /* Worker.swift in Sources */,
+				7FFA0CF92978353B00E2BC27 /* OwnerChatTalkListView.swift in Sources */,
 				7FFA0C7A296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift in Sources */,
 				7FFA0CEC2972F1DC00E2BC27 /* MessageField.swift in Sources */,
 				7FFA0CF72976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift in Sources */,
