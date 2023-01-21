@@ -13,6 +13,7 @@ struct Worker: Identifiable, Codable {
     var id: String
     var name: String
     var personalId: String
+    // ここのタイムスタンプを更新することで朝礼のスキャンが出来ているかを確認する。
     var timestamp: Date
 }
 

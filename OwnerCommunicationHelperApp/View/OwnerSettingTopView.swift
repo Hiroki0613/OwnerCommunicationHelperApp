@@ -103,8 +103,15 @@ struct OwnerSettingTopView: View {
                             send: OwnerSettingTopAction.gotoQrCodeScanView
                         )
                     ) {
-                        //                            OwnerQRCodeView()
-                        Text("QRコードを表示")
+                        OwnerScanQrCodeView(
+                            store: store.scope(
+                                state: \.ownerQrScanState,
+                                action: OwnerSettingTopAction.ownerQrScanAction
+                            ),
+                            goBackAction: {
+                                viewStore.send(.gotoQrCodeScanView(false))
+                            }
+                        )
                     }
                     .fullScreenCover(
                         isPresented: viewStore.binding(
