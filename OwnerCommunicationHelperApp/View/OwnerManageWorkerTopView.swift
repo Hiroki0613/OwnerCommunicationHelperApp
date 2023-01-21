@@ -8,27 +8,42 @@
 import SwiftUI
 
 struct OwnerManageWorkerTopView: View {
-    var nameArray = ["ヤマダ", "スズキ", "サトウ", "エンドウ"]
+    @StateObject var workerSettingManager = WorkerSettingManager()
 
     var body: some View {
-        ZStack {
-            PrimaryColor.backgroundGreen
-            ScrollView {
-                VStack {
-                    Spacer().frame(height: 20)
-                    Text("作業者")
-                        .fontWeight(.semibold)
-                        .font(.system(size: 20))
-                        .foregroundColor(Color.black)
-                    ForEach(0..<nameArray.count) { index in
-                        OwnerManageWorkerCellView(name: nameArray[index])
-                            .cornerRadius(20)
-                        Spacer().frame(height: 10)
+        NavigationView {
+            ZStack {
+                PrimaryColor.backgroundGreen
+                    .ignoresSafeArea()
+                ScrollView {
+                    VStack {
+                        Spacer().frame(height: 20)
+                        Text("作業者")
+                            .fontWeight(.semibold)
+                            .font(.system(size: 20))
+                            .foregroundColor(Color.black)
+                        ForEach(workerSettingManager.workers, id: \.id) { worker in
+                            let _ = print("hirohiro_ゲット")
+                            NavigationLink(
+                                destination: {
+                                    Text(worker.name)
+                                },
+                                label: {
+                                    OwnerManageWorkerCellView(name: worker.name)
+                                        .cornerRadius(20)
+                                        .environmentObject(workerSettingManager)
+                                }
+                            )
+                            Spacer().frame(height: 10)
+                        }
                     }
+                    .padding(.horizontal, 30)
                 }
-                .padding(.horizontal, 30)
+                .clipped()
             }
-            .clipped()
+        }
+        .onAppear {
+            workerSettingManager.getWorkerData()
         }
     }
 }

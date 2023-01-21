@@ -20,10 +20,27 @@ class WorkerSettingManager: ObservableObject {
     @Published private(set) var workers: [Worker] = []
     let db = Firestore.firestore()
 
+    func getWorkerData() {
+        db.collection("OwnerList").document("123456789").collection("WorkerData").addSnapshotListener { querySnapshot, error in
+            guard let documents = querySnapshot?.documents else {
+                print("WorkerSettingManager / Error fetching documents: \(String(describing: error))")
+                return
+            }
+            self.workers = documents.compactMap{ document -> Worker? in
+                do {
+                    return try document.data(as: Worker.self)
+                } catch {
+                    print("WorkerSettingManager / Error decoding document into Message: \(error)")
+                    return nil
+                }
+            }
+        }
+    }
+
     func setRegistrationData(name: String, personalId: Int) {
         do {
             let newWorker = Worker(id: "\(UUID())", name: name, personalId: personalId, timestamp: Date())
-            try db.collection("WorkerData").document(String(personalId)).setData(from: newWorker)
+            try db.collection("OwnerList").document("123456789").collection("WorkerData").document(String(personalId)).setData(from: newWorker)
         } catch {
             print("WorkerSettingManager / Error adding message to Firestore: \(error)")
         }

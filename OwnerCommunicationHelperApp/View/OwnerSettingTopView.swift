@@ -48,7 +48,8 @@ struct OwnerSettingTopView: View {
                             Group {
                                 Button(
                                     action: {
-                                        workerSettingManager.setRegistrationData(name: "テスト", personalId: 555)
+                                        // TODO: Workerを追加するViewを作成する。
+//                                        workerSettingManager.setRegistrationData(name: "テスト4", personalId: 999)
                                     }, label: {
                                         Text("Workerの追加")
                                             .fontWeight(.semibold)
