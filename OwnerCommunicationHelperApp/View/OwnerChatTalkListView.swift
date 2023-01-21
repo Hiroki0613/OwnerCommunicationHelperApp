@@ -8,32 +8,35 @@
 import SwiftUI
 
 struct OwnerChatTalkListView: View {
-
-    // TODO: personalIdをランダムで作成するようにする。
-    var workerArray = [
-        Worker(id: "\(UUID())", name: "ヤマダ", personalId: 111, timestamp: Date()),
-        Worker(id: "\(UUID())", name: "スズキ", personalId: 222, timestamp: Date()),
-        Worker(id: "\(UUID())", name: "サトウ", personalId: 333, timestamp: Date()),
-        Worker(id: "\(UUID())", name: "エンドウ", personalId: 444, timestamp: Date())
-    ]
+    @StateObject var workerSettingManager = WorkerSettingManager()
 
     var body: some View {
         ZStack {
             PrimaryColor.backgroundSnowWhite
+                .ignoresSafeArea()
             ScrollView {
                 VStack {
-                    ForEach(workerArray) { worker in
+                    Spacer().frame(height: 20)
+                    ForEach(workerSettingManager.workers, id: \.id) { worker in
                         NavigationLink(
-                            destination: OwnerChatTopView(personalId: worker.personalId),
+                            destination: {
+                                OwnerChatTopView(personalId: worker.personalId)
+                            },
                             label: {
                                 OwnerChatWorkerCellView(name: worker.name)
                                     .cornerRadius(20)
-                                Spacer().frame(height: 10)
+                                    .environmentObject(workerSettingManager)
                             }
                         )
+                        Spacer().frame(height: 10)
                     }
                 }
+                .padding(.horizontal, 30)
             }
+            .clipped()
+        }
+        .onAppear {
+            workerSettingManager.getWorkerData()
         }
     }
 }

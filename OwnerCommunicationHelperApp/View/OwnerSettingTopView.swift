@@ -49,6 +49,7 @@ struct OwnerSettingTopView: View {
                                 Button(
                                     action: {
                                         // TODO: Workerを追加するViewを作成する。
+                                        // TODO: personalIdをランダムで作成するようにする。
 //                                        workerSettingManager.setRegistrationData(name: "テスト4", personalId: 999)
                                     }, label: {
                                         Text("Workerの追加")

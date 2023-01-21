@@ -19,7 +19,7 @@ class MessagesManager: ObservableObject {
     // Read message from Firestore in real-time with the addSnapShotListener
     func getMessages(personalId: Int) {
         // TODO: チャットの構成を確定すること。
-        db.collection("ChatRoomId").document(String(personalId)).collection("Chat").addSnapshotListener { querySnapshot, error in
+        db.collection("OwnerList").document("123456789").collection("ChatRoomId").document(String(personalId)).collection("Chat").addSnapshotListener { querySnapshot, error in
             // If we don't have documents, exit the function
             guard let documents = querySnapshot?.documents else {
                 print("Error fetching documents: \(String(describing: error))")
@@ -56,7 +56,7 @@ class MessagesManager: ObservableObject {
             let newMessage = Message(id: "\(UUID())", personalId: "",personalInformation: "", text: text, timestamp: Date())
             // Create a new document in Firestore with the newMessage variable above, and use setData(from:) to convert the Message into Firestore data
             // Note that setData(from:) is a function available only in FirebaseFirestoreSwift package - remember to import it at the top
-            try db.collection("ChatRoomId").document(String(personalId)).collection("Chat").document().setData(from: newMessage)
+            try db.collection("OwnerList").document("123456789").collection("ChatRoomId").document(String(personalId)).collection("Chat").document().setData(from: newMessage)
         } catch {
             // If we run into an error, print the error in the console
             print("Error adding message to Firestore: \(error)")
