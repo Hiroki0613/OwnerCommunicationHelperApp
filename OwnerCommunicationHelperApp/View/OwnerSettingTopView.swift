@@ -62,8 +62,7 @@ struct OwnerSettingTopView: View {
                                 Spacer().frame(height: 30)
                                 Button(
                                     action: {
-                                        // 一旦、FirebaseでWorkerが追加されているかを確認する
-                                        viewStore.send(.gotoQrCodeCreateView(true))
+                                        viewStore.send(.gotoQrCodeScanView(true))
                                     }, label: {
                                         Text("QRコードの表示")
                                             .fontWeight(.semibold)
@@ -100,8 +99,8 @@ struct OwnerSettingTopView: View {
                     .clipped()
                     .fullScreenCover(
                         isPresented: viewStore.binding(
-                            get: \.hasShowedQrCode,
-                            send: OwnerSettingTopAction.gotoQrCodeCreateView
+                            get: \.hasShowedQrCodeScanView,
+                            send: OwnerSettingTopAction.gotoQrCodeScanView
                         )
                     ) {
                         //                            OwnerQRCodeView()
@@ -130,7 +129,7 @@ struct OwnerSettingTopView_Previews: PreviewProvider {
             store: Store(
                 initialState: OwnerSettingTopState(
                     pressureString: "",
-                    hasShowedQrCode: true
+                    hasShowedQrCodeScanView: true
                 ),
                 reducer: ownerSettingTopReducer,
                 environment: OwnerSettingTopEnvironment()

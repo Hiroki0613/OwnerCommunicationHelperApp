@@ -9,13 +9,13 @@ import ComposableArchitecture
 
 struct OwnerSettingTopState: Equatable {
     var pressureString = ""
-    var hasShowedQrCode = false
+    var hasShowedQrCodeScanView = false
     var hasShowedRegisterWorkerView = false
 }
 
 enum OwnerSettingTopAction {
     case setPressure(String)
-    case gotoQrCodeCreateView(Bool)
+    case gotoQrCodeScanView(Bool)
     case gotoRegisterWorkerView(Bool)
 }
 
@@ -29,8 +29,8 @@ let ownerSettingTopReducer = Reducer<OwnerSettingTopState, OwnerSettingTopAction
         state.pressureString = pressureString
         return .none
 
-    case .gotoQrCodeCreateView(let isActive):
-        state.hasShowedQrCode = isActive
+    case .gotoQrCodeScanView(let isActive):
+        state.hasShowedQrCodeScanView = isActive
         return .none
 
     case .gotoRegisterWorkerView(let isActive):
