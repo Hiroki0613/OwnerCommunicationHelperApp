@@ -25,7 +25,7 @@ struct OwnerManageWorkerTopView: View {
                         ForEach(workerSettingManager.workers, id: \.id) { worker in
                             NavigationLink(
                                 destination: {
-                                    Text(worker.name)
+                                    OwnerManagerWorkerQRCodeView(name: worker.name, personalId: worker.personalId)
                                 },
                                 label: {
                                     OwnerManageWorkerCellView(name: worker.name)

@@ -26,7 +26,6 @@ struct OwnerRegisterWorkerView: View {
                     .font(.caption)
                     .frame(height: 22)
                     .disableAutocorrection(true)
-
                 }
                 .padding(.horizontal)
                 .padding(.vertical, 10)
