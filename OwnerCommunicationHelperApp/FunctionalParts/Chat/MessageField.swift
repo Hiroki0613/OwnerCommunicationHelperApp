@@ -20,7 +20,6 @@ struct MessageField: View {
                 .font(.caption)
                 .frame(height: 22)
                 .disableAutocorrection(true)
-
             Button {
                 messagesManager.sendMessage(text: message, personalId:personalId)
                 message = ""

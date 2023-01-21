@@ -23,7 +23,6 @@ struct OwnerManageWorkerTopView: View {
                             .font(.system(size: 20))
                             .foregroundColor(Color.black)
                         ForEach(workerSettingManager.workers, id: \.id) { worker in
-                            let _ = print("hirohiro_ゲット")
                             NavigationLink(
                                 destination: {
                                     Text(worker.name)

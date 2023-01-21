@@ -47,6 +47,7 @@
 		7FFA0CF72976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CF62976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift */; };
 		7FFA0CF92978353B00E2BC27 /* OwnerChatTalkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CF82978353B00E2BC27 /* OwnerChatTalkListView.swift */; };
 		7FFA0CFB2978370D00E2BC27 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CFA2978370D00E2BC27 /* Worker.swift */; };
+		7FFA0CFD297BE3EC00E2BC27 /* OwnerRegisterWorkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CFC297BE3EB00E2BC27 /* OwnerRegisterWorkerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		7FFA0CF62976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerManageWorkerCellView.swift; sourceTree = "<group>"; };
 		7FFA0CF82978353B00E2BC27 /* OwnerChatTalkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerChatTalkListView.swift; sourceTree = "<group>"; };
 		7FFA0CFA2978370D00E2BC27 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
+		7FFA0CFC297BE3EB00E2BC27 /* OwnerRegisterWorkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerRegisterWorkerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				7FFA0CF82978353B00E2BC27 /* OwnerChatTalkListView.swift */,
 				7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */,
 				7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */,
+				7FFA0CFC297BE3EB00E2BC27 /* OwnerRegisterWorkerView.swift */,
 				7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */,
 				7FFA0CD3296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift */,
 				7FFA0CD7296C03F800E2BC27 /* OwnerSettingPressureView.swift */,
@@ -321,6 +324,7 @@
 				7FFA0C7F296BE1E100E2BC27 /* AltimatorManager.swift in Sources */,
 				7FFA0CD8296C03F800E2BC27 /* OwnerSettingPressureView.swift in Sources */,
 				7FFA0CF12972F2C500E2BC27 /* MessagesManager.swift in Sources */,
+				7FFA0CFD297BE3EC00E2BC27 /* OwnerRegisterWorkerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

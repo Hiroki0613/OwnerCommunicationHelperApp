@@ -10,8 +10,8 @@ import FirebaseAuthUI
 import SwiftUI
 
 struct OwnerSettingTopView: View {
+    @StateObject var workerSettingManager = WorkerSettingManager()
     let store: Store<OwnerSettingTopState, OwnerSettingTopAction>
-    @EnvironmentObject var workerSettingManager: WorkerSettingManager
 
     var body: some View {
         WithViewStore(store) { viewStore in
@@ -48,11 +48,9 @@ struct OwnerSettingTopView: View {
                             Group {
                                 Button(
                                     action: {
-                                        // TODO: Workerを追加するViewを作成する。
-                                        // TODO: personalIdをランダムで作成するようにする。
-//                                        workerSettingManager.setRegistrationData(name: "テスト4", personalId: 999)
+                                        viewStore.send(.gotoRegisterWorkerView(true))
                                     }, label: {
-                                        Text("Workerの追加")
+                                        Text("Worker,Staffの追加")
                                             .fontWeight(.semibold)
                                             .font(.system(size: 20))
                                             .foregroundColor(Color.white)
@@ -104,10 +102,20 @@ struct OwnerSettingTopView: View {
                         isPresented: viewStore.binding(
                             get: \.hasShowedQrCode,
                             send: OwnerSettingTopAction.gotoQrCodeCreateView
-                        )) {
-//                            OwnerQRCodeView()
-                            Text("QRコードを表示")
-                        }
+                        )
+                    ) {
+                        //                            OwnerQRCodeView()
+                        Text("QRコードを表示")
+                    }
+                    .fullScreenCover(
+                        isPresented: viewStore.binding(
+                            get: \.hasShowedRegisterWorkerView,
+                            send: OwnerSettingTopAction.gotoRegisterWorkerView
+                        )
+                    ) {
+                        OwnerRegisterWorkerView(viewStore: viewStore)
+                            .environmentObject(workerSettingManager)
+                    }
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarHidden(true)
