@@ -12,7 +12,7 @@ import FirebaseFirestoreSwift
 struct Worker: Identifiable, Codable {
     var id: String
     var name: String
-    var personalId: Int
+    var personalId: String
     var timestamp: Date
 }
 
@@ -37,10 +37,10 @@ class WorkerSettingManager: ObservableObject {
         }
     }
 
-    func setRegistrationData(name: String, personalId: Int) {
+    func setRegistrationData(name: String, personalId: String) {
         do {
             let newWorker = Worker(id: "\(UUID())", name: name, personalId: personalId, timestamp: Date())
-            try db.collection("OwnerList").document("123456789").collection("WorkerData").document(String(personalId)).setData(from: newWorker)
+            try db.collection("OwnerList").document("123456789").collection("WorkerData").document(personalId).setData(from: newWorker)
         } catch {
             print("WorkerSettingManager / Error adding message to Firestore: \(error)")
         }

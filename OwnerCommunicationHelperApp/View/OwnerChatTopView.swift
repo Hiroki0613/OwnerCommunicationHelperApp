@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OwnerChatTopView: View {
-    var personalId: Int
+    var personalId: String
     @StateObject var messagesManager = MessagesManager()
 
     var body: some View {
@@ -44,6 +44,6 @@ struct OwnerChatTopView: View {
 
 struct OwnerChatTopView_Previews: PreviewProvider {
     static var previews: some View {
-        OwnerChatTopView(personalId: 0)
+        OwnerChatTopView(personalId: "")
     }
 }

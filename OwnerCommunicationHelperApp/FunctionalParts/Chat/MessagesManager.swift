@@ -17,9 +17,9 @@ class MessagesManager: ObservableObject {
     let db = Firestore.firestore()
 
     // Read message from Firestore in real-time with the addSnapShotListener
-    func getMessages(personalId: Int) {
+    func getMessages(personalId: String) {
         // TODO: チャットの構成を確定すること。
-        db.collection("OwnerList").document("123456789").collection("ChatRoomId").document(String(personalId)).collection("Chat").addSnapshotListener { querySnapshot, error in
+        db.collection("OwnerList").document("123456789").collection("ChatRoomId").document(personalId).collection("Chat").addSnapshotListener { querySnapshot, error in
             // If we don't have documents, exit the function
             guard let documents = querySnapshot?.documents else {
                 print("Error fetching documents: \(String(describing: error))")
@@ -48,7 +48,7 @@ class MessagesManager: ObservableObject {
     }
 
     // Add a message in Firestore
-    func sendMessage(text: String, personalId: Int) {
+    func sendMessage(text: String, personalId: String) {
         do {
             guard text.isEmpty == false else { return }
             // Create a new Message instance, with a unique ID, the text we passed, a received value set to false (since the user will always be the sender), and a timestamp
@@ -56,7 +56,7 @@ class MessagesManager: ObservableObject {
             let newMessage = Message(id: "\(UUID())", personalId: "",personalInformation: "", text: text, timestamp: Date())
             // Create a new document in Firestore with the newMessage variable above, and use setData(from:) to convert the Message into Firestore data
             // Note that setData(from:) is a function available only in FirebaseFirestoreSwift package - remember to import it at the top
-            try db.collection("OwnerList").document("123456789").collection("ChatRoomId").document(String(personalId)).collection("Chat").document().setData(from: newMessage)
+            try db.collection("OwnerList").document("123456789").collection("ChatRoomId").document(personalId).collection("Chat").document().setData(from: newMessage)
         } catch {
             // If we run into an error, print the error in the console
             print("Error adding message to Firestore: \(error)")

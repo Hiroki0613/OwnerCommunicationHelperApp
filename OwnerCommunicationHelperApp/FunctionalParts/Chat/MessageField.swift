@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MessageField: View {
-    var personalId: Int
+    var personalId: String
     @EnvironmentObject var messagesManager: MessagesManager
     @State private var message = ""
 
@@ -43,7 +43,7 @@ struct MessageField: View {
 
 struct MessageField_Previews: PreviewProvider {
     static var previews: some View {
-        MessageField(personalId: 0)
+        MessageField(personalId: "")
             .environmentObject(MessagesManager())
     }
 }
