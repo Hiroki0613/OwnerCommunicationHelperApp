@@ -9,11 +9,12 @@ import SwiftUI
 
 struct OwnerChatTalkListView: View {
 
+    // TODO: personalIdをランダムで作成するようにする。
     var workerArray = [
-        Worker(name: "ヤマダ", personalId: 111),
-        Worker(name: "スズキ", personalId: 222),
-        Worker(name: "サトウ", personalId: 333),
-        Worker(name: "エンドウ", personalId: 444)
+        Worker(id: "\(UUID())", name: "ヤマダ", personalId: 111, timestamp: Date()),
+        Worker(id: "\(UUID())", name: "スズキ", personalId: 222, timestamp: Date()),
+        Worker(id: "\(UUID())", name: "サトウ", personalId: 333, timestamp: Date()),
+        Worker(id: "\(UUID())", name: "エンドウ", personalId: 444, timestamp: Date())
     ]
 
     var body: some View {

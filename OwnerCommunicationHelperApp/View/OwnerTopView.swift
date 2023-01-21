@@ -10,6 +10,7 @@ import SwiftUI
 
 struct OwnerTopView: View {
     let store: Store<OwnerTopState, OwnerTopAction>
+    @StateObject var workerSettingManager = WorkerSettingManager()
     @ObservedObject private var authState = FirebaseAuthStateObserver()
     @State var isShowSheet = false
 
@@ -24,6 +25,7 @@ struct OwnerTopView: View {
                             action: OwnerTopAction.settingTopAction
                         )
                     )
+                    .environmentObject(workerSettingManager)
                         .tabItem {
                             Label("設定", systemImage: "gear")
                         }

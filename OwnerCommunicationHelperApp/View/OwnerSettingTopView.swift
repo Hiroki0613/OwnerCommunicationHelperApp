@@ -10,8 +10,8 @@ import FirebaseAuthUI
 import SwiftUI
 
 struct OwnerSettingTopView: View {
-
     let store: Store<OwnerSettingTopState, OwnerSettingTopAction>
+    @EnvironmentObject var workerSettingManager: WorkerSettingManager
 
     var body: some View {
         WithViewStore(store) { viewStore in
@@ -45,22 +45,52 @@ struct OwnerSettingTopView: View {
                                 }
                             )
                             Spacer().frame(height: 30)
-                            Button(action: {
-                                viewStore.send(.gotoQrCodeCreateView(true))
-                                //                                do {
-                                //                                    try Auth.auth().signOut()
-                                //                                } catch {
-                                //                                    print("error")
-                                //                                }
-                            }, label: {
-                                Text("Workerの追加")
-                                    .fontWeight(.semibold)
-                                    .font(.system(size: 20))
-                                    .foregroundColor(Color.white)
-                                    .frame(maxWidth: .infinity, minHeight: 91)
-                                    .background(PrimaryColor.buttonRed)
-                                    .cornerRadius(20)
-                            })
+                            Group {
+                                Button(
+                                    action: {
+                                        workerSettingManager.setRegistrationData(name: "テスト", personalId: 555)
+                                    }, label: {
+                                        Text("Workerの追加")
+                                            .fontWeight(.semibold)
+                                            .font(.system(size: 20))
+                                            .foregroundColor(Color.white)
+                                            .frame(maxWidth: .infinity, minHeight: 91)
+                                            .background(PrimaryColor.buttonRed)
+                                            .cornerRadius(20)
+                                    }
+                                )
+                                Button(
+                                    action: {
+                                        // 一旦、FirebaseでWorkerが追加されているかを確認する
+                                        viewStore.send(.gotoQrCodeCreateView(true))
+                                    }, label: {
+                                        Text("QRコードの表示")
+                                            .fontWeight(.semibold)
+                                            .font(.system(size: 20))
+                                            .foregroundColor(Color.white)
+                                            .frame(maxWidth: .infinity, minHeight: 91)
+                                            .background(PrimaryColor.buttonRed)
+                                            .cornerRadius(20)
+                                    }
+                                )
+                                Button(
+                                    action: {
+                                        do {
+                                            try Auth.auth().signOut()
+                                        } catch {
+                                            print("error")
+                                        }
+                                    }, label: {
+                                        Text("ログアウト")
+                                            .fontWeight(.semibold)
+                                            .font(.system(size: 20))
+                                            .foregroundColor(Color.white)
+                                            .frame(maxWidth: .infinity, minHeight: 91)
+                                            .background(PrimaryColor.buttonRed)
+                                            .cornerRadius(20)
+                                    }
+                                )
+                            }
                         }
                         .padding(.horizontal, 30)
                         Spacer().frame(height: 30)

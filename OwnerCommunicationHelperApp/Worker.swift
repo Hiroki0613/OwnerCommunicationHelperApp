@@ -6,9 +6,26 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-struct Worker: Identifiable {
-    var id = UUID()
+struct Worker: Identifiable, Codable {
+    var id: String
     var name: String
     var personalId: Int
+    var timestamp: Date
+}
+
+class WorkerSettingManager: ObservableObject {
+    @Published private(set) var workers: [Worker] = []
+    let db = Firestore.firestore()
+
+    func setRegistrationData(name: String, personalId: Int) {
+        do {
+            let newWorker = Worker(id: "\(UUID())", name: name, personalId: personalId, timestamp: Date())
+            try db.collection("WorkerData").document(String(personalId)).setData(from: newWorker)
+        } catch {
+            print("WorkerSettingManager / Error adding message to Firestore: \(error)")
+        }
+    }
 }
