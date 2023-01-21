@@ -17,6 +17,7 @@ struct OwnerManageStaffTopView: View {
     var body: some View {
         ZStack {
             PrimaryColor.backgroundGreen
+                .ignoresSafeArea()
             ScrollView {
                 VStack {
                     Spacer().frame(height: 20)

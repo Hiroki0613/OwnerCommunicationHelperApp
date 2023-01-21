@@ -17,6 +17,16 @@ struct OwnerChatTalkListView: View {
             ScrollView {
                 VStack {
                     Spacer().frame(height: 20)
+                    ZStack {
+                        PrimaryColor.backgroundGreen
+                        Text("誰と話しますか？")
+                            .fontWeight(.semibold)
+                            .font(.system(size: 20))
+                            .foregroundColor(Color.white)
+                            .padding(20)
+                    }
+                    .cornerRadius(20)
+                    Spacer().frame(height: 20)
                     ForEach(workerSettingManager.workers, id: \.id) { worker in
                         NavigationLink(
                             destination: {
@@ -56,7 +66,7 @@ struct OwnerChatWorkerCellView: View {
             Text(name + "さん")
                 .fontWeight(.semibold)
                 .font(.system(size: 20))
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.white)
                 .padding(20)
         }
     }

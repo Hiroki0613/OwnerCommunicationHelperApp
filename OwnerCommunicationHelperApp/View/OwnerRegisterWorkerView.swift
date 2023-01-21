@@ -17,6 +17,8 @@ struct OwnerRegisterWorkerView: View {
         ZStack {
             PrimaryColor.backgroundGreen
             VStack {
+                CommonText(text: "ワーカー追加", alignment: .center)
+                Spacer().frame(height: 30)
                 Group {
                     CustomTextField(
                         placeholder: Text("名前を入力してください"),

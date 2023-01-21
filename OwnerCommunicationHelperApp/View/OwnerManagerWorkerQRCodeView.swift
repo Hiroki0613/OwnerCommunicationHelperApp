@@ -15,6 +15,7 @@ struct OwnerManagerWorkerQRCodeView: View {
     var body: some View {
         ZStack {
             PrimaryColor.backgroundGreen
+                .ignoresSafeArea()
             VStack {
                 Spacer()
                 CommonText(text: name, alignment: .center)

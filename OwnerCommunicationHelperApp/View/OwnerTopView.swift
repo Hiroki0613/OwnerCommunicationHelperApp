@@ -26,17 +26,21 @@ struct OwnerTopView: View {
                         )
                     )
                     .environmentObject(workerSettingManager)
-                        .tabItem {
-                            Label("設定", systemImage: "gear")
-                        }
+                    .tabItem {
+                        Label("設定", systemImage: "gear")
+                    }
                     OwnerManageStaffTopView()
                         .tabItem {
                             Label("スタッフ", systemImage: "person")
                         }
-                    OwnerManageWorkerTopView()
-                        .tabItem {
-                            Label("作業者", systemImage: "hammer.fill")
-                        }
+                    NavigationView {
+                        OwnerManageWorkerTopView()
+                            .navigationBarTitleDisplayMode(.inline)
+                            .navigationBarHidden(true)
+                    }
+                    .tabItem {
+                        Label("作業者", systemImage: "hammer.fill")
+                    }
                 }
             } else {
                 Text("You are not logged in.")

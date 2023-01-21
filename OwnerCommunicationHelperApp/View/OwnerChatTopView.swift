@@ -14,6 +14,7 @@ struct OwnerChatTopView: View {
     var body: some View {
         ZStack {
             PrimaryColor.buttonLightGray
+                .ignoresSafeArea()
             VStack {
                 ScrollViewReader { proxy in
                     ScrollView {

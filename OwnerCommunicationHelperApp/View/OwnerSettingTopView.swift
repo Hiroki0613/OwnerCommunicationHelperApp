@@ -18,6 +18,7 @@ struct OwnerSettingTopView: View {
             NavigationView {
                 ZStack {
                     PrimaryColor.backgroundGreen
+                        .ignoresSafeArea()
                     ScrollView {
                         VStack {
                             Spacer().frame(height: 20)
@@ -50,7 +51,7 @@ struct OwnerSettingTopView: View {
                                     action: {
                                         viewStore.send(.gotoRegisterWorkerView(true))
                                     }, label: {
-                                        Text("Worker,Staffの追加")
+                                        Text("Worker,Staff,Terminalの追加")
                                             .fontWeight(.semibold)
                                             .font(.system(size: 20))
                                             .foregroundColor(Color.white)
@@ -64,7 +65,7 @@ struct OwnerSettingTopView: View {
                                     action: {
                                         viewStore.send(.gotoQrCodeScanView(true))
                                     }, label: {
-                                        Text("QRコードの表示")
+                                        Text("QRコードスキャン")
                                             .fontWeight(.semibold)
                                             .font(.system(size: 20))
                                             .foregroundColor(Color.white)

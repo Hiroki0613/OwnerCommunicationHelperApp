@@ -11,7 +11,6 @@ struct OwnerManageWorkerTopView: View {
     @StateObject var workerSettingManager = WorkerSettingManager()
 
     var body: some View {
-        NavigationView {
             ZStack {
                 PrimaryColor.backgroundGreen
                     .ignoresSafeArea()
@@ -40,7 +39,6 @@ struct OwnerManageWorkerTopView: View {
                 }
                 .clipped()
             }
-        }
         .onAppear {
             workerSettingManager.getWorkerData()
         }
