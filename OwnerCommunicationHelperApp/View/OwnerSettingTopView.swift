@@ -61,6 +61,7 @@ struct OwnerSettingTopView: View {
                                             .cornerRadius(20)
                                     }
                                 )
+                                Spacer().frame(height: 30)
                                 Button(
                                     action: {
                                         // 一旦、FirebaseでWorkerが追加されているかを確認する
@@ -75,6 +76,7 @@ struct OwnerSettingTopView: View {
                                             .cornerRadius(20)
                                     }
                                 )
+                                Spacer().frame(height: 30)
                                 Button(
                                     action: {
                                         do {
