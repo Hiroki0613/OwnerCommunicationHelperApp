@@ -29,6 +29,7 @@ struct OwnerTopView: View {
                     .tabItem {
                         Label("設定", systemImage: "gear")
                     }
+                    // TODO: OwnerManageWorkerTopViewを参考にスタッフ追加方法を検討する。その際に担当Workerの情報を設定する方法も検討する
                     OwnerManageStaffTopView()
                         .tabItem {
                             Label("スタッフ", systemImage: "person")
@@ -55,6 +56,8 @@ struct OwnerTopView: View {
         }
         .sheet(isPresented: $isShowSheet, content: {
             ZStack {
+                // TODO: Appleアカウントでのログイン
+                // TODO: Owner情報を更新するようにする
                 FirebaseUIView()
             }
         })

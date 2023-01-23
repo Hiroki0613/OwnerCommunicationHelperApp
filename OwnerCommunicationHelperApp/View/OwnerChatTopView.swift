@@ -13,6 +13,9 @@ struct OwnerChatTopView: View {
 
     var body: some View {
         ZStack {
+            // TODO: チャット画面のUIを整えること
+            // TODO: 要望では、1日分だけをチャット画面にするので、タイムスタンプから当日分だけを取得すること。
+            // TODO: チャット画面、現在はタブバーが見える。見えないようにすること。
             PrimaryColor.buttonLightGray
                 .ignoresSafeArea()
             VStack {

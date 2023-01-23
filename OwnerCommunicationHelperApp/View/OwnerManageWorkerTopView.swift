@@ -24,6 +24,7 @@ struct OwnerManageWorkerTopView: View {
                         ForEach(workerSettingManager.workers, id: \.id) { worker in
                             NavigationLink(
                                 destination: {
+                                    // TODO: Workerの削除を行う機能を実装すること
                                     OwnerManagerWorkerQRCodeView(name: worker.name, personalId: worker.personalId)
                                 },
                                 label: {

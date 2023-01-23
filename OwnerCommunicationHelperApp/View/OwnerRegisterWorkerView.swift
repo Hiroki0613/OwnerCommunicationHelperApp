@@ -8,6 +8,7 @@
 import ComposableArchitecture
 import SwiftUI
 
+// TODO: ここをOwnerRegisterWorkerViewを Staff、Terminal 追加の参考にする。
 struct OwnerRegisterWorkerView: View {
     let viewStore: ViewStore<OwnerSettingTopState, OwnerSettingTopAction>
     @EnvironmentObject var workerSettingManager: WorkerSettingManager
