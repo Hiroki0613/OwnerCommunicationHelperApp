@@ -42,7 +42,6 @@ struct OwnerChatTopView: View {
         .onAppear {
             messagesManager.getMessages(personalId: personalId)
         }
-
     }
 }
 

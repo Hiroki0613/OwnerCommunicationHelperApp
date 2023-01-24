@@ -52,6 +52,7 @@ let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrSca
         state.hasReadWorkerId = true
         return Effect(value: .finishReadQrCode)
 
+        // TODO: よく考えたらStaffIdは必要では無い気がする。
     case .readStaffId(let id):
         state.hasReadStaffId = true
         return Effect(value: .finishReadQrCode)

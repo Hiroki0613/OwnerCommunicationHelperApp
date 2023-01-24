@@ -51,6 +51,7 @@
 		7FFA0CFF297BF12200E2BC27 /* OwnerManagerWorkerQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0CFE297BF12200E2BC27 /* OwnerManagerWorkerQRCodeView.swift */; };
 		7FFA0D01297C257800E2BC27 /* OwnerQrScanCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0D00297C257800E2BC27 /* OwnerQrScanCore.swift */; };
 		7FFA0D03297C2A8E00E2BC27 /* OwnerScanQrCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0D02297C2A8E00E2BC27 /* OwnerScanQrCodeView.swift */; };
+		7FFA0D05298026B800E2BC27 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0D04298026B800E2BC27 /* Owner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		7FFA0CFE297BF12200E2BC27 /* OwnerManagerWorkerQRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerManagerWorkerQRCodeView.swift; sourceTree = "<group>"; };
 		7FFA0D00297C257800E2BC27 /* OwnerQrScanCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerQrScanCore.swift; sourceTree = "<group>"; };
 		7FFA0D02297C2A8E00E2BC27 /* OwnerScanQrCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerScanQrCodeView.swift; sourceTree = "<group>"; };
+		7FFA0D04298026B800E2BC27 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */,
 				7FFA0C64296BDC2700E2BC27 /* ContentView.swift */,
 				7FFA0CFA2978370D00E2BC27 /* Worker.swift */,
+				7FFA0D04298026B800E2BC27 /* Owner.swift */,
 				7FFA0C66296BDC3200E2BC27 /* Assets.xcassets */,
 				7FFA0C68296BDC3200E2BC27 /* Preview Content */,
 				7FFA0CD1296C00AF00E2BC27 /* Constants.swift */,
@@ -332,6 +335,7 @@
 				7FFA0CF52976EA5700E2BC27 /* OwnerManageStaffCellView.swift in Sources */,
 				7FFA0CD0296BFB6600E2BC27 /* OwnerSettingTopCore.swift in Sources */,
 				7FFA0CD6296C01DC00E2BC27 /* CommonText.swift in Sources */,
+				7FFA0D05298026B800E2BC27 /* Owner.swift in Sources */,
 				7FFA0C63296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift in Sources */,
 				7FFA0C7F296BE1E100E2BC27 /* AltimatorManager.swift in Sources */,
 				7FFA0CD8296C03F800E2BC27 /* OwnerSettingPressureView.swift in Sources */,
