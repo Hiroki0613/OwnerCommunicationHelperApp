@@ -10,12 +10,14 @@ import Foundation
 
 struct OwnerQrScanState: Equatable {
     var hasReadWorkerId = false
+    var hasReadStaffId = false
     var hasReadTerminalId = false
 }
 
 enum OwnerQrScanAction {
     case scanQrCodeResult(result: String)
     case readWorkerId(id: String)
+    case readStaffId(id: String)
     case readTerminalId(id: String)
     case finishReadQrCode
 }
@@ -33,6 +35,11 @@ let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrSca
                 Effect(value: .readWorkerId(id: result))
             )
         }
+        if result.contains("staff_") {
+            return .concatenate(
+                Effect(value: .readStaffId(id: result))
+            )
+        }
         if result.contains("terminal_") {
             return .concatenate(
                 Effect(value: .readTerminalId(id: result))
@@ -45,16 +52,19 @@ let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrSca
         state.hasReadWorkerId = true
         return Effect(value: .finishReadQrCode)
 
+    case .readStaffId(let id):
+        state.hasReadStaffId = true
+        return Effect(value: .finishReadQrCode)
+
     case .readTerminalId(let id):
-        // TODO: workerIDはworker + ランダム生成を使って用意する。
         state.hasReadTerminalId = true
         return Effect(value: .finishReadQrCode)
 
     case .finishReadQrCode:
-        if state.hasReadWorkerId
-            && state.hasReadTerminalId {
+        if state.hasReadWorkerId && state.hasReadTerminalId || state.hasReadStaffId && state.hasReadTerminalId {
             print("hirohiro_完了した")
             state.hasReadWorkerId = false
+            state.hasReadStaffId = false
             state.hasReadTerminalId = false
             return .none
         }

@@ -65,7 +65,6 @@ struct OwnerSettingTopView: View {
                                     }
                                 )
                                 Spacer().frame(height: 30)
-                                // TODO: QRコードをスキャンする時に、"Worker+Teminal"、"Staff+Teminal"の両方ができるようにしておく。"Terminal+Teminal"は通過しないようにしておく。
                                 Button(
                                     action: {
                                         viewStore.send(.gotoQrCodeScanView(true))
