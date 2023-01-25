@@ -19,7 +19,8 @@ struct Owner: Identifiable, Codable {
 }
 
 class OwnerSettingManager: ObservableObject {
-    @Published private(set) var owner: Owner = Owner(id: "", ownerId: "", startWorkTime: Date(), endWorkTime: Date(), numberOfPeopleCanRegister: 7)
+    // TODO: ここの構造がおかしいので修正すること。
+    @Published private(set) var owner: Owner?
     let db = Firestore.firestore()
 
     func getOwnerData() {
