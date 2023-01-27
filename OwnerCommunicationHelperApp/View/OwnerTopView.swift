@@ -57,6 +57,8 @@ struct OwnerTopView: View {
         .sheet(isPresented: $isShowSheet, content: {
             ZStack {
                 // TODO: Appleアカウントでのログイン
+                // TODO: テストフライトでの申請時にSignInAppleを入れないとリジェクトされる可能性あり。
+                // TODO: 難しいなら、一旦Emailサインインに変更する。
                 // TODO: Owner情報を更新するようにする
                 FirebaseUIView()
             }
