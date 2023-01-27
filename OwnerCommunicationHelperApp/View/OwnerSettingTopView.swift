@@ -11,6 +11,7 @@ import SwiftUI
 
 struct OwnerSettingTopView: View {
     @StateObject var workerSettingManager = WorkerSettingManager()
+    @StateObject var ownerSettingManager = OwnerSettingManager()
     let store: Store<OwnerSettingTopState, OwnerSettingTopAction>
 
     var body: some View {
@@ -32,7 +33,8 @@ struct OwnerSettingTopView: View {
                             // TODO: 可能参加人数をデフォルトで決めておく。
                             // TODO: 残り人数はFirebaseと連携させておく。Workerの数を読み出してカウントに入れるようにする。
                             // TODO: 課金方法については、後から検討する。ここで可能参加人数を変更できるようにする。
-                            OwnerSettingSubscriptionView()
+                            let _ = print("hirohiro_numberOfPeopleCanRegister: ", ownerSettingManager.owner?.numberOfPeopleCanRegister)
+                            OwnerSettingSubscriptionView(numberOfPeopleCanRegister: ownerSettingManager.owner?.numberOfPeopleCanRegister)
                                 .cornerRadius(20)
                             Spacer().frame(height: 30)
                             NavigationLink(
@@ -130,6 +132,10 @@ struct OwnerSettingTopView: View {
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarHidden(true)
+            }
+            .onAppear {
+                ownerSettingManager.setOwnerData(name: "ひろひろ")
+                ownerSettingManager.getOwnerData()
             }
         }
     }

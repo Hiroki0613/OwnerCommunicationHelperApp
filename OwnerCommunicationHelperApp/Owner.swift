@@ -24,18 +24,24 @@ class OwnerSettingManager: ObservableObject {
     let db = Firestore.firestore()
 
     func getOwnerData() {
-        db.collection("OwnerList").document("\(Auth.auth().currentUser?.uid)").getDocument { snapShot, error in
-            guard let document = snapShot?.exists else {
-                print("OwnerDataSettingManager / Error fetching documents: \(String(describing: error))")
+        db.collection("OwnerList").document("\(Auth.auth().currentUser?.uid)").getDocument { document, error in
+            guard error == nil else {
+                print("error", error ?? "")
                 return
             }
-            // TODO: ここにデータを格納する
+            if let document = document, document.exists {
+                let data = document.data()
+                if let data = data {
+                    print("hirohiro_documentData: ", data)
+                }
+            }
         }
     }
 
     func setOwnerData(name: String) {
         do {
-            let newOwner = Worker(id: "\(String(describing: Auth.auth().currentUser?.uid))", name: name, personalId: "\(Auth.auth().currentUser?.uid)", timestamp: Date())
+//            let newOwner = Worker(id: "\(Auth.auth().currentUser?.uid)", name: name, personalId: "\(Auth.auth().currentUser?.uid)", timestamp: Date())
+            let newOwner = Owner(id: "\(Auth.auth().currentUser?.uid)", ownerId: "\(Auth.auth().currentUser?.uid)", startWorkTime: Date(), endWorkTime: Date(), numberOfPeopleCanRegister: 7)
             try db.collection("OwnerList").document("\(Auth.auth().currentUser?.uid)").setData(from: newOwner)
         } catch {
             print("OwnerSettingManager / Error adding message to Firestore: \(error)")
