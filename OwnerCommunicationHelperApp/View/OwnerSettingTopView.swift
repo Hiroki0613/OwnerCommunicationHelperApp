@@ -134,6 +134,7 @@ struct OwnerSettingTopView: View {
                 .navigationBarHidden(true)
             }
             .onAppear {
+                // TODO: ここのset、getの導線が曖昧なので要整理
                 ownerSettingManager.setOwnerData(name: "ひろひろ")
                 ownerSettingManager.getOwnerData()
             }
