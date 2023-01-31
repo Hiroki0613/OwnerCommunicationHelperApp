@@ -10,14 +10,12 @@ import Foundation
 
 struct OwnerQrScanState: Equatable {
     var hasReadWorkerId = false
-    var hasReadStaffId = false
     var hasReadTerminalId = false
 }
 
 enum OwnerQrScanAction {
     case scanQrCodeResult(result: String)
     case readWorkerId(id: String)
-    case readStaffId(id: String)
     case readTerminalId(id: String)
     case finishReadQrCode
 }
@@ -29,15 +27,9 @@ let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrSca
 
     switch action {
     case .scanQrCodeResult(let result):
-        print("hirohiro_resultAA: ", result)
         if result.contains("worker_") {
             return .concatenate(
                 Effect(value: .readWorkerId(id: result))
-            )
-        }
-        if result.contains("staff_") {
-            return .concatenate(
-                Effect(value: .readStaffId(id: result))
             )
         }
         if result.contains("terminal_") {
@@ -48,13 +40,7 @@ let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrSca
         return .none
 
     case .readWorkerId(let id):
-        // TODO: ownerはQRコードの前にownerなどをつけて、string切り離しをおこなって登録
         state.hasReadWorkerId = true
-        return Effect(value: .finishReadQrCode)
-
-        // TODO: よく考えたらStaffIdは必要では無い気がする。
-    case .readStaffId(let id):
-        state.hasReadStaffId = true
         return Effect(value: .finishReadQrCode)
 
     case .readTerminalId(let id):
@@ -62,11 +48,10 @@ let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrSca
         return Effect(value: .finishReadQrCode)
 
     case .finishReadQrCode:
-        if state.hasReadWorkerId && state.hasReadTerminalId || state.hasReadStaffId && state.hasReadTerminalId {
-            print("hirohiro_完了した")
+        if state.hasReadWorkerId && state.hasReadTerminalId {
             state.hasReadWorkerId = false
-            state.hasReadStaffId = false
             state.hasReadTerminalId = false
+            // TODO: ここに朝礼時のQRコードを読み取った後の処理を書く。
             return .none
         }
         return .none
