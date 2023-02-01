@@ -23,6 +23,7 @@ struct FirebaseUIView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UINavigationController {
         let authUI = FUIAuth.defaultAuthUI()!
         let providers: [FUIAuthProvider] = [
+            // TODO: ここは最終的にAppleログインのみにする。そもそもAppleIDを登録しないとアプリがダウンロード出来ないので登録が必須。決済関係は、どうするかは要検討。
             FUIGoogleAuth(authUI: authUI)
         ]
         authUI.providers = providers
