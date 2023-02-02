@@ -44,23 +44,30 @@ struct OwnerTopView: View {
                     }
                 }
             } else {
-                Text("You are not logged in.")
-                    .padding()
-                Button(
-                    action: {
-                        isShowSheet.toggle()
-                    }, label: {
-                        Text("login")
-                    })
+                ZStack {
+                    PrimaryColor.backgroundGreen
+                    VStack {
+                        Text("少しでも力になれば幸いです")
+                            .padding()
+                        Button(
+                            action: {
+                                isShowSheet.toggle()
+                            }, label: {
+                                Text("AppleIDでログインしてください")
+                            }
+                        )
+                    }
+                }
+            
             }
         }
         .sheet(isPresented: $isShowSheet, content: {
             ZStack {
-                // TODO: Appleアカウントでのログイン
-                // TODO: テストフライトでの申請時にSignInAppleを入れないとリジェクトされる可能性あり。
-                // TODO: 難しいなら、一旦Emailサインインに変更する。
-                // TODO: Owner情報を更新するようにする
-                FirebaseUIView()
+                PrimaryColor.backgroundGreen
+                VStack {
+                    // TODO: Owner情報を更新するようにする
+                    FirebaseUIView()
+                }
             }
         })
     }
