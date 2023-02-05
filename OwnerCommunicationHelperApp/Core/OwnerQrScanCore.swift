@@ -51,7 +51,7 @@ let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrSca
         if state.hasReadWorkerId && state.hasReadTerminalId {
             state.hasReadWorkerId = false
             state.hasReadTerminalId = false
-            // TODO: ここに朝礼時のQRコードを読み取った後の処理を書く。
+            // TODO: ここに朝礼時のQRコードを読み取った後の処理を書く。Firestoreへの書き込みをして、WorkerApp側のTCAを反応させて画面を切り替えさせる。
             return .none
         }
         return .none
