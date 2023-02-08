@@ -16,6 +16,9 @@ struct FirebaseUIView: UIViewControllerRepresentable {
         Coordinator(self)
     }
 
+    /*
+     アニノマスログインは、ログアウトするたびに新しいアカウントになってしまうので注意。
+     */
     // signInApple
     // https://ios-docs.dev/guideline4-8/
     // https://www.amefure.com/tech/swift-firebase-authentication-apple
