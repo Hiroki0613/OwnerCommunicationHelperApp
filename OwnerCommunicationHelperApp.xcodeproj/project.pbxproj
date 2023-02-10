@@ -116,6 +116,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F6593EB29953287006C2E61 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */,
+				7FFA0CD3296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift */,
+				7FFA0CD7296C03F800E2BC27 /* OwnerSettingPressureView.swift */,
+				7FFA0CD9296C053700E2BC27 /* OwnerSettingSubscriptionView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		7F6593EC29953296006C2E61 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				7FFA0CFE297BF12200E2BC27 /* OwnerManagerWorkerQRCodeView.swift */,
+				7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */,
+				7FFA0CF62976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		7F6593ED299532AF006C2E61 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7FFA0CF42976EA5700E2BC27 /* OwnerManageStaffCellView.swift */,
+				7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		7FFA0C56296BDC2600E2BC27 = {
 			isa = PBXGroup;
 			children = (
@@ -176,20 +206,14 @@
 		7FFA0CCB296BFA4D00E2BC27 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7F6593EB29953287006C2E61 /* Setting */,
+				7F6593ED299532AF006C2E61 /* Manager */,
+				7F6593EC29953296006C2E61 /* Worker */,
 				7FFA0C7B296BDFD200E2BC27 /* OwnerTopView.swift */,
-				7FFA0CF42976EA5700E2BC27 /* OwnerManageStaffCellView.swift */,
 				7FFA0CF2297437B700E2BC27 /* OwnerChatTopView.swift */,
 				7FFA0CF82978353B00E2BC27 /* OwnerChatTalkListView.swift */,
-				7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */,
 				7FFA0D02297C2A8E00E2BC27 /* OwnerScanQrCodeView.swift */,
-				7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */,
 				7FFA0CFC297BE3EB00E2BC27 /* OwnerRegisterWorkerView.swift */,
-				7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */,
-				7FFA0CFE297BF12200E2BC27 /* OwnerManagerWorkerQRCodeView.swift */,
-				7FFA0CD3296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift */,
-				7FFA0CD7296C03F800E2BC27 /* OwnerSettingPressureView.swift */,
-				7FFA0CF62976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift */,
-				7FFA0CD9296C053700E2BC27 /* OwnerSettingSubscriptionView.swift */,
 				7FFA0CDB296C0BB500E2BC27 /* FirebaseUIView.swift */,
 			);
 			path = View;
