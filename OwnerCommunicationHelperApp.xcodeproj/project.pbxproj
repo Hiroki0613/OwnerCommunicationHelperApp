@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F6593F329990F5B006C2E61 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593F229990F5B006C2E61 /* Filter.swift */; };
+		7F6593F529990F8C006C2E61 /* PulseDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593F429990F8C006C2E61 /* PulseDetector.swift */; };
+		7F6593F729990FBA006C2E61 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593F629990FBA006C2E61 /* HeartRateManager.swift */; };
+		7F6593F929990FDF006C2E61 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593F829990FDF006C2E61 /* ColorUtils.swift */; };
+		7F6593FB2999100F006C2E61 /* PulseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593FA2999100F006C2E61 /* PulseViewController.swift */; };
+		7F6593FD29991124006C2E61 /* AVCaptureDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593FC29991124006C2E61 /* AVCaptureDevice+Ext.swift */; };
 		7FFA0C63296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */; };
 		7FFA0C65296BDC2700E2BC27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C64296BDC2700E2BC27 /* ContentView.swift */; };
 		7FFA0C67296BDC3200E2BC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA0C66296BDC3200E2BC27 /* Assets.xcassets */; };
@@ -56,6 +62,12 @@
 
 /* Begin PBXFileReference section */
 		7F6593EA298BF02B006C2E61 /* OwnerCommunicationHelperApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OwnerCommunicationHelperApp.entitlements; sourceTree = "<group>"; };
+		7F6593F229990F5B006C2E61 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		7F6593F429990F8C006C2E61 /* PulseDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseDetector.swift; sourceTree = "<group>"; };
+		7F6593F629990FBA006C2E61 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateManager.swift; sourceTree = "<group>"; };
+		7F6593F829990FDF006C2E61 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		7F6593FA2999100F006C2E61 /* PulseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseViewController.swift; sourceTree = "<group>"; };
+		7F6593FC29991124006C2E61 /* AVCaptureDevice+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Ext.swift"; sourceTree = "<group>"; };
 		7FFA0C5F296BDC2700E2BC27 /* OwnerCommunicationHelperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OwnerCommunicationHelperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCommunicationHelperAppApp.swift; sourceTree = "<group>"; };
 		7FFA0C64296BDC2700E2BC27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,6 +158,43 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		7F6593EE29990EDA006C2E61 /* Pulse */ = {
+			isa = PBXGroup;
+			children = (
+				7F6593EF29990EF9006C2E61 /* Pulse Detectoer Helpers */,
+				7F6593F029990F03006C2E61 /* Managers */,
+				7F6593F129990F1F006C2E61 /* Utilities */,
+				7F6593FA2999100F006C2E61 /* PulseViewController.swift */,
+				7F6593FC29991124006C2E61 /* AVCaptureDevice+Ext.swift */,
+			);
+			path = Pulse;
+			sourceTree = "<group>";
+		};
+		7F6593EF29990EF9006C2E61 /* Pulse Detectoer Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7F6593F229990F5B006C2E61 /* Filter.swift */,
+				7F6593F429990F8C006C2E61 /* PulseDetector.swift */,
+			);
+			path = "Pulse Detectoer Helpers";
+			sourceTree = "<group>";
+		};
+		7F6593F029990F03006C2E61 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7F6593F629990FBA006C2E61 /* HeartRateManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		7F6593F129990F1F006C2E61 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7F6593F829990FDF006C2E61 /* ColorUtils.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		7FFA0C56296BDC2600E2BC27 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +244,7 @@
 		7FFA0C7D296BE12000E2BC27 /* FunctionalParts */ = {
 			isa = PBXGroup;
 			children = (
+				7F6593EE29990EDA006C2E61 /* Pulse */,
 				7FFA0CE62972EC1A00E2BC27 /* Chat */,
 				7FFA0C7E296BE1E100E2BC27 /* AltimatorManager.swift */,
 				7FFA0CE2297048BE00E2BC27 /* QRCodeGenerator.swift */,
@@ -336,7 +386,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F6593FB2999100F006C2E61 /* PulseViewController.swift in Sources */,
 				7FFA0CE529705D1900E2BC27 /* QrCodeScannerView.swift in Sources */,
+				7F6593F929990FDF006C2E61 /* ColorUtils.swift in Sources */,
 				7FFA0CFB2978370D00E2BC27 /* Worker.swift in Sources */,
 				7FFA0CFF297BF12200E2BC27 /* OwnerManagerWorkerQRCodeView.swift in Sources */,
 				7FFA0CF92978353B00E2BC27 /* OwnerChatTalkListView.swift in Sources */,
@@ -345,10 +397,13 @@
 				7FFA0CF72976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift in Sources */,
 				7FFA0C76296BDF3300E2BC27 /* OwnerSettingTopView.swift in Sources */,
 				7FFA0CE82972EE8C00E2BC27 /* Message.swift in Sources */,
+				7F6593F529990F8C006C2E61 /* PulseDetector.swift in Sources */,
+				7F6593FD29991124006C2E61 /* AVCaptureDevice+Ext.swift in Sources */,
 				7FFA0CD4296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift in Sources */,
 				7FFA0CDC296C0BB500E2BC27 /* FirebaseUIView.swift in Sources */,
 				7FFA0D03297C2A8E00E2BC27 /* OwnerScanQrCodeView.swift in Sources */,
 				7FFA0C65296BDC2700E2BC27 /* ContentView.swift in Sources */,
+				7F6593F329990F5B006C2E61 /* Filter.swift in Sources */,
 				7FFA0CE3297048BF00E2BC27 /* QRCodeGenerator.swift in Sources */,
 				7FFA0C78296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift in Sources */,
 				7FFA0CCE296BFAD400E2BC27 /* OwnerTopCore.swift in Sources */,
@@ -356,6 +411,7 @@
 				7FFA0CF3297437B700E2BC27 /* OwnerChatTopView.swift in Sources */,
 				7FFA0CD2296C00AF00E2BC27 /* Constants.swift in Sources */,
 				7FFA0CEA2972EF5000E2BC27 /* MessageBubble.swift in Sources */,
+				7F6593F729990FBA006C2E61 /* HeartRateManager.swift in Sources */,
 				7FFA0D01297C257800E2BC27 /* OwnerQrScanCore.swift in Sources */,
 				7FFA0C7C296BDFD200E2BC27 /* OwnerTopView.swift in Sources */,
 				7FFA0CF52976EA5700E2BC27 /* OwnerManageStaffCellView.swift in Sources */,
