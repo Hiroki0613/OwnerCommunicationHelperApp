@@ -19,12 +19,12 @@ struct Owner: Identifiable, Codable {
 }
 
 class OwnerSettingManager: ObservableObject {
-    // TODO: ここの構造がおかしいので修正すること。
     @Published private(set) var owner: Owner?
     let db = Firestore.firestore()
 
     func getOwnerData() {
-        db.collection("OwnerList").document("\(Auth.auth().currentUser?.uid)").getDocument { document, error in
+        guard let auth = Auth.auth().currentUser?.uid else { return }
+        db.collection("OwnerList").document(auth).getDocument { document, error in
             guard error == nil else {
                 print("error", error ?? "")
                 return
@@ -40,9 +40,10 @@ class OwnerSettingManager: ObservableObject {
 
     func setOwnerData(name: String) {
         do {
-//            let newOwner = Worker(id: "\(Auth.auth().currentUser?.uid)", name: name, personalId: "\(Auth.auth().currentUser?.uid)", timestamp: Date())
-            let newOwner = Owner(id: "\(Auth.auth().currentUser?.uid)", ownerId: "\(Auth.auth().currentUser?.uid)", startWorkTime: Date(), endWorkTime: Date(), numberOfPeopleCanRegister: 7)
-            try db.collection("OwnerList").document("\(Auth.auth().currentUser?.uid)").setData(from: newOwner)
+            // TODO: authを失敗することはないと思うが、失敗した時の考慮は入れたほうが良いかも・・・
+            guard let auth = Auth.auth().currentUser?.uid else { return }
+            let newOwner = Owner(id: auth, ownerId: auth, startWorkTime: Date(), endWorkTime: Date(), numberOfPeopleCanRegister: 7)
+            try db.collection("OwnerList").document(auth).setData(from: newOwner)
         } catch {
             print("OwnerSettingManager / Error adding message to Firestore: \(error)")
         }
