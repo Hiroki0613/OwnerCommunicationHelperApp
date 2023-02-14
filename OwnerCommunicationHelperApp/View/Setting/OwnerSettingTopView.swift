@@ -23,9 +23,17 @@ struct OwnerSettingTopView: View {
                     ScrollView {
                         VStack {
                             Spacer().frame(height: 20)
-                            // TODO: SettingTimerは変更できるようにする。
-                            OwnerSettingOperatingTimeView(startTime: "8:30", endTime: "17:30")
-                                .cornerRadius(20)
+                            // TODO: SettingTimerは変更できるようにする。今はタップするとDate()が更新されるようになっている。
+                            Button(
+                                action: {
+                                    ownerSettingManager.updateOperatingTime(startWorkTime: Date(), endWorkTime: Date())
+                                },
+                                label: {
+                                    let _ = print("hirohiro_b_owner: ",ownerSettingManager.owner?.startWorkTime)
+                                    OwnerSettingOperatingTimeView(startTime: "8:30", endTime: "17:30")
+                                        .cornerRadius(20)
+                                }
+                            )
                             Spacer().frame(height: 30)
                             OwnerSettingPressureView(viewStore: viewStore)
                                 .cornerRadius(20)

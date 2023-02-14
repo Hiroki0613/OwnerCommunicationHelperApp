@@ -48,4 +48,14 @@ class OwnerSettingManager: ObservableObject {
             print("OwnerSettingManager / Error adding message to Firestore: \(error)")
         }
     }
+
+    func updateOperatingTime(startWorkTime: Date, endWorkTime: Date) {
+        guard let auth = Auth.auth().currentUser?.uid else { return }
+        db.collection("OwnerList").document(auth).updateData(
+            [
+                "startWorkTime": startWorkTime as Any,
+                "endWorkTime": endWorkTime as Any
+            ]
+        )
+    }
 }
