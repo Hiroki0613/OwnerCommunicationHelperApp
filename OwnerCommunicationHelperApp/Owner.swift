@@ -36,6 +36,22 @@ class OwnerSettingManager: ObservableObject {
                 }
             }
         }
+        
+        
+        // TODO: 参考コード
+        // https://stackoverflow.com/questions/59826967/swiftui-assign-firbase-database-output-to-data-model
+//            var user = User()
+//            let docRef = db.collection("users").document(Auth.auth().currentUser?.uid)
+//            docRef.getDocument { (document, error) in
+//                if let document = document, document.exists {
+//                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                    print("Document data: \(dataDescription)")
+//                    user.username = document.data(["username"]) as! String
+//                    user.email= document.data(["email"]) as! String
+//                } else {
+//                    print("Document does not exist")
+//                }
+//            }
     }
 
     func setOwnerData(name: String) {
