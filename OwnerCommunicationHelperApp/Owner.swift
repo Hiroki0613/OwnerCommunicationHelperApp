@@ -52,6 +52,52 @@ class OwnerSettingManager: ObservableObject {
 //                    print("Document does not exist")
 //                }
 //            }
+        
+        
+        
+        
+        
+        
+        // TODO: 参考コード
+        // https://ymgsapo.com/2022/11/17/swiftuifirestore-swiftui-list/
+//        import Foundation
+//        import FirebaseFirestore
+//
+//        struct Message: Identifiable {
+//            var id: String = UUID().uuidString
+//            var name: String
+//            var post: String
+//            var dateEvent: Date
+//            var dateString: String {
+//                let formatter = DateFormatter()
+//                formatter.dateFormat = "yyyy年M月d日 H時m分"
+//                return formatter.string(from: dateEvent)
+//            }
+//        }
+//
+//        class ViewModel: ObservableObject {
+//
+//            @Published var messages = [Message]()
+//
+//            private var db = Firestore.firestore()
+//
+//            func fetchData() {
+//                db.collection("messages").addSnapshotListener { (querySnapshot, error) in
+//                    guard let documents = querySnapshot?.documents else {
+//                        print("No documents")
+//                        return
+//                    }
+//
+//                    self.messages = documents.map { (queryDocumentSnapshot) -> Message in
+//                        let data = queryDocumentSnapshot.data()
+//                        let name = data["name"] as? String ?? ""
+//                        let post = data["post"] as? String ?? ""
+//                        let dateEvent = (data["time"] as? Timestamp)?.dateValue() ?? Date()
+//                        return Message(name: name, post: post, dateEvent: dateEvent)
+//                    }
+//                }
+//            }
+//        }
     }
 
     func setOwnerData(name: String) {
