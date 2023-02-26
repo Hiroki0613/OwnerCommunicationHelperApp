@@ -23,14 +23,12 @@ struct OwnerSettingTopView: View {
                     ScrollView {
                         VStack {
                             Spacer().frame(height: 20)
-                            // TODO: SettingTimerは変更できるようにする。今はタップするとDate()が更新されるようになっている。
                             Button(
                                 action: {
-                                    ownerSettingManager.updateOperatingTime(startWorkTime: Date(), endWorkTime: Date())
+                                    viewStore.send(.gotoDatePickerView(true))
                                 },
                                 label: {
-                                    let _ = print("hirohiro_b_owner: ",ownerSettingManager.owner.startWorkTime)
-                                    OwnerSettingOperatingTimeView(startTime: "8:30", endTime: "17:30")
+                                    OwnerSettingOperatingTimeView(startTime: Date(timeIntervalSince1970: ownerSettingManager.owner.startWorkTime), endTime: Date(timeIntervalSince1970: ownerSettingManager.owner.endWorkTime))
                                         .cornerRadius(20)
                                 }
                             )
@@ -41,7 +39,6 @@ struct OwnerSettingTopView: View {
                             // TODO: 可能参加人数をデフォルトで決めておく。
                             // TODO: 残り人数はFirebaseと連携させておく。Workerの数を読み出してカウントに入れるようにする。
                             // TODO: 課金方法については、後から検討する。ここで可能参加人数を変更できるようにする。
-                            let _ = print("hirohiro_numberOfPeopleCanRegister: ", ownerSettingManager.owner.numberOfPeopleCanRegister)
                             OwnerSettingSubscriptionView(numberOfPeopleCanRegister: ownerSettingManager.owner.numberOfPeopleCanRegister)
                                 .cornerRadius(20)
                             Spacer().frame(height: 30)
@@ -137,13 +134,25 @@ struct OwnerSettingTopView: View {
                         OwnerRegisterWorkerView(viewStore: viewStore)
                             .environmentObject(workerSettingManager)
                     }
+                    .fullScreenCover(
+                        isPresented: viewStore.binding(
+                            get: \.hasShowedDatePickerView,
+                            send: OwnerSettingTopAction.gotoDatePickerView
+                        )
+                    ) {
+                        DatePickerView(
+                            viewStore: viewStore,
+                            startDate: Date(timeIntervalSince1970: ownerSettingManager.owner.startWorkTime),
+                            endDate: Date(timeIntervalSince1970: ownerSettingManager.owner.endWorkTime)
+                        )
+                    }
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarHidden(true)
             }
             .onAppear {
                 // TODO: ここのset、getの導線が曖昧なので要整理
-                ownerSettingManager.setOwnerData(name: "ひろひろ")
+//                ownerSettingManager.setOwnerData(name: "ひろひろ")
                 ownerSettingManager.getOwnerData()
             }
         }

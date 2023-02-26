@@ -12,6 +12,7 @@ struct OwnerSettingTopState: Equatable {
     var pressureString = ""
     var hasShowedQrCodeScanView = false
     var hasShowedRegisterWorkerView = false
+    var hasShowedDatePickerView = false
 }
 
 enum OwnerSettingTopAction {
@@ -19,6 +20,7 @@ enum OwnerSettingTopAction {
     case setPressure(String)
     case gotoQrCodeScanView(Bool)
     case gotoRegisterWorkerView(Bool)
+    case gotoDatePickerView(Bool)
 }
 
 struct OwnerSettingTopEnvironment {
@@ -49,6 +51,10 @@ let ownerSettingTopReducer = Reducer<OwnerSettingTopState, OwnerSettingTopAction
 
         case .gotoRegisterWorkerView(let isActive):
             state.hasShowedRegisterWorkerView = isActive
+            return .none
+
+        case .gotoDatePickerView(let isActive):
+            state.hasShowedDatePickerView = isActive
             return .none
         }
     }
