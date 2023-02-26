@@ -11,15 +11,15 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct Owner: Identifiable, Codable {
-    var id: String
-    var ownerId: String
-    var startWorkTime: Date
-    var endWorkTime: Date
-    var numberOfPeopleCanRegister: Int
+    var id: String = ""
+    var ownerId: String = ""
+    var startWorkTime: Date = Date()
+    var endWorkTime: Date = Date()
+    var numberOfPeopleCanRegister: Int = 0
 }
 
 class OwnerSettingManager: ObservableObject {
-    @Published private(set) var owner: Owner?
+    @Published private(set) var owner = Owner()
     let db = Firestore.firestore()
 
     func getOwnerData() {
@@ -32,61 +32,14 @@ class OwnerSettingManager: ObservableObject {
             if let document = document, document.exists {
                 let data = document.data()
                 if let data = data {
-                    print("hirohiro_documentData: ", data)
+                    self.owner.id = data["id"] as? String ?? ""
+                    self.owner.ownerId = data["ownerId"] as? String ?? ""
+                    self.owner.startWorkTime = data["startWorkTime"] as? Date ?? Date()
+                    self.owner.endWorkTime = data["endWorkTime"] as? Date ?? Date()
+                    self.owner.numberOfPeopleCanRegister = data["numberOfPeopleCanRegister"] as? Int ?? 0
                 }
             }
         }
-        
-        
-
-        
-        
-        
-        
-        
-        // TODO: 参考コード
-        // https://ymgsapo.com/2022/11/17/swiftuifirestore-swiftui-list/
-//        import Foundation
-//        import FirebaseFirestore
-//
-//        struct Message: Identifiable {
-//            var id: String = UUID().uuidString
-//            var name: String
-//            var post: String
-//            var dateEvent: Date
-//            var dateString: String {
-//                let formatter = DateFormatter()
-//                formatter.dateFormat = "yyyy年M月d日 H時m分"
-//                return formatter.string(from: dateEvent)
-//            }
-//        }
-//
-//        class ViewModel: ObservableObject {
-//
-//            @Published var messages = [Message]()
-//
-//            private var db = Firestore.firestore()
-//
-//            func fetchData() {
-//                db.collection("messages").addSnapshotListener { (querySnapshot, error) in
-//                    guard let documents = querySnapshot?.documents else {
-//                        print("No documents")
-//                        return
-//                    }
-//
-//                    self.messages = documents.map { (queryDocumentSnapshot) -> Message in
-//                        let data = queryDocumentSnapshot.data()
-//                        let name = data["name"] as? String ?? ""
-//                        let post = data["post"] as? String ?? ""
-//                        let dateEvent = (data["time"] as? Timestamp)?.dateValue() ?? Date()
-//                        return Message(name: name, post: post, dateEvent: dateEvent)
-//                    }
-//                }
-//            }
-//        }
-        
-        
-        
     }
 
     func setOwnerData(name: String) {

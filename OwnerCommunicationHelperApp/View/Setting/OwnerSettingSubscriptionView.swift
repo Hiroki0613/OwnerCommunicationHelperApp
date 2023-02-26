@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OwnerSettingSubscriptionView: View {
-    var numberOfPeopleCanRegister: Int?
+    var numberOfPeopleCanRegister: Int
 
     var body: some View {
         ZStack {

@@ -29,7 +29,7 @@ struct OwnerSettingTopView: View {
                                     ownerSettingManager.updateOperatingTime(startWorkTime: Date(), endWorkTime: Date())
                                 },
                                 label: {
-                                    let _ = print("hirohiro_b_owner: ",ownerSettingManager.owner?.startWorkTime)
+                                    let _ = print("hirohiro_b_owner: ",ownerSettingManager.owner.startWorkTime)
                                     OwnerSettingOperatingTimeView(startTime: "8:30", endTime: "17:30")
                                         .cornerRadius(20)
                                 }
@@ -41,8 +41,8 @@ struct OwnerSettingTopView: View {
                             // TODO: 可能参加人数をデフォルトで決めておく。
                             // TODO: 残り人数はFirebaseと連携させておく。Workerの数を読み出してカウントに入れるようにする。
                             // TODO: 課金方法については、後から検討する。ここで可能参加人数を変更できるようにする。
-                            let _ = print("hirohiro_numberOfPeopleCanRegister: ", ownerSettingManager.owner?.numberOfPeopleCanRegister)
-                            OwnerSettingSubscriptionView(numberOfPeopleCanRegister: ownerSettingManager.owner?.numberOfPeopleCanRegister)
+                            let _ = print("hirohiro_numberOfPeopleCanRegister: ", ownerSettingManager.owner.numberOfPeopleCanRegister)
+                            OwnerSettingSubscriptionView(numberOfPeopleCanRegister: ownerSettingManager.owner.numberOfPeopleCanRegister)
                                 .cornerRadius(20)
                             Spacer().frame(height: 30)
                             NavigationLink(
