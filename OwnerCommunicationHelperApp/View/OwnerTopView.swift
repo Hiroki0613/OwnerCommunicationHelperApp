@@ -17,7 +17,7 @@ struct OwnerTopView: View {
     var body: some View {
         WithViewStore(store) { viewStore in
             // FirebaseのinfoPlistを追加すること。そうするとログイン機能が実装できる。
-            if authState.isSignin {
+            if authState.isSignin && viewStore.hasRegisterOwnerSetting  {
                 TabView {
                     OwnerSettingTopView(
                         store: store.scope(
@@ -58,7 +58,6 @@ struct OwnerTopView: View {
                         )
                     }
                 }
-            
             }
         }
         .sheet(isPresented: $isShowSheet, content: {
