@@ -154,9 +154,6 @@ struct OwnerSettingTopView: View {
                 // TODO: ここのset、getの導線が曖昧なので要整理
 //                ownerSettingManager.setOwnerData(name: "ひろひろ")
                 ownerSettingManager.getOwnerData()
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//                    viewStore.send(.setOwnerSettingInformation)
-//                }
             }
         }
     }
