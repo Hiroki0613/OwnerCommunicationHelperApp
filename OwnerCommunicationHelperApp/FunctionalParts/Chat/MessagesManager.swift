@@ -49,6 +49,7 @@ class MessagesManager: ObservableObject {
         }
     }
 
+    // TODO: 近藤　ここに心拍数の情報を載せる。
     // Add a message in Firestore
     func sendMessage(text: String, personalId: String) {
         do {
