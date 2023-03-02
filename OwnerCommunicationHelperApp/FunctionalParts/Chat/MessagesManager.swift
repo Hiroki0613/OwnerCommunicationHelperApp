@@ -50,6 +50,16 @@ class MessagesManager: ObservableObject {
     }
 
     // TODO: 近藤　ここに心拍数の情報を載せる。
+    /*
+
+     1. MessageManagerにpulseを取得するprotocolを使ってdelegeteを用意。
+     2. pulseを取得できるところにおいて、delegeteを発火させる。
+     3. sendMessageを押す前に、pulseを取得しておく。
+     4. 送信前の確認でpulseと文章を見せる。
+     5. sendMessageにpulse: Intを入れておき、firestoreに送信する。
+     
+     
+     */
     // Add a message in Firestore
     func sendMessage(text: String, personalId: String) {
         do {
