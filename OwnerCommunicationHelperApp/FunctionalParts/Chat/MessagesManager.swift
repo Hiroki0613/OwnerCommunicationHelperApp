@@ -61,13 +61,13 @@ class MessagesManager: ObservableObject {
      
      */
     // Add a message in Firestore
-    func sendMessage(text: String, personalId: String) {
+    func sendMessage(text: String, personalId: String, personalInformation: String) {
         do {
             guard let auth = Auth.auth().currentUser?.uid,
                   text.isEmpty == false else { return }
             // Create a new Message instance, with a unique ID, the text we passed, a received value set to false (since the user will always be the sender), and a timestamp
             // TODO: チャットに送信する情報を編集すること
-            let newMessage = Message(id: "\(UUID())", personalId: "",personalInformation: "", text: text, timestamp: Date())
+            let newMessage = Message(id: "\(UUID())", personalId: "",personalInformation: personalInformation, text: text, timestamp: Date())
             // Create a new document in Firestore with the newMessage variable above, and use setData(from:) to convert the Message into Firestore data
             // Note that setData(from:) is a function available only in FirebaseFirestoreSwift package - remember to import it at the top
             try db.collection("OwnerList").document(auth).collection("ChatRoomId").document(personalId).collection("Chat").document().setData(from: newMessage)
