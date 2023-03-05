@@ -149,6 +149,7 @@ class PulseViewController: UIViewController {
                         completion: { _ in
                             self.pulseLabel.isHidden = false
                             self.pulseLabel.text = "\(lroundf(pulse)) BPM"
+                            // TODO: ここで心拍数を送信する機能sendMessageを発火させれば良い。
                         }
                     )
                 }
@@ -225,7 +226,8 @@ extension PulseViewController {
             measurementStartedFlag = false
             pulseDetector.reset()
             DispatchQueue.main.async {
-                self.toggleTorch(status: false)
+                // TODO: ここでのバックライトオフは止めておくほうが良さそう。
+//                self.toggleTorch(status: false)
                 self.thresholdLabel.text = "バックカメラに赤色 🟥　になるまで指をあててください"
             }
         }
@@ -414,7 +416,8 @@ extension PulseViewControllerTwo {
             measurementStartedFlag = false
             pulseDetector.reset()
             DispatchQueue.main.async {
-                self.toggleTorch(status: false)
+                // TODO: ここでのバックライトオフは止めておくほうが良さそう。
+//                self.toggleTorch(status: false)
                 self.thresholdText = "バックカメラに赤色 🟥　になるまで指をあててください"
             }
         }
