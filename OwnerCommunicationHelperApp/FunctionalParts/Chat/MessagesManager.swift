@@ -16,6 +16,7 @@ class MessagesManager: ObservableObject {
     @Published private(set) var lastMessageId: String = ""
     // Create an instance of our Firestore database
     let db = Firestore.firestore()
+    var pulseRate: Float = 0
 
     // Read message from Firestore in real-time with the addSnapShotListener
     func getMessages(personalId: String) {
@@ -49,7 +50,7 @@ class MessagesManager: ObservableObject {
         }
     }
 
-    // TODO: 近藤　ここに心拍数の情報を載せる。
+    // TODO: ここに心拍数の情報を載せる。
     /*
 
      1. MessageManagerにpulseを取得するprotocolを使ってdelegeteを用意。
@@ -66,8 +67,8 @@ class MessagesManager: ObservableObject {
             guard let auth = Auth.auth().currentUser?.uid,
                   text.isEmpty == false else { return }
             // Create a new Message instance, with a unique ID, the text we passed, a received value set to false (since the user will always be the sender), and a timestamp
-            // TODO: チャットに送信する情報を編集すること
-            let newMessage = Message(id: "\(UUID())", personalId: "",personalInformation: personalInformation, text: text, timestamp: Date())
+            // TODO: チャットに送信する情報を編集すること。待って、これだと誰がdelegateを受け持つかがわからない。delegete = selfが発火していない・・・。
+            let newMessage = Message(id: "\(UUID())", personalId: "",personalInformation: "\(pulseRate)BPMですか", text: text, timestamp: Date())
             // Create a new document in Firestore with the newMessage variable above, and use setData(from:) to convert the Message into Firestore data
             // Note that setData(from:) is a function available only in FirebaseFirestoreSwift package - remember to import it at the top
             try db.collection("OwnerList").document(auth).collection("ChatRoomId").document(personalId).collection("Chat").document().setData(from: newMessage)
@@ -75,5 +76,11 @@ class MessagesManager: ObservableObject {
             // If we run into an error, print the error in the console
             print("Error adding message to Firestore: \(error)")
         }
+    }
+}
+
+extension MessagesManager: PulseDetectDelegate {
+    func get(pulseRate: Float) {
+        self.pulseRate = pulseRate
     }
 }

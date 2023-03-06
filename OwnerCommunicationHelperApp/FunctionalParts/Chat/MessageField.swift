@@ -11,6 +11,7 @@ struct MessageField: View {
     var personalId: String
     @EnvironmentObject var messagesManager: MessagesManager
     @State private var message = ""
+    @State private var pulse: Int = 0
 
     var body: some View {
         HStack {

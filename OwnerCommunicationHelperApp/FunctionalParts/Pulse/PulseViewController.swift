@@ -9,8 +9,13 @@
 import AVFoundation
 import UIKit
 
+protocol PulseDetectDelegate {
+    func get(pulseRate: Float)
+}
+
 class PulseViewController: UIViewController {
     private var validFrameCounter = 0
+    var pulseDetectDelegate: PulseDetectDelegate?
     var previewLayerShadowView = UIView()
     var previewLayer = UIView()
     var pulseLabel = UILabel()
@@ -150,6 +155,7 @@ class PulseViewController: UIViewController {
                             self.pulseLabel.isHidden = false
                             self.pulseLabel.text = "\(lroundf(pulse)) BPM"
                             // TODO: ここで心拍数を送信する機能sendMessageを発火させれば良い。
+                            self.pulseDetectDelegate?.get(pulseRate: pulse)
                         }
                     )
                 }
