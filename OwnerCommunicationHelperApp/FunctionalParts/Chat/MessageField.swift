@@ -9,9 +9,11 @@ import SwiftUI
 
 struct MessageField: View {
     var personalId: String
+//    var pulseDetectDelegate: PulseDetectDelegate
     @EnvironmentObject var messagesManager: MessagesManager
     @State private var message = ""
-    @State private var pulse: Int = 0
+    @State private var pulseRate: Float = 0
+    @State private var openView: Bool = false
 
     var body: some View {
         HStack {
@@ -35,6 +37,12 @@ struct MessageField: View {
                     .cornerRadius(20)
             }
         }
+        .fullScreenCover(
+            isPresented: $openView,
+            content: {
+                PulseView()
+            }
+        )
         .padding(.horizontal)
         .padding(.vertical, 10)
         .background(.mint)
@@ -65,5 +73,11 @@ struct CustomTextField: View {
             }
             TextField("", text: $text, onEditingChanged: editingChanged, onCommit: commit)
         }
+    }
+}
+
+extension MessageField: PulseDetectDelegate {
+    func get(pulseRate: Float) {
+        self.pulseRate = pulseRate
     }
 }

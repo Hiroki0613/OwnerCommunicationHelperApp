@@ -7,10 +7,19 @@
 
 // https://github.com/athanasiospap/Pulse
 import AVFoundation
+import SwiftUI
 import UIKit
 
 protocol PulseDetectDelegate {
     func get(pulseRate: Float)
+}
+
+struct PulseView: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UIViewController {
+        return PulseViewController()
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) { }
 }
 
 class PulseViewController: UIViewController {
