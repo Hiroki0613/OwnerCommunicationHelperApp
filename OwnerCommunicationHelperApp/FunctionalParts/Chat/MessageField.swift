@@ -40,6 +40,7 @@ struct MessageField: View {
         .fullScreenCover(
             isPresented: $openView,
             content: {
+                // ここで引数を入れたいが、どうやったら良いのだろう・・・。
                 PulseView()
             }
         )
