@@ -12,10 +12,6 @@ import FirebaseFirestore
 import SwiftUI
 import UIKit
 
-protocol PulseDetectDelegate {
-    func get(pulseRate: Float)
-}
-
 struct PulseView: UIViewControllerRepresentable {
     @Binding var messageText: String
     @Binding var personalId: String
@@ -34,7 +30,6 @@ class PulseViewController: UIViewController {
     var messageText: String = ""
     var personalID: String = ""
     private var validFrameCounter = 0
-    var pulseDetectDelegate: PulseDetectDelegate?
     var previewLayerShadowView = UIView()
     var previewLayer = UIView()
     var pulseLabel = UILabel()
@@ -185,7 +180,6 @@ class PulseViewController: UIViewController {
                             self.pulseLabel.isHidden = false
                             self.pulseLabel.text = "\(lroundf(pulse)) BPM"
                             // TODO: ここで心拍数を送信する機能sendMessageを発火させれば良い。
-                            self.pulseDetectDelegate?.get(pulseRate: pulse)
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                 guard let auth = Auth.auth().currentUser?.uid else { return }
                                 self.db.collection("OwnerList").document(auth).collection("ChatRoomId").document(self.personalID).collection("Chat").document().setData(

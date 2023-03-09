@@ -79,9 +79,3 @@ struct CustomTextField: View {
         }
     }
 }
-
-extension MessageField: PulseDetectDelegate {
-    func get(pulseRate: Float) {
-        self.pulseRate = pulseRate
-    }
-}

@@ -67,7 +67,6 @@ class MessagesManager: ObservableObject {
             guard let auth = Auth.auth().currentUser?.uid,
                   text.isEmpty == false else { return }
             // Create a new Message instance, with a unique ID, the text we passed, a received value set to false (since the user will always be the sender), and a timestamp
-            // TODO: チャットに送信する情報を編集すること。待って、これだと誰がdelegateを受け持つかがわからない。delegete = selfが発火していない・・・。
             let newMessage = Message(id: "\(UUID())", personalId: "",personalInformation: "\(pulseRate)BPMですか", text: text, timestamp: Date())
             // Create a new document in Firestore with the newMessage variable above, and use setData(from:) to convert the Message into Firestore data
             // Note that setData(from:) is a function available only in FirebaseFirestoreSwift package - remember to import it at the top
@@ -76,11 +75,5 @@ class MessagesManager: ObservableObject {
             // If we run into an error, print the error in the console
             print("Error adding message to Firestore: \(error)")
         }
-    }
-}
-
-extension MessagesManager: PulseDetectDelegate {
-    func get(pulseRate: Float) {
-        self.pulseRate = pulseRate
     }
 }
