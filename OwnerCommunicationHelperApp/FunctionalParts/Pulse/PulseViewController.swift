@@ -7,6 +7,8 @@
 
 // https://github.com/athanasiospap/Pulse
 import AVFoundation
+import FirebaseAuth
+import FirebaseFirestore
 import SwiftUI
 import UIKit
 
@@ -15,14 +17,22 @@ protocol PulseDetectDelegate {
 }
 
 struct PulseView: UIViewControllerRepresentable {
+    @Binding var messageText: String
+    @Binding var personalId: String
+
     func makeUIViewController(context: Context) -> UIViewController {
-        return PulseViewController()
+        print("hirohiro_c_makeUIViewController: ", messageText,personalId)
+        return PulseViewController(messageText: messageText, personalId: personalId)
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) { }
 }
 
 class PulseViewController: UIViewController {
+    let db = Firestore.firestore()
+    @EnvironmentObject var messagesManager: MessagesManager
+    var messageText: String = ""
+    var personalID: String = ""
     private var validFrameCounter = 0
     var pulseDetectDelegate: PulseDetectDelegate?
     var previewLayerShadowView = UIView()
@@ -35,9 +45,20 @@ class PulseViewController: UIViewController {
     private var inputs: [CGFloat] = []
     private var measurementStartedFlag = false
     private var timer = Timer()
-
+    
+    init(messageText: String, personalId: String) {
+        self.messageText = messageText
+        self.personalID = personalId
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("hirohiro_b_messageText and personalID: ", messageText, personalID)
         previewLayerShadowView = UIView(
             frame: CGRect(
                 x: view.frame.width / 2 - 30,
@@ -165,6 +186,17 @@ class PulseViewController: UIViewController {
                             self.pulseLabel.text = "\(lroundf(pulse)) BPM"
                             // TODO: ここで心拍数を送信する機能sendMessageを発火させれば良い。
                             self.pulseDetectDelegate?.get(pulseRate: pulse)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                guard let auth = Auth.auth().currentUser?.uid else { return }
+                                self.db.collection("OwnerList").document(auth).collection("ChatRoomId").document(self.personalID).collection("Chat").document().setData(
+                                    ["id": "\(UUID())" as Any,
+                                     "personalId": self.personalID as Any,
+                                     "personalInformation": "\(pulse)BPM" as Any,
+                                     "text": self.messageText as Any,
+                                     "timestamp": Date() as Any,
+                                    ]
+                                )
+                            }
                         }
                     )
                 }
