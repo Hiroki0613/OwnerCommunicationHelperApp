@@ -28,9 +28,8 @@ struct MessageField: View {
 //                // TODO: ここを押すと心拍数を測定する画面に遷移させる。画面遷移させた先で、心拍数を取得して、最後にsendMessageをする。textは測定画面にわたす。
 //                messagesManager.sendMessage(text: message, personalId: personalId, personalInformation: "テスト心臓")
 //                message = ""
-                
-                openView = true
-                
+                if message.isEmpty { return }
+                openView.toggle()
                 
             } label: {
                 Image(systemName: "paperplane.fill")
@@ -44,9 +43,12 @@ struct MessageField: View {
         .fullScreenCover(
             isPresented: $openView,
             content: {
-                PulseView(messageText: $message, personalId: $personalId)
+                PulseView(messageText: $message, personalId: $personalId, openView: $openView)
             }
         )
+        .onAppear {
+            print("hirohiro_d_MessageFieldが表示された")
+        }
         .padding(.horizontal)
         .padding(.vertical, 10)
         .background(.mint)

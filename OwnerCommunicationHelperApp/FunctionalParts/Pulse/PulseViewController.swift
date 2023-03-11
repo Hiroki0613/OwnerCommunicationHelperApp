@@ -15,10 +15,11 @@ import UIKit
 struct PulseView: UIViewControllerRepresentable {
     @Binding var messageText: String
     @Binding var personalId: String
+    @Binding var openView: Bool
 
     func makeUIViewController(context: Context) -> UIViewController {
         print("hirohiro_c_makeUIViewController: ", messageText,personalId)
-        return PulseViewController(messageText: messageText, personalId: personalId)
+        return PulseViewController(messageText: messageText, personalId: personalId, openView: openView)
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) { }
@@ -26,9 +27,9 @@ struct PulseView: UIViewControllerRepresentable {
 
 class PulseViewController: UIViewController {
     let db = Firestore.firestore()
-    @EnvironmentObject var messagesManager: MessagesManager
     var messageText: String = ""
     var personalID: String = ""
+    var openView = true
     private var validFrameCounter = 0
     var previewLayerShadowView = UIView()
     var previewLayer = UIView()
@@ -40,10 +41,12 @@ class PulseViewController: UIViewController {
     private var inputs: [CGFloat] = []
     private var measurementStartedFlag = false
     private var timer = Timer()
+    private var hasSendMessage = false
     
-    init(messageText: String, personalId: String) {
+    init(messageText: String, personalId: String, openView: Bool) {
         self.messageText = messageText
         self.personalID = personalId
+        self.openView = openView
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -91,6 +94,7 @@ class PulseViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         deinitCaptureSession()
+        hasSendMessage = false
     }
 
     // MARK: - Setup Views
@@ -182,15 +186,22 @@ class PulseViewController: UIViewController {
                             // TODO: ここで心拍数を送信する機能sendMessageを発火させれば良い。
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                 guard let auth = Auth.auth().currentUser?.uid else { return }
-                                self.db.collection("OwnerList").document(auth).collection("ChatRoomId").document(self.personalID).collection("Chat").document().setData(
-                                    ["id": "\(UUID())" as Any,
-                                     "personalId": self.personalID as Any,
-                                     "personalInformation": "\(pulse)BPM" as Any,
-                                     "text": self.messageText as Any,
-                                     "timestamp": Date() as Any,
-                                    ]
-                                )
+                                if self.hasSendMessage == false {
+                                    self.db.collection("OwnerList").document(auth).collection("ChatRoomId").document(self.personalID).collection("Chat").document().setData(
+                                        ["id": "\(UUID())" as Any,
+                                         "personalId": self.personalID as Any,
+                                         "personalInformation": "\(pulse)BPM" as Any,
+                                         "text": self.messageText as Any,
+                                         "timestamp": Date() as Any,
+                                        ]
+                                    ) { error in
+                                        // TODO: 何かしらの処理を入れたほうが良いかも
+                                        print("hirohiro_d_error: ", error)
+                                    }
+                                }
+                                self.hasSendMessage = true
                             }
+                            self.dismiss(animated: true)
                         }
                     )
                 }
