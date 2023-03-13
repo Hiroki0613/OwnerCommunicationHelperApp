@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MessageField: View {
     @State var personalId: String
-//    var pulseDetectDelegate: PulseDetectDelegate
     @EnvironmentObject var messagesManager: MessagesManager
     @State private var message = ""
     @State private var pulseRate: Float = 0
@@ -25,12 +24,11 @@ struct MessageField: View {
                 .disableAutocorrection(true)
             // TODO: 暫定で心拍数(personalInformation)に"テスト心臓"と入れておく。
             Button {
-//                // TODO: ここを押すと心拍数を測定する画面に遷移させる。画面遷移させた先で、心拍数を取得して、最後にsendMessageをする。textは測定画面にわたす。
-//                messagesManager.sendMessage(text: message, personalId: personalId, personalInformation: "テスト心臓")
-//                message = ""
+                //                // TODO: ここを押すと心拍数を測定する画面に遷移させる。画面遷移させた先で、心拍数を取得して、最後にsendMessageをする。textは測定画面にわたす。
+                //                messagesManager.sendMessage(text: message, personalId: personalId, personalInformation: "テスト心臓")
+                //                message = ""
                 if message.isEmpty { return }
                 openView.toggle()
-                
             } label: {
                 Image(systemName: "paperplane.fill")
                     .foregroundColor(.white)
@@ -43,12 +41,9 @@ struct MessageField: View {
         .fullScreenCover(
             isPresented: $openView,
             content: {
-                PulseView(messageText: $message, personalId: $personalId, openView: $openView)
+                PulseView(messageText: $message, personalId: $personalId)
             }
         )
-        .onAppear {
-            print("hirohiro_d_MessageFieldが表示された")
-        }
         .padding(.horizontal)
         .padding(.vertical, 10)
         .background(.mint)

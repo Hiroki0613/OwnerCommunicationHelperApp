@@ -15,11 +15,10 @@ import UIKit
 struct PulseView: UIViewControllerRepresentable {
     @Binding var messageText: String
     @Binding var personalId: String
-    @Binding var openView: Bool
 
     func makeUIViewController(context: Context) -> UIViewController {
         print("hirohiro_c_makeUIViewController: ", messageText,personalId)
-        return PulseViewController(messageText: messageText, personalId: personalId, openView: openView)
+        return PulseViewController(messageText: messageText, personalId: personalId)
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) { }
@@ -29,7 +28,6 @@ class PulseViewController: UIViewController {
     let db = Firestore.firestore()
     var messageText: String = ""
     var personalID: String = ""
-    var openView = true
     private var validFrameCounter = 0
     var previewLayerShadowView = UIView()
     var previewLayer = UIView()
@@ -42,18 +40,17 @@ class PulseViewController: UIViewController {
     private var measurementStartedFlag = false
     private var timer = Timer()
     private var hasSendMessage = false
-    
-    init(messageText: String, personalId: String, openView: Bool) {
+
+    init(messageText: String, personalId: String) {
         self.messageText = messageText
         self.personalID = personalId
-        self.openView = openView
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("hirohiro_b_messageText and personalID: ", messageText, personalID)
