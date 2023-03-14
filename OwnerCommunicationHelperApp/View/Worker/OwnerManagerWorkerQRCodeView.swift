@@ -14,6 +14,7 @@ struct OwnerManagerWorkerQRCodeView: View {
 
     var body: some View {
         // TODO: 削除したときに、nilクラッシュしないように調整をすること。例えば、一旦前の画面に戻してから、時間差で削除するなど
+        // TODO: personalIdがnilの場合に表示する画面を用意する。
         ZStack {
             PrimaryColor.backgroundGreen
                 .ignoresSafeArea()
