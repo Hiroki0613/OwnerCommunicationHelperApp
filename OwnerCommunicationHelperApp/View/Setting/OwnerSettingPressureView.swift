@@ -19,6 +19,7 @@ struct OwnerSettingPressureView: View {
             PrimaryColor.buttonLightGray
             VStack {
                 CommonText(text: availabe ? manager.pressureString : "----", alignment: .leading)
+                    .frame(height: 30)
             }
             .padding(20)
         }
