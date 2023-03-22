@@ -151,7 +151,8 @@ struct OwnerSettingTopView: View {
                 .navigationBarHidden(true)
             }
             .onAppear {
-                // TODO: ここのset、getの導線が曖昧なので要整理
+                // TODO: ここのset、getの導線が曖昧なので要整理。
+                // TODO: 現状は、getとsetが二つ共存している。
 //                ownerSettingManager.setOwnerData(name: "ひろひろ")
                 ownerSettingManager.getOwnerData()
             }
