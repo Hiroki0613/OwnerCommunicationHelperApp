@@ -179,7 +179,7 @@ class PulseViewController: UIViewController {
                         },
                         completion: { _ in
                             self.pulseLabel.isHidden = false
-                            self.pulseLabel.text = "\(lroundf(pulse)) BPM"
+                            self.pulseLabel.text = "\(round(pulse))BPM"
                             // TODO: ここで心拍数を送信する機能sendMessageを発火させれば良い。
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                 guard let auth = Auth.auth().currentUser?.uid else { return }
@@ -187,7 +187,7 @@ class PulseViewController: UIViewController {
                                     self.db.collection("OwnerList").document(auth).collection("ChatRoomId").document(self.personalID).collection("Chat").document().setData(
                                         ["id": "\(UUID())" as Any,
                                          "personalId": self.personalID as Any,
-                                         "personalInformation": "\(pulse)BPM" as Any,
+                                         "personalInformation": "\(round(pulse))BPM" as Any,
                                          "text": self.messageText as Any,
                                          "timestamp": Date() as Any,
                                         ]

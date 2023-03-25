@@ -15,19 +15,32 @@ struct MessageBubble: View {
     // TODO: 身体情報を入れるUIを作成すること personalInformation
     var body: some View {
         VStack(alignment: isMessageReceived ? .leading : .trailing) {
-            HStack {
+            HStack(spacing: .zero) {
                 Text(message.text)
-                    .font(.caption)
-                    .padding()
+                    .font(.caption2)
+                    .fontWeight(.thin)
+                    .padding(.all, 10)
                     .foregroundColor(.black)
                     .background(isMessageReceived ? PrimaryColor.buttonLightGray : PrimaryColor.buttonRed)
-                    .cornerRadius(30)
+                    .cornerRadius(10)
+                Spacer().frame(width: 5)
+                VStack {
+                    Spacer()
+                    Text("\(message.personalInformation)")
+                        .font(.caption2)
+                        .fontWeight(.thin)
+                        .foregroundColor(.gray)
+                        .padding(isMessageReceived ? .leading : .trailing, 10)
+                    Text("\(message.timestamp.formatted(.dateTime.hour().minute()))")
+                        .font(.caption2)
+                        .foregroundColor(.gray)
+                        .padding(isMessageReceived ? .leading : .trailing, 10)
+                    Spacer()
+                }
+                Spacer()
             }
             .frame(maxWidth: 300, alignment: isMessageReceived ? .leading : .trailing)
-            Text("\(message.timestamp.formatted(.dateTime.hour().minute()))")
-                .font(.caption2)
-                .foregroundColor(.gray)
-                .padding(isMessageReceived ? .leading : .trailing, 10)
+         
         }
         .frame(maxWidth: .infinity, alignment: isMessageReceived ? .leading : .trailing)
         .padding(isMessageReceived ? .leading : .trailing)
