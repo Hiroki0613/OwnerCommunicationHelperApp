@@ -42,6 +42,7 @@ struct MessageField: View {
             isPresented: $openView,
             content: {
                 PulseView(messageText: $message, personalId: $personalId)
+                    .onDisappear { message = "" }
             }
         )
         .padding(.horizontal)
