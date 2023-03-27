@@ -49,4 +49,9 @@ class WorkerSettingManager: ObservableObject {
             print("WorkerSettingManager / Error adding message to Firestore: \(error)")
         }
     }
+
+    func deleteWorkerData(personalId: String) {
+        guard let auth = Auth.auth().currentUser?.uid else { return }
+        db.collection("OwnerList").document(auth).collection("WorkerData").document(personalId).delete()
+    }
 }

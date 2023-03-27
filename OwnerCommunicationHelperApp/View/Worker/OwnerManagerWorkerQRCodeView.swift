@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct OwnerManagerWorkerQRCodeView: View {
+    @StateObject var workerSettingManager = WorkerSettingManager()
+    @StateObject var messagesManager = MessagesManager()
+    @Environment(\.dismiss) var dismiss
     var name: String
     var personalId: String
     private let qRCodeGenerator = QRCodeGenerator()
 
     var body: some View {
-        // TODO: 削除したときに、nilクラッシュしないように調整をすること。例えば、一旦前の画面に戻してから、時間差で削除するなど
-        // TODO: personalIdがnilの場合に表示する画面を用意する。
-        // TODO: 右上のヘッダーに削除ボタンを入れる。
         ZStack {
             PrimaryColor.backgroundGreen
                 .ignoresSafeArea()
@@ -27,6 +27,25 @@ struct OwnerManagerWorkerQRCodeView: View {
                         .resizable()
                         .frame(width: 200, height: 200)
                 }
+                Spacer().frame(height: 30)
+                Button(
+                    action: {
+                        dismiss()
+                        print("hirohiro_d_personalId: ", personalId)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            workerSettingManager.deleteWorkerData(personalId: personalId)
+//                            messagesManager.deleteMessage(personalId: personalId)
+                        }
+                    }, label: {
+                        Text("削除")
+                            .fontWeight(.semibold)
+                            .font(.system(size: 20))
+                            .foregroundColor(Color.white)
+                            .frame(maxWidth: .infinity, minHeight: 91)
+                            .background(PrimaryColor.buttonRed)
+                            .cornerRadius(20)
+                    }
+                )
                 Spacer()
             }
         }

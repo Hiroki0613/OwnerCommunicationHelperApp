@@ -76,4 +76,9 @@ class MessagesManager: ObservableObject {
             print("Error adding message to Firestore: \(error)")
         }
     }
+
+    func deleteMessage(personalId: String) {
+        guard let auth = Auth.auth().currentUser?.uid else { return }
+        db.collection("OwnerList").document(auth).collection("ChatRoomId").document(personalId).delete()
+    }
 }
