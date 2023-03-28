@@ -62,6 +62,21 @@ struct OwnerSettingTopView: View {
                                     action: {
                                         viewStore.send(.gotoRegisterWorkerView(true))
                                     }, label: {
+                                        // TODO: Terminalを追加
+                                        /*
+                                         OwnerIDのQRコード + FCMTokenをWorker端末で読み取らせる。読み込んだ後に、FirestoreのaddSnapshotListenerを使ってWorker端末で、AuthIDをTerminalIDとして書き込む。さらに、TeminalIDへFCMTokenの情報を入れるとベター。 この２つがFirestoreへ書き込めた段階で、UserDefaultsにOwnerIDを書き込む。この間は初期セットアップ画面にしておくこと。
+                                         (FCMTokenについては、理想論はCloudFunctionを通して取得するのがベスト。今回はFCMTokenは入れないようにする)
+                                         Owner端末は表示している。QRコード画面を書き込みが成功したら閉じるようにする。
+                                         
+                                         なお、Worker端末でセットアップ画面に戻すことは出来ないようにする。
+                                         1. Terminalの追加画面を用意
+                                         2. OwnerのAuthIDを画面表示
+                                         2. Worker端末で読ませる。読ませたら。TerminalIDとして、AuthをFirestoreに書き込む。
+                                         3.
+                                         Owner端末はAddSnapshotListenerを通して、登録が完了していることを確認する。読み込みが成功したら、(ダイアログを表示して)前の画面に戻る。
+                                         4. Worker端末は、UserDefaultsにOwnerIDが書き込まれたら、画面が朝礼画面になるようにする。
+                                         5. Worker端末は朝礼画面になったら、TerminalIDをQRコードで表示するようにセットする。
+                                         */
                                         Text("Worker,Staff,Terminalの追加")
                                             .fontWeight(.semibold)
                                             .font(.system(size: 20))

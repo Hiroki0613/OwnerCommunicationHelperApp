@@ -24,7 +24,23 @@ class OwnerSettingManager: ObservableObject {
 
     func getOwnerData() {
         guard let auth = Auth.auth().currentUser?.uid else { return }
-        db.collection("OwnerList").document(auth).getDocument { document, error in
+//        db.collection("OwnerList").document(auth).getDocument { document, error in
+//            guard error == nil else {
+//                print("error", error ?? "")
+//                return
+//            }
+//            if let document = document, document.exists {
+//                let data = document.data()
+//                if let data = data {
+//                    self.owner.id = data["id"] as? String ?? ""
+//                    self.owner.ownerId = data["ownerId"] as? String ?? ""
+//                    self.owner.startWorkTime = data["startWorkTime"] as? Double ?? 0
+//                    self.owner.endWorkTime = data["endWorkTime"] as? Double ?? 0
+//                    self.owner.numberOfPeopleCanRegister = data["numberOfPeopleCanRegister"] as? Int ?? 0
+//                }
+//            }
+//        }
+        db.collection("OwnerList").document(auth).addSnapshotListener { document, error in
             guard error == nil else {
                 print("error", error ?? "")
                 return
