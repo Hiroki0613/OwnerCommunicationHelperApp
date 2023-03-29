@@ -77,7 +77,10 @@ struct OwnerSettingTopView: View {
                                          4. Worker端末は、UserDefaultsにOwnerIDが書き込まれたら、画面が朝礼画面になるようにする。
                                          5. Worker端末は朝礼画面になったら、TerminalIDをQRコードで表示するようにセットする。
                                          */
-                                        Text("Worker,Staff,Terminalの追加")
+                                        // TODO: Worker、Staff、Deviceの追加画面を選択するような画面を作成する。
+                                        // TODO: Deviceの画面はOwnerのAuthIDをQRコードにしておく。
+                                        // TODO: QRコードを自体は将来的にハッシュ関数を記録するようにして、セキュリティを高めること。
+                                        Text("Worker,Staff,Deviceの追加")
                                             .fontWeight(.semibold)
                                             .font(.system(size: 20))
                                             .foregroundColor(Color.white)
