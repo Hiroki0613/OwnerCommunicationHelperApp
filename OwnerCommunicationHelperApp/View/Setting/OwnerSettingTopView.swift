@@ -28,6 +28,7 @@ struct OwnerSettingTopView: View {
                                     viewStore.send(.gotoDatePickerView(true))
                                 },
                                 label: {
+                                    // TODO: 可能な限り通信を減らすために、更新しない限りは端末保存したデータで表示する。
                                     OwnerSettingOperatingTimeView(startTime: Date(timeIntervalSince1970: ownerSettingManager.owner.startWorkTime), endTime: Date(timeIntervalSince1970: ownerSettingManager.owner.endWorkTime))
                                         .cornerRadius(20)
                                 }
