@@ -30,11 +30,9 @@ struct OwnerManagerWorkerQRCodeView: View {
                 Spacer().frame(height: 30)
                 Button(
                     action: {
-                        dismiss()
-                        print("hirohiro_d_personalId: ", personalId)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            workerSettingManager.deleteWorkerData(personalId: personalId)
-//                            messagesManager.deleteMessage(personalId: personalId)
+                        workerSettingManager.deleteWorkerData(personalId: personalId) { error in
+                            guard let _ = error else { return }
+                            dismiss()
                         }
                     }, label: {
                         Text("削除")

@@ -50,8 +50,10 @@ class WorkerSettingManager: ObservableObject {
         }
     }
 
-    func deleteWorkerData(personalId: String) {
+    func deleteWorkerData(personalId: String, completion: @escaping(Error?) -> Void) {
         guard let auth = Auth.auth().currentUser?.uid else { return }
-        db.collection("OwnerList").document(auth).collection("WorkerData").document(personalId).delete()
+        db.collection("OwnerList").document(auth).collection("WorkerData").document(personalId).delete() { error in
+            completion(error)
+        }
     }
 }
