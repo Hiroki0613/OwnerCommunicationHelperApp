@@ -31,7 +31,7 @@ struct OwnerManagerWorkerQRCodeView: View {
                 Button(
                     action: {
                         workerSettingManager.deleteWorkerData(personalId: personalId) { error in
-                            guard let _ = error else { return }
+                            if let _ = error { return }
                             dismiss()
                         }
                     }, label: {
