@@ -10,13 +10,13 @@ import Foundation
 
 struct OwnerQrScanState: Equatable {
     var hasReadWorkerId = false
-    var hasReadTerminalId = false
+    var hasReadDeviceId = false
 }
 
 enum OwnerQrScanAction {
     case scanQrCodeResult(result: String)
     case readWorkerId(id: String)
-    case readTerminalId(id: String)
+    case readDeviceId(id: String)
     case finishReadQrCode
 }
 
@@ -32,9 +32,9 @@ let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrSca
                 Effect(value: .readWorkerId(id: result))
             )
         }
-        if result.contains("terminal_") {
+        if result.contains("device_") {
             return .concatenate(
-                Effect(value: .readTerminalId(id: result))
+                Effect(value: .readDeviceId(id: result))
             )
         }
         return .none
@@ -43,14 +43,14 @@ let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrSca
         state.hasReadWorkerId = true
         return Effect(value: .finishReadQrCode)
 
-    case .readTerminalId(let id):
-        state.hasReadTerminalId = true
+    case .readDeviceId(let id):
+        state.hasReadDeviceId = true
         return Effect(value: .finishReadQrCode)
 
     case .finishReadQrCode:
-        if state.hasReadWorkerId && state.hasReadTerminalId {
+        if state.hasReadWorkerId && state.hasReadDeviceId {
             state.hasReadWorkerId = false
-            state.hasReadTerminalId = false
+            state.hasReadDeviceId = false
             // TODO: ここに朝礼時のQRコードを読み取った後の処理を書く。Firestoreへの書き込みをして、WorkerApp側のTCAを反応させて画面を切り替えさせる。
             // TODO: setData or UpdataData と addSnapshotLisenerを使って、処理を連携させる。
             return .none

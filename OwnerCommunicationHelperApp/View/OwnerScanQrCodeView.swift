@@ -33,7 +33,7 @@ struct OwnerScanQrCodeView: View {
                                 .foregroundColor(Color.black)
                                 .background(PrimaryColor.buttonLightGray)
                         }
-                        if viewStore.hasReadTerminalId {
+                        if viewStore.hasReadDeviceId {
                             Spacer().frame(height: 20)
                             Text("端末IDを読みました")
                                 .font(.system(size: 16))
