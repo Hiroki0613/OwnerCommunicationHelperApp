@@ -18,9 +18,11 @@ struct OwnerChatTopView: View {
             // TODO: チャット画面、現在はタブバーが見える。見えないようにすること。
             PrimaryColor.buttonLightGray
                 .ignoresSafeArea()
-            VStack {
+            VStack(spacing: .zero) {
                 ScrollViewReader { proxy in
                     ScrollView {
+                        // TODO: ここに背景色を入れると、うまいこと背景が入ってくる。
+                        PrimaryColor.backgroundGreen
                         ForEach(messagesManager.messages, id: \.id) { message in
                             let _ = print("hirohiro_message: ", message)
                             MessageBubble(message: message)

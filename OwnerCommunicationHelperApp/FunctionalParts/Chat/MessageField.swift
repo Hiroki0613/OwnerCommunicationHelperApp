@@ -20,7 +20,7 @@ struct MessageField: View {
             CustomTextField(placeholder: Text("文字を入力してください"), text: $message)
                 .foregroundColor(.black)
                 .font(.caption)
-                .frame(height: 22)
+                .frame(height: 18)
                 .disableAutocorrection(true)
             // TODO: 暫定で心拍数(personalInformation)に"テスト心臓"と入れておく。
             Button {
