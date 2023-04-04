@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F2B229229AB8E1100618B4A /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B229129AB8E1100618B4A /* DatePickerView.swift */; };
+		7F2B229429DC644E00618B4A /* OwnerRegisterDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B229329DC644D00618B4A /* OwnerRegisterDeviceView.swift */; };
 		7F6593F329990F5B006C2E61 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593F229990F5B006C2E61 /* Filter.swift */; };
 		7F6593F529990F8C006C2E61 /* PulseDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593F429990F8C006C2E61 /* PulseDetector.swift */; };
 		7F6593F729990FBA006C2E61 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593F629990FBA006C2E61 /* HeartRateManager.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		7F2B229129AB8E1100618B4A /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		7F2B229329DC644D00618B4A /* OwnerRegisterDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerRegisterDeviceView.swift; sourceTree = "<group>"; };
 		7F6593EA298BF02B006C2E61 /* OwnerCommunicationHelperApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OwnerCommunicationHelperApp.entitlements; sourceTree = "<group>"; };
 		7F6593F229990F5B006C2E61 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		7F6593F429990F8C006C2E61 /* PulseDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseDetector.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				7FFA0CF82978353B00E2BC27 /* OwnerChatTalkListView.swift */,
 				7FFA0D02297C2A8E00E2BC27 /* OwnerScanQrCodeView.swift */,
 				7FFA0CFC297BE3EB00E2BC27 /* OwnerRegisterWorkerView.swift */,
+				7F2B229329DC644D00618B4A /* OwnerRegisterDeviceView.swift */,
 				7FFA0CDB296C0BB500E2BC27 /* FirebaseUIView.swift */,
 			);
 			path = View;
@@ -413,6 +416,7 @@
 				7F6593FD29991124006C2E61 /* AVCaptureDevice+Ext.swift in Sources */,
 				7FFA0CD4296C019A00E2BC27 /* OwnerSettingOperatingTimeView.swift in Sources */,
 				7FFA0CDC296C0BB500E2BC27 /* FirebaseUIView.swift in Sources */,
+				7F2B229429DC644E00618B4A /* OwnerRegisterDeviceView.swift in Sources */,
 				7FFA0D03297C2A8E00E2BC27 /* OwnerScanQrCodeView.swift in Sources */,
 				7FFA0C65296BDC2700E2BC27 /* ContentView.swift in Sources */,
 				7F6593F329990F5B006C2E61 /* Filter.swift in Sources */,
