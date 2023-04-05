@@ -12,6 +12,7 @@ struct OwnerSettingTopState: Equatable {
     var ownerQrScanState = OwnerQrScanState()
     var pressureString = ""
     var hasShowedQrCodeScanView = false
+    var hasShowedQrCodeReadView = false
     var hasShowedRegisterWorkerView = false
     var hasShowedDatePickerView = false
 }
@@ -19,6 +20,7 @@ struct OwnerSettingTopState: Equatable {
 enum OwnerSettingTopAction {
     case ownerQrScanAction(OwnerQrScanAction)
     case setPressure(String)
+    case gotoQrCodeReadView(Bool)
     case gotoQrCodeScanView(Bool)
     case gotoRegisterWorkerView(Bool)
     case gotoDatePickerView(Bool)
@@ -45,6 +47,10 @@ let ownerSettingTopReducer = Reducer<OwnerSettingTopState, OwnerSettingTopAction
 
         case .setPressure(let pressureString):
             state.pressureString = pressureString
+            return .none
+
+        case .gotoQrCodeReadView(let isActive):
+            state.hasShowedQrCodeReadView = isActive
             return .none
 
         case .gotoQrCodeScanView(let isActive):
