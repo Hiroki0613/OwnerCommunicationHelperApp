@@ -8,13 +8,44 @@
 import SwiftUI
 
 struct OwnerRegisterDeviceView: View {
+    @Environment(\.dismiss) var dismiss
+    var name: String
+    var personalId: String
+    private let qRCodeGenerator = QRCodeGenerator()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        ZStack {
+            PrimaryColor.backgroundGreen
+                .ignoresSafeArea()
+            VStack {
+                Spacer()
+                CommonText(text: name, alignment: .center)
+                if let personalQrIdImage = qRCodeGenerator.generate(with: personalId) {
+                    Image(uiImage: personalQrIdImage)
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                }
+                Spacer().frame(height: 30)
+                Button(
+                    action: {
+                        dismiss()
+                    }, label: {
+                        Text("戻る")
+                            .fontWeight(.semibold)
+                            .font(.system(size: 20))
+                            .foregroundColor(Color.white)
+                            .frame(maxWidth: .infinity, minHeight: 91)
+                            .background(PrimaryColor.buttonRed)
+                            .cornerRadius(20)
+                    }
+                )
+                Spacer()
+            }
+        }    }
 }
 
 struct OwnerRegisterDeviceView_Previews: PreviewProvider {
     static var previews: some View {
-        OwnerRegisterDeviceView()
+        OwnerRegisterDeviceView(name: "", personalId: "")
     }
 }
