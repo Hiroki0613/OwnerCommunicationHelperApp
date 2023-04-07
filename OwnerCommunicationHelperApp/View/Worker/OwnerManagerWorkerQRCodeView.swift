@@ -9,7 +9,6 @@ import SwiftUI
 
 struct OwnerManagerWorkerQRCodeView: View {
     @StateObject var workerSettingManager = WorkerSettingManager()
-    @StateObject var messagesManager = MessagesManager()
     @Environment(\.dismiss) var dismiss
     var name: String
     var personalId: String
