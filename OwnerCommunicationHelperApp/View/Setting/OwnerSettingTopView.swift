@@ -61,7 +61,10 @@ struct OwnerSettingTopView: View {
                             Group {
                                 Button(
                                     action: {
-                                        viewStore.send(.gotoRegisterWorkerView(true))
+                                        
+                                        // TODO: Worker,Staff,Deviceの追加を分岐させること。
+//                                        viewStore.send(.gotoRegisterWorkerView(true))
+                                        viewStore.send(.gotoQrCodeReadView(true))
                                     }, label: {
                                         // TODO: Deviceを追加
                                         /*
@@ -152,6 +155,15 @@ struct OwnerSettingTopView: View {
                     ) {
                         OwnerRegisterWorkerView(viewStore: viewStore)
                             .environmentObject(workerSettingManager)
+                    }
+                    .fullScreenCover(
+                        isPresented: viewStore.binding(
+                            get: \.hasShowedQrCodeReadView,
+                            send: OwnerSettingTopAction.gotoQrCodeReadView
+                        )
+                    ) {
+                        OwnerRegisterDeviceView(name: "hirohiro_test", personalId: "abcdefg")
+
                     }
                     .fullScreenCover(
                         isPresented: viewStore.binding(
