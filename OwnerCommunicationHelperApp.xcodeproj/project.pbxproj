@@ -15,6 +15,7 @@
 		7F6593F929990FDF006C2E61 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593F829990FDF006C2E61 /* ColorUtils.swift */; };
 		7F6593FB2999100F006C2E61 /* PulseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593FA2999100F006C2E61 /* PulseViewController.swift */; };
 		7F6593FD29991124006C2E61 /* AVCaptureDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593FC29991124006C2E61 /* AVCaptureDevice+Ext.swift */; };
+		7F84598729E4595500464BD9 /* OwnerSelectRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84598629E4595500464BD9 /* OwnerSelectRegisterView.swift */; };
 		7FFA0C63296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */; };
 		7FFA0C65296BDC2700E2BC27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C64296BDC2700E2BC27 /* ContentView.swift */; };
 		7FFA0C67296BDC3200E2BC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA0C66296BDC3200E2BC27 /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		7F6593F829990FDF006C2E61 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		7F6593FA2999100F006C2E61 /* PulseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseViewController.swift; sourceTree = "<group>"; };
 		7F6593FC29991124006C2E61 /* AVCaptureDevice+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Ext.swift"; sourceTree = "<group>"; };
+		7F84598629E4595500464BD9 /* OwnerSelectRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSelectRegisterView.swift; sourceTree = "<group>"; };
 		7FFA0C5F296BDC2700E2BC27 /* OwnerCommunicationHelperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OwnerCommunicationHelperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCommunicationHelperAppApp.swift; sourceTree = "<group>"; };
 		7FFA0C64296BDC2700E2BC27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				7FFA0CF2297437B700E2BC27 /* OwnerChatTopView.swift */,
 				7FFA0CF82978353B00E2BC27 /* OwnerChatTalkListView.swift */,
 				7FFA0D02297C2A8E00E2BC27 /* OwnerScanQrCodeView.swift */,
+				7F84598629E4595500464BD9 /* OwnerSelectRegisterView.swift */,
 				7FFA0CFC297BE3EB00E2BC27 /* OwnerRegisterWorkerView.swift */,
 				7F2B229329DC644D00618B4A /* OwnerRegisterDeviceView.swift */,
 				7FFA0CDB296C0BB500E2BC27 /* FirebaseUIView.swift */,
@@ -427,6 +430,7 @@
 				7FFA0CF3297437B700E2BC27 /* OwnerChatTopView.swift in Sources */,
 				7FFA0CD2296C00AF00E2BC27 /* Constants.swift in Sources */,
 				7FFA0CEA2972EF5000E2BC27 /* MessageBubble.swift in Sources */,
+				7F84598729E4595500464BD9 /* OwnerSelectRegisterView.swift in Sources */,
 				7F6593F729990FBA006C2E61 /* HeartRateManager.swift in Sources */,
 				7FFA0D01297C257800E2BC27 /* OwnerQrScanCore.swift in Sources */,
 				7FFA0C7C296BDFD200E2BC27 /* OwnerTopView.swift in Sources */,
