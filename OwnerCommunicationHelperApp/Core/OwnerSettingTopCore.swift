@@ -15,6 +15,7 @@ struct OwnerSettingTopState: Equatable {
     var hasShowedQrCodeReadView = false
     var hasShowedRegisterWorkerView = false
     var hasShowedDatePickerView = false
+    var hasShowedSelectRegisterView = false
 }
 
 enum OwnerSettingTopAction {
@@ -23,6 +24,7 @@ enum OwnerSettingTopAction {
     case gotoQrCodeReadView(Bool)
     case gotoQrCodeScanView(Bool)
     case gotoRegisterWorkerView(Bool)
+    case gotoSelectRegisterView(Bool)
     case gotoDatePickerView(Bool)
 }
 
@@ -59,6 +61,10 @@ let ownerSettingTopReducer = Reducer<OwnerSettingTopState, OwnerSettingTopAction
 
         case .gotoRegisterWorkerView(let isActive):
             state.hasShowedRegisterWorkerView = isActive
+            return .none
+
+        case .gotoSelectRegisterView(let isActive):
+            state.hasShowedSelectRegisterView = isActive
             return .none
 
         case .gotoDatePickerView(let isActive):
