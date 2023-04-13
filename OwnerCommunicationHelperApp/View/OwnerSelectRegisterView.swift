@@ -22,7 +22,7 @@ struct OwnerSelectRegisterView: View {
             ScrollView {
                 VStack {
                     Spacer().frame(height: 20)
-                    Text("スタッフ")
+                    Text("新規登録")
                         .fontWeight(.semibold)
                         .font(.system(size: 20))
                         .foregroundColor(Color.black)
