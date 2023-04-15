@@ -26,23 +26,24 @@ struct OwnerSelectRegisterView: View {
                         .fontWeight(.semibold)
                         .font(.system(size: 20))
                         .foregroundColor(Color.black)
-                    ForEach(0..<registerArray.count) { index in
-                        switch index {
-                        case 0:
-                            OwnerManageStaffCellView(name: registerArray[index])
-                                .cornerRadius(20)
-                        case 1:
-                            OwnerManageStaffCellView(name: registerArray[index])
-                                .cornerRadius(20)
-                        case 2:
-                            OwnerManageStaffCellView(name: registerArray[index])
-                                .cornerRadius(20)
-                        default:
-                            OwnerManageStaffCellView(name: registerArray[index])
-                                .cornerRadius(20)
-                        }
-                        Spacer().frame(height: 10)
-                    }
+//                    ForEach(0..<registerArray.count) { index in
+//                        switch index {
+//                        case 0:
+//                            OwnerManageStaffCellView(name: registerArray[index])
+//                                .cornerRadius(20)
+//                        case 1:
+//                            OwnerManageStaffCellView(name: registerArray[index])
+//                                .cornerRadius(20)
+//                        case 2:
+//                            OwnerManageStaffCellView(name: registerArray[index])
+//                                .cornerRadius(20)
+//                        default:
+//                            OwnerManageStaffCellView(name: registerArray[index])
+//                                .cornerRadius(20)
+//                        }
+//                        Spacer().frame(height: 10)
+//                    }
+                    // TODO: ここで、それぞれの登録画面に遷移するようにする。
                 }
                 .padding(.horizontal, 30)
             }
