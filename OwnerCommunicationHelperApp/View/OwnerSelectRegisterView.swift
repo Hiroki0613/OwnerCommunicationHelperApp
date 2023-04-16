@@ -5,55 +5,120 @@
 //  Created by 近藤宏輝 on 2023/04/10.
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 struct OwnerSelectRegisterView: View {
-    // 登録する対処が、デバイス、作業者、スタッフを選ぶ
-    var registerArray = ["デバイス", "作業者", "スタッフ"]
-
-    init() {
-        UITableView.appearance().backgroundColor = PrimaryUIColor.background
-    }
+    @StateObject var workerSettingManager = WorkerSettingManager()
+    let store: Store<OwnerSettingTopState, OwnerSettingTopAction>
 
     var body: some View {
-        ZStack {
-            PrimaryColor.backgroundGreen
-                .ignoresSafeArea()
-            ScrollView {
-                VStack {
-                    Spacer().frame(height: 20)
-                    Text("新規登録")
-                        .fontWeight(.semibold)
-                        .font(.system(size: 20))
-                        .foregroundColor(Color.black)
-//                    ForEach(0..<registerArray.count) { index in
-//                        switch index {
-//                        case 0:
-//                            OwnerManageStaffCellView(name: registerArray[index])
-//                                .cornerRadius(20)
-//                        case 1:
-//                            OwnerManageStaffCellView(name: registerArray[index])
-//                                .cornerRadius(20)
-//                        case 2:
-//                            OwnerManageStaffCellView(name: registerArray[index])
-//                                .cornerRadius(20)
-//                        default:
-//                            OwnerManageStaffCellView(name: registerArray[index])
-//                                .cornerRadius(20)
-//                        }
-//                        Spacer().frame(height: 10)
-//                    }
-                    // TODO: ここで、それぞれの登録画面に遷移するようにする。
+        WithViewStore(store) { viewStore in
+            ZStack {
+                PrimaryColor.backgroundGreen
+                    .ignoresSafeArea()
+                ScrollView {
+                    VStack {
+                        Spacer().frame(height: 20)
+                        Text("新規登録")
+                            .fontWeight(.semibold)
+                            .font(.system(size: 20))
+                            .foregroundColor(Color.black)
+                        Button(
+                            action: {
+                                viewStore.send(.gotoQrCodeReadView(true))
+                            }, label: {
+                                Text("デバイス追加")
+                                    .fontWeight(.semibold)
+                                    .font(.system(size: 20))
+                                    .foregroundColor(Color.white)
+                                    .frame(maxWidth: .infinity, minHeight: 91)
+                                    .background(PrimaryColor.buttonRed)
+                                    .cornerRadius(20)
+                            }
+                        )
+                        Spacer().frame(height: 30)
+                        Button(
+                            action: {
+                                viewStore.send(.gotoRegisterWorkerView(true))
+                            }, label: {
+                                Text("Worker追加")
+                                    .fontWeight(.semibold)
+                                    .font(.system(size: 20))
+                                    .foregroundColor(Color.white)
+                                    .frame(maxWidth: .infinity, minHeight: 91)
+                                    .background(PrimaryColor.buttonRed)
+                                    .cornerRadius(20)
+                            }
+                        )
+                        Spacer().frame(height: 30)
+                        Button(
+                            action: {
+                                viewStore.send(.gotoQrCodeScanView(true))
+                            }, label: {
+                                Text("スタッフ追加")
+                                    .fontWeight(.semibold)
+                                    .font(.system(size: 20))
+                                    .foregroundColor(Color.white)
+                                    .frame(maxWidth: .infinity, minHeight: 91)
+                                    .background(PrimaryColor.buttonRed)
+                                    .cornerRadius(20)
+                            }
+                        )
+                        Spacer().frame(height: 30)
+                    }
+                    .padding(.horizontal, 30)
                 }
-                .padding(.horizontal, 30)
+                .clipped()
+                .fullScreenCover(
+                    isPresented: viewStore.binding(
+                        get: \.hasShowedQrCodeScanView,
+                        send: OwnerSettingTopAction.gotoQrCodeScanView
+                    )
+                ) {
+                    OwnerScanQrCodeView(
+                        store: store.scope(
+                            state: \.ownerQrScanState,
+                            action: OwnerSettingTopAction.ownerQrScanAction
+                        ),
+                        goBackAction: {
+                            viewStore.send(.gotoQrCodeScanView(false))
+                        }
+                    )
+                }
+                .fullScreenCover(
+                    isPresented: viewStore.binding(
+                        get: \.hasShowedRegisterWorkerView,
+                        send: OwnerSettingTopAction.gotoRegisterWorkerView
+                    )
+                ) {
+                    OwnerRegisterWorkerView(viewStore: viewStore)
+                        .environmentObject(workerSettingManager)
+                }
+                .fullScreenCover(
+                    isPresented: viewStore.binding(
+                        get: \.hasShowedQrCodeReadView,
+                        send: OwnerSettingTopAction.gotoQrCodeReadView
+                    )
+                ) {
+                    OwnerRegisterDeviceView(name: "hirohiro_test", personalId: "abcdefg")
+                }
             }
-            .clipped()
         }
     }
 }
 
 struct OwnerSelectRegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        OwnerSelectRegisterView()
+        OwnerSelectRegisterView(
+            store: Store(
+                initialState: OwnerSettingTopState(
+                    pressureString: "",
+                    hasShowedQrCodeScanView: true
+                ),
+                reducer: ownerSettingTopReducer,
+                environment: OwnerSettingTopEnvironment()
+            )
+        )
     }
 }

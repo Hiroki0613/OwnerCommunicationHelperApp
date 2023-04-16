@@ -134,45 +134,11 @@ struct OwnerSettingTopView: View {
                     .clipped()
                     .fullScreenCover(
                         isPresented: viewStore.binding(
-                            get: \.hasShowedQrCodeScanView,
-                            send: OwnerSettingTopAction.gotoQrCodeScanView
-                        )
-                    ) {
-                        OwnerScanQrCodeView(
-                            store: store.scope(
-                                state: \.ownerQrScanState,
-                                action: OwnerSettingTopAction.ownerQrScanAction
-                            ),
-                            goBackAction: {
-                                viewStore.send(.gotoQrCodeScanView(false))
-                            }
-                        )
-                    }
-                    .fullScreenCover(
-                        isPresented: viewStore.binding(
-                            get: \.hasShowedRegisterWorkerView,
-                            send: OwnerSettingTopAction.gotoRegisterWorkerView
-                        )
-                    ) {
-                        OwnerRegisterWorkerView(viewStore: viewStore)
-                            .environmentObject(workerSettingManager)
-                    }
-                    .fullScreenCover(
-                        isPresented: viewStore.binding(
-                            get: \.hasShowedQrCodeReadView,
-                            send: OwnerSettingTopAction.gotoQrCodeReadView
-                        )
-                    ) {
-                        OwnerRegisterDeviceView(name: "hirohiro_test", personalId: "abcdefg")
-
-                    }
-                    .fullScreenCover(
-                        isPresented: viewStore.binding(
                             get: \.hasShowedSelectRegisterView,
                             send: OwnerSettingTopAction.gotoSelectRegisterView
                         )
                     ) {
-                        OwnerSelectRegisterView()
+                        OwnerSelectRegisterView(store: store)
                     }
                     .fullScreenCover(
                         isPresented: viewStore.binding(
