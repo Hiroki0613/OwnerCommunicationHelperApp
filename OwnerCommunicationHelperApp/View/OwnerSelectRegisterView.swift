@@ -54,7 +54,7 @@ struct OwnerSelectRegisterView: View {
                         Spacer().frame(height: 30)
                         Button(
                             action: {
-                                viewStore.send(.gotoQrCodeScanView(true))
+                                // TODO: ここはスタッフ追加の画面を開くようにする。
                             }, label: {
                                 Text("スタッフ追加")
                                     .fontWeight(.semibold)
@@ -66,26 +66,23 @@ struct OwnerSelectRegisterView: View {
                             }
                         )
                         Spacer().frame(height: 30)
+                        Button(
+                            action: {
+                                viewStore.send(.gotoSelectRegisterView(false))
+                            }, label: {
+                                Text("閉じる")
+                                    .fontWeight(.semibold)
+                                    .font(.system(size: 20))
+                                    .foregroundColor(Color.white)
+                                    .frame(maxWidth: .infinity, minHeight: 91)
+                                    .background(PrimaryColor.buttonRed)
+                                    .cornerRadius(20)
+                            }
+                        )
                     }
                     .padding(.horizontal, 30)
                 }
                 .clipped()
-                .fullScreenCover(
-                    isPresented: viewStore.binding(
-                        get: \.hasShowedQrCodeScanView,
-                        send: OwnerSettingTopAction.gotoQrCodeScanView
-                    )
-                ) {
-                    OwnerScanQrCodeView(
-                        store: store.scope(
-                            state: \.ownerQrScanState,
-                            action: OwnerSettingTopAction.ownerQrScanAction
-                        ),
-                        goBackAction: {
-                            viewStore.send(.gotoQrCodeScanView(false))
-                        }
-                    )
-                }
                 .fullScreenCover(
                     isPresented: viewStore.binding(
                         get: \.hasShowedRegisterWorkerView,
