@@ -11,7 +11,6 @@ import SwiftUI
 struct OwnerRegisterDeviceView: View {
     @Environment(\.dismiss) var dismiss
     var name: String
-    var personalId: String
     private let qRCodeGenerator = QRCodeGenerator()
 
     var body: some View {
@@ -20,7 +19,7 @@ struct OwnerRegisterDeviceView: View {
                 .ignoresSafeArea()
             VStack {
                 Spacer()
-                if let deviceQrIdImage = qRCodeGenerator.generate(with: personalId),
+                if let deviceQrIdImage = qRCodeGenerator.generate(with: generateRandomDeviceId()),
                    let ownerId = Auth.auth().currentUser?.uid,
                    let ownerQrCodeIdImage = qRCodeGenerator.generate(with: "owner_\(ownerId)")
                 {
@@ -49,11 +48,19 @@ struct OwnerRegisterDeviceView: View {
                 )
                 Spacer()
             }
-        }    }
+        }
+    }
+
+    func generateRandomDeviceId() -> String {
+      let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        //２０文字のランダムな文字列を生成
+        let randomStr = String((0..<20).map{ _ in characters.randomElement()! })
+      return "device_\(randomStr)"
+    }
 }
 
 struct OwnerRegisterDeviceView_Previews: PreviewProvider {
     static var previews: some View {
-        OwnerRegisterDeviceView(name: "", personalId: "")
+        OwnerRegisterDeviceView(name: "")
     }
 }

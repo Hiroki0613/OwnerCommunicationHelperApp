@@ -99,7 +99,7 @@ struct OwnerSelectRegisterView: View {
                         send: OwnerSettingTopAction.gotoQrCodeReadView
                     )
                 ) {
-                    OwnerRegisterDeviceView(name: "hirohiro_test", personalId: "device_abcdefg")
+                    OwnerRegisterDeviceView(name: "hirohiro_test")
                 }
             }
         }
