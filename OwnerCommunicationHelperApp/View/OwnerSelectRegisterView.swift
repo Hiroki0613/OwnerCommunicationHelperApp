@@ -9,6 +9,7 @@ import ComposableArchitecture
 import SwiftUI
 
 struct OwnerSelectRegisterView: View {
+    var authString: String = ""
     @StateObject var workerSettingManager = WorkerSettingManager()
     let store: Store<OwnerSettingTopState, OwnerSettingTopAction>
 
@@ -98,7 +99,7 @@ struct OwnerSelectRegisterView: View {
                         send: OwnerSettingTopAction.gotoQrCodeReadView
                     )
                 ) {
-                    OwnerRegisterDeviceView(name: "hirohiro_test", personalId: "abcdefg")
+                    OwnerRegisterDeviceView(name: "hirohiro_test", personalId: "device_abcdefg")
                 }
             }
         }

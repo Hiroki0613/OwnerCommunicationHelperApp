@@ -5,6 +5,7 @@
 //  Created by 近藤宏輝 on 2023/04/04.
 //
 
+import FirebaseAuth
 import SwiftUI
 
 struct OwnerRegisterDeviceView: View {
@@ -19,9 +20,16 @@ struct OwnerRegisterDeviceView: View {
                 .ignoresSafeArea()
             VStack {
                 Spacer()
-                CommonText(text: name, alignment: .center)
-                if let personalQrIdImage = qRCodeGenerator.generate(with: personalId) {
-                    Image(uiImage: personalQrIdImage)
+                if let deviceQrIdImage = qRCodeGenerator.generate(with: personalId),
+                   let ownerId = Auth.auth().currentUser?.uid,
+                   let ownerQrCodeIdImage = qRCodeGenerator.generate(with: "owner_\(ownerId)")
+                {
+                    CommonText(text: name, alignment: .center)
+                    Image(uiImage: deviceQrIdImage)
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                    Spacer().frame(height: 30)
+                    Image(uiImage: ownerQrCodeIdImage)
                         .resizable()
                         .frame(width: 200, height: 200)
                 }

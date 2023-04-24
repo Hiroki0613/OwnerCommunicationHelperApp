@@ -21,6 +21,7 @@ struct OwnerManagerWorkerQRCodeView: View {
             VStack {
                 Spacer()
                 CommonText(text: name, alignment: .center)
+                let _ = print("hirohiro_a_QRCode_worker_ID: ", personalId)
                 if let personalQrIdImage = qRCodeGenerator.generate(with: personalId) {
                     Image(uiImage: personalQrIdImage)
                         .resizable()

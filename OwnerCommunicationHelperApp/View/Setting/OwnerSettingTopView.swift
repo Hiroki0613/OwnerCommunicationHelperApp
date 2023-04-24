@@ -65,6 +65,7 @@ struct OwnerSettingTopView: View {
                                         // TODO: Worker,Staff,Deviceの追加を分岐させること。
 //                                        viewStore.send(.gotoRegisterWorkerView(true))
 //                                        viewStore.send(.gotoQrCodeReadView(true))
+                                        guard let _ = Auth.auth().currentUser?.uid else { return }
                                         viewStore.send(.gotoSelectRegisterView(true))
                                     }, label: {
                                         // TODO: Deviceを追加
@@ -133,10 +134,11 @@ struct OwnerSettingTopView: View {
                     }
                     .clipped()
                     .fullScreenCover(
-                        isPresented: viewStore.binding(
-                            get: \.hasShowedSelectRegisterView,
-                            send: OwnerSettingTopAction.gotoSelectRegisterView
-                        )
+                        isPresented:
+                            viewStore.binding(
+                                get: \.hasShowedSelectRegisterView,
+                                send: OwnerSettingTopAction.gotoSelectRegisterView
+                            )
                     ) {
                         OwnerSelectRegisterView(store: store)
                     }
