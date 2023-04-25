@@ -12,6 +12,7 @@ struct MessageBubble: View {
     // TODO: MessageBubbleでのアライメント、色などはpersonalIdで判別すること。
     var isMessageReceived = true
 
+    // TODO: 身体情報を入れるUIを作成すること personalInformation
     var body: some View {
         VStack(alignment: isMessageReceived ? .leading : .trailing) {
             HStack(spacing: .zero) {

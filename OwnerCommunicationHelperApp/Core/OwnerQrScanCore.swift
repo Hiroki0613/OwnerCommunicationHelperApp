@@ -21,6 +21,7 @@ enum OwnerQrScanAction {
     case readWorkerId(id: String)
     case readDeviceId(id: String)
     case finishReadQrCode
+    case afterFinishReadQrCode
 }
 
 struct OwnerQrScanEnvironment {
@@ -63,6 +64,12 @@ let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrSca
             workerSettingManager.setAfterMorningMeetingData(workerId: state.setWorkerId, deviceId: state.setDeviceId)
             return .none
         }
+        return .none
+        
+    case .afterFinishReadQrCode:
+        // OwnerSettingTopCoreで処理
+        // TODO: オーナー側でもQRコードを読み取ったことをダイアログなどで通知したほうが良いかもしれない。〇〇さん読みました。
+        // TODO: 画面を閉じる or 一人のWorkerさんの処理が終わったことをダイアログで示す。
         return .none
     }
 }
