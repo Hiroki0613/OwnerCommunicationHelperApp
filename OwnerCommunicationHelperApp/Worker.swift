@@ -59,19 +59,31 @@ class WorkerSettingManager: ObservableObject {
     }
 
     // 朝会後に端末とWorkerIdを紐づけるもの
-    func setAfterMorningMeetingData(name: String, workerId: String, deviceId: String) {
-        do {
-            guard let auth = Auth.auth().currentUser?.uid else { return }
-            let newWorker = Worker(
-                id: "\(UUID())",
-                name: name,
-                workerId: workerId,
-                deviceId: deviceId,
-                timestamp: Date()
-            )
-            try db.collection("OwnerList").document(auth).collection("WorkerData").document(workerId).setData(from: newWorker)
-        } catch {
-            print("WorkerSettingManager / Error adding message to Firestore: \(error)")
+    func setAfterMorningMeetingData(workerId: String, deviceId: String) {
+//        do {
+//            guard let auth = Auth.auth().currentUser?.uid else { return }
+//            let newWorker = Worker(
+//                id: "\(UUID())",
+//                name: name,
+//                workerId: workerId,
+//                deviceId: deviceId,
+//                timestamp: Date()
+//            )
+//            try db.collection("OwnerList").document(auth).collection("WorkerData").document(workerId).setData(from: newWorker)
+//        } catch {
+//            print("WorkerSettingManager / Error adding message to Firestore: \(error)")
+//        }
+        guard let auth = Auth.auth().currentUser?.uid else { return }
+        db.collection("OwnerList").document(auth).collection("WorkerData").document(workerId).updateData([
+            "workerId" : workerId,
+            "deviceId" : deviceId,
+            "timestamp" : Date()
+        ]) { error in
+            if let error = error {
+                print("Error updating document: \(error)")
+            } else {
+                print("Document successfully updated")
+            }
         }
     }
     

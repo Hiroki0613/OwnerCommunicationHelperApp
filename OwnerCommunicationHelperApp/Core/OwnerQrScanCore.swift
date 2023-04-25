@@ -61,8 +61,7 @@ let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrSca
             state.hasReadDeviceId = false
             // TODO: ここに朝礼時のQRコードを読み取った後の処理を書く。Firestoreへの書き込みをして、WorkerApp側のTCAを反応させて画面を切り替えさせる。
             // TODO: setData or UpdataData と addSnapshotLisenerを使って、処理を連携させる。
-            workerSettingManager.setAfterMorningMeetingData(
-                name: "テストですか", workerId: state.setWorkerId, deviceId: state.setDeviceId)
+            workerSettingManager.setAfterMorningMeetingData(workerId: state.setWorkerId, deviceId: state.setDeviceId)
             return .none
         }
         return .none
