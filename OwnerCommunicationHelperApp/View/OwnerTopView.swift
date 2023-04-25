@@ -64,7 +64,6 @@ struct OwnerTopView: View {
             ZStack {
                 PrimaryColor.backgroundGreen
                 VStack {
-                    // TODO: Owner情報を更新するようにする
                     FirebaseUIView()
                 }
             }

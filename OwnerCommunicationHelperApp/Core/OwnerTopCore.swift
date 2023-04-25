@@ -10,10 +10,6 @@ import Foundation
 
 struct OwnerTopState: Equatable {
     var settingTopState: OwnerSettingTopState
-    // TODO: ここはdidSetでUserDefaultsがセットされるようにする。
-//    var hasRegisterOwnerSetting {
-//        UserDefaults.register(なんとか)
-//    }
     var hasRegisterOwnerSetting = true
 }
 

@@ -60,7 +60,6 @@ class OwnerSettingManager: ObservableObject {
 
     func setOwnerData(name: String) {
         do {
-            // TODO: authを失敗することはないと思うが、失敗した時の考慮は入れたほうが良いかも・・・
             guard let auth = Auth.auth().currentUser?.uid else { return }
             let newOwner = Owner(id: auth, ownerId: auth, startWorkTime: Double(Date().timeIntervalSince1970), endWorkTime: Double(Date().timeIntervalSince1970), numberOfPeopleCanRegister: 7)
             try db.collection("OwnerList").document(auth).setData(from: newOwner)

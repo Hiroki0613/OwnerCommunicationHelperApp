@@ -22,11 +22,7 @@ struct MessageField: View {
                 .font(.caption)
                 .frame(height: 18)
                 .disableAutocorrection(true)
-            // TODO: 暫定で心拍数(personalInformation)に"テスト心臓"と入れておく。
             Button {
-                //                // TODO: ここを押すと心拍数を測定する画面に遷移させる。画面遷移させた先で、心拍数を取得して、最後にsendMessageをする。textは測定画面にわたす。
-                //                messagesManager.sendMessage(text: message, personalId: personalId, personalInformation: "テスト心臓")
-                //                message = ""
                 if message.isEmpty { return }
                 openView.toggle()
             } label: {
