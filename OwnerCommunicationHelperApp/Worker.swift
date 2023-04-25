@@ -13,7 +13,8 @@ import FirebaseFirestoreSwift
 struct Worker: Identifiable, Codable {
     var id: String
     var name: String
-    var personalId: String
+    var workerId: String
+    var deviceId: String
     // ここのタイムスタンプを更新することで朝礼のスキャンが出来ているかを確認する。
     var timestamp: Date
 }
@@ -40,15 +41,40 @@ class WorkerSettingManager: ObservableObject {
         }
     }
 
-    func setRegistrationData(name: String, personalId: String) {
+    func setRegistrationData(name: String, workerId: String) {
         do {
             guard let auth = Auth.auth().currentUser?.uid else { return }
-            let newWorker = Worker(id: "\(UUID())", name: name, personalId: personalId, timestamp: Date())
-            try db.collection("OwnerList").document(auth).collection("WorkerData").document(personalId).setData(from: newWorker)
+//            let newWorker = Worker(id: "\(UUID())", name: name, personalId: personalId, timestamp: Date())
+            let newWorker = Worker(
+                id: "\(UUID())",
+                name: name,
+                workerId: workerId,
+                deviceId: "777",
+                timestamp: Date()
+            )
+            try db.collection("OwnerList").document(auth).collection("WorkerData").document(workerId).setData(from: newWorker)
         } catch {
             print("WorkerSettingManager / Error adding message to Firestore: \(error)")
         }
     }
+
+    // 朝会後に端末とWorkerIdを紐づけるもの
+    func setAfterMorningMeetingData(name: String, workerId: String, deviceId: String) {
+        do {
+            guard let auth = Auth.auth().currentUser?.uid else { return }
+            let newWorker = Worker(
+                id: "\(UUID())",
+                name: name,
+                workerId: workerId,
+                deviceId: deviceId,
+                timestamp: Date()
+            )
+            try db.collection("OwnerList").document(auth).collection("WorkerData").document(workerId).setData(from: newWorker)
+        } catch {
+            print("WorkerSettingManager / Error adding message to Firestore: \(error)")
+        }
+    }
+    
 
     func deleteWorkerData(personalId: String, completion: @escaping(Error?) -> Void) {
         guard let auth = Auth.auth().currentUser?.uid else { return }

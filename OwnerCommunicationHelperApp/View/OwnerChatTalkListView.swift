@@ -30,7 +30,7 @@ struct OwnerChatTalkListView: View {
                     ForEach(workerSettingManager.workers, id: \.id) { worker in
                         NavigationLink(
                             destination: {
-                                OwnerChatTopView(personalId: worker.personalId)
+                                OwnerChatTopView(personalId: worker.workerId)
                             },
                             label: {
                                 OwnerChatWorkerCellView(name: worker.name)

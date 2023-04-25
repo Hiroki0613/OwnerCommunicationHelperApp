@@ -7,10 +7,13 @@
 
 import ComposableArchitecture
 import Foundation
+import SwiftUI
 
 struct OwnerQrScanState: Equatable {
     var hasReadWorkerId = false
     var hasReadDeviceId = false
+    var setWorkerId = ""
+    var setDeviceId = ""
 }
 
 enum OwnerQrScanAction {
@@ -24,6 +27,7 @@ struct OwnerQrScanEnvironment {
 }
 
 let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrScanEnvironment> { state, action, _ in
+    @StateObject var workerSettingManager = WorkerSettingManager()
 
     switch action {
     case .scanQrCodeResult(let result):
@@ -40,19 +44,25 @@ let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrSca
         return .none
 
     case .readWorkerId(let id):
+        state.setWorkerId = id
         state.hasReadWorkerId = true
         return Effect(value: .finishReadQrCode)
 
     case .readDeviceId(let id):
+        state.setDeviceId = id
         state.hasReadDeviceId = true
         return Effect(value: .finishReadQrCode)
 
     case .finishReadQrCode:
-        if state.hasReadWorkerId && state.hasReadDeviceId {
+        if state.hasReadWorkerId && state.hasReadDeviceId,
+           !state.setWorkerId.isEmpty,
+           !state.setDeviceId.isEmpty {
             state.hasReadWorkerId = false
             state.hasReadDeviceId = false
             // TODO: ここに朝礼時のQRコードを読み取った後の処理を書く。Firestoreへの書き込みをして、WorkerApp側のTCAを反応させて画面を切り替えさせる。
             // TODO: setData or UpdataData と addSnapshotLisenerを使って、処理を連携させる。
+            workerSettingManager.setAfterMorningMeetingData(
+                name: "テストですか", workerId: state.setWorkerId, deviceId: state.setDeviceId)
             return .none
         }
         return .none

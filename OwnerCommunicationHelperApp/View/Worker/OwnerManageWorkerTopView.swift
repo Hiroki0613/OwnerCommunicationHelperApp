@@ -25,7 +25,7 @@ struct OwnerManageWorkerTopView: View {
                             NavigationLink(
                                 destination: {
                                     // TODO: Workerの削除を行う機能を実装すること
-                                    OwnerManagerWorkerQRCodeView(name: worker.name, personalId: worker.personalId)
+                                    OwnerManagerWorkerQRCodeView(name: worker.name, personalId: worker.workerId)
                                 },
                                 label: {
                                     OwnerManageWorkerCellView(name: worker.name)
@@ -40,9 +40,9 @@ struct OwnerManageWorkerTopView: View {
                 }
                 .clipped()
             }
-        .onAppear {
-            workerSettingManager.getWorkerData()
-        }
+            .onAppear {
+                workerSettingManager.getWorkerData()
+            }
     }
 }
 

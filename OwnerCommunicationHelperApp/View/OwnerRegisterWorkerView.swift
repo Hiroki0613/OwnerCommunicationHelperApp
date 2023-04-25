@@ -39,7 +39,7 @@ struct OwnerRegisterWorkerView: View {
                 Button(
                     action: {
                         let id = generateRandomWorkerId()
-                        workerSettingManager.setRegistrationData(name: workerName, personalId: id)
+                        workerSettingManager.setRegistrationData(name: workerName, workerId: id)
                         workerName = ""
                     },
                     label: {

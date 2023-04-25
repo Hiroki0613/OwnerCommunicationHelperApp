@@ -154,6 +154,22 @@ struct OwnerSettingTopView: View {
                             endDate: Date(timeIntervalSince1970: ownerSettingManager.owner.endWorkTime)
                         )
                     }
+                    .fullScreenCover(
+                        isPresented: viewStore.binding(
+                            get: \.hasShowedQrCodeScanView,
+                            send: OwnerSettingTopAction.gotoQrCodeScanView
+                            )
+                        ) {
+                            OwnerScanQrCodeView(
+                                store: store.scope(
+                                    state: \.ownerQrScanState,
+                                    action: OwnerSettingTopAction.ownerQrScanAction
+                                ),
+                                goBackAction: {
+                                    viewStore.send(.gotoQrCodeScanView(false))
+                                }
+                            )
+                        }
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarHidden(true)
