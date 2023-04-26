@@ -178,15 +178,16 @@ class PulseViewController: UIViewController {
                             self.pulseLabel.alpha = 1.0
                         },
                         completion: { _ in
+                            let roundPulseString = String(format: "%.0f", round(pulse))
                             self.pulseLabel.isHidden = false
-                            self.pulseLabel.text = "\(round(pulse))BPM"
+                            self.pulseLabel.text = "\(roundPulseString) BPM"
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                 guard let auth = Auth.auth().currentUser?.uid else { return }
                                 if self.hasSendMessage == false {
                                     self.db.collection("OwnerList").document(auth).collection("ChatRoomId").document(self.personalID).collection("Chat").document().setData(
                                         ["id": "\(UUID())" as Any,
                                          "personalId": self.personalID as Any,
-                                         "personalInformation": "\(round(pulse))BPM" as Any,
+                                         "personalInformation": "\(roundPulseString) BPM" as Any,
                                          "text": self.messageText as Any,
                                          "timestamp": Date() as Any,
                                         ]
