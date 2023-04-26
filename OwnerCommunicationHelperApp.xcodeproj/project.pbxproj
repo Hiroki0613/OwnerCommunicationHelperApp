@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7F2B229229AB8E1100618B4A /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B229129AB8E1100618B4A /* DatePickerView.swift */; };
 		7F2B229429DC644E00618B4A /* OwnerRegisterDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B229329DC644D00618B4A /* OwnerRegisterDeviceView.swift */; };
+		7F50FA1529F7E2A700CD3CA6 /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F50FA1429F7E2A700CD3CA6 /* UserDefault+Ext.swift */; };
+		7F50FA1729F8F1C800CD3CA6 /* FirebaseEmailAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7F50FA1629F8F1C800CD3CA6 /* FirebaseEmailAuthUI */; };
+		7F50FA1929F8F82200CD3CA6 /* OwnerRegisterNewOwnerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F50FA1829F8F82200CD3CA6 /* OwnerRegisterNewOwnerSettingView.swift */; };
 		7F6593F329990F5B006C2E61 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593F229990F5B006C2E61 /* Filter.swift */; };
 		7F6593F529990F8C006C2E61 /* PulseDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593F429990F8C006C2E61 /* PulseDetector.swift */; };
 		7F6593F729990FBA006C2E61 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593F629990FBA006C2E61 /* HeartRateManager.swift */; };
@@ -66,6 +69,8 @@
 /* Begin PBXFileReference section */
 		7F2B229129AB8E1100618B4A /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		7F2B229329DC644D00618B4A /* OwnerRegisterDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerRegisterDeviceView.swift; sourceTree = "<group>"; };
+		7F50FA1429F7E2A700CD3CA6 /* UserDefault+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Ext.swift"; sourceTree = "<group>"; };
+		7F50FA1829F8F82200CD3CA6 /* OwnerRegisterNewOwnerSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerRegisterNewOwnerSettingView.swift; sourceTree = "<group>"; };
 		7F6593EA298BF02B006C2E61 /* OwnerCommunicationHelperApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OwnerCommunicationHelperApp.entitlements; sourceTree = "<group>"; };
 		7F6593F229990F5B006C2E61 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		7F6593F429990F8C006C2E61 /* PulseDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseDetector.swift; sourceTree = "<group>"; };
@@ -117,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F50FA1729F8F1C800CD3CA6 /* FirebaseEmailAuthUI in Frameworks */,
 				7FFA0C72296BDE7200E2BC27 /* ComposableArchitecture in Frameworks */,
 				7FFA0C8D296BF41400E2BC27 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				7FFA0C82296BF1AB00E2BC27 /* FirebaseAuthUI in Frameworks */,
@@ -140,6 +146,14 @@
 				7F2B229129AB8E1100618B4A /* DatePickerView.swift */,
 			);
 			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		7F50FA1329F7E28D00CD3CA6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7F50FA1429F7E2A700CD3CA6 /* UserDefault+Ext.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		7F6593EB29953287006C2E61 /* Setting */ = {
@@ -229,6 +243,7 @@
 		7FFA0C61296BDC2700E2BC27 /* OwnerCommunicationHelperApp */ = {
 			isa = PBXGroup;
 			children = (
+				7F50FA1329F7E28D00CD3CA6 /* Extension */,
 				7F6593EA298BF02B006C2E61 /* OwnerCommunicationHelperApp.entitlements */,
 				7FFA0CE1296C50C200E2BC27 /* Info.plist */,
 				7FFA0CDF296C47CD00E2BC27 /* GoogleService-Info.plist */,
@@ -279,6 +294,7 @@
 				7FFA0CF82978353B00E2BC27 /* OwnerChatTalkListView.swift */,
 				7FFA0D02297C2A8E00E2BC27 /* OwnerScanQrCodeView.swift */,
 				7F84598629E4595500464BD9 /* OwnerSelectRegisterView.swift */,
+				7F50FA1829F8F82200CD3CA6 /* OwnerRegisterNewOwnerSettingView.swift */,
 				7FFA0CFC297BE3EB00E2BC27 /* OwnerRegisterWorkerView.swift */,
 				7F2B229329DC644D00618B4A /* OwnerRegisterDeviceView.swift */,
 				7FFA0CDB296C0BB500E2BC27 /* FirebaseUIView.swift */,
@@ -342,6 +358,7 @@
 				7FFA0C8E296BF41400E2BC27 /* FirebaseFunctions */,
 				7FFA0C90296BF41500E2BC27 /* FirebaseFunctionsCombine-Community */,
 				7FFA0CEE2972F2A400E2BC27 /* FirebaseFirestoreSwift */,
+				7F50FA1629F8F1C800CD3CA6 /* FirebaseEmailAuthUI */,
 			);
 			productName = OwnerCommunicationHelperApp;
 			productReference = 7FFA0C5F296BDC2700E2BC27 /* OwnerCommunicationHelperApp.app */;
@@ -406,6 +423,7 @@
 				7F6593FB2999100F006C2E61 /* PulseViewController.swift in Sources */,
 				7FFA0CE529705D1900E2BC27 /* QrCodeScannerView.swift in Sources */,
 				7F6593F929990FDF006C2E61 /* ColorUtils.swift in Sources */,
+				7F50FA1929F8F82200CD3CA6 /* OwnerRegisterNewOwnerSettingView.swift in Sources */,
 				7FFA0CFB2978370D00E2BC27 /* Worker.swift in Sources */,
 				7FFA0CFF297BF12200E2BC27 /* OwnerManagerWorkerQRCodeView.swift in Sources */,
 				7FFA0CF92978353B00E2BC27 /* OwnerChatTalkListView.swift in Sources */,
@@ -413,6 +431,7 @@
 				7FFA0CEC2972F1DC00E2BC27 /* MessageField.swift in Sources */,
 				7F2B229229AB8E1100618B4A /* DatePickerView.swift in Sources */,
 				7FFA0CF72976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift in Sources */,
+				7F50FA1529F7E2A700CD3CA6 /* UserDefault+Ext.swift in Sources */,
 				7FFA0C76296BDF3300E2BC27 /* OwnerSettingTopView.swift in Sources */,
 				7FFA0CE82972EE8C00E2BC27 /* Message.swift in Sources */,
 				7F6593F529990F8C006C2E61 /* PulseDetector.swift in Sources */,
@@ -684,6 +703,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7F50FA1629F8F1C800CD3CA6 /* FirebaseEmailAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FFA0C80296BF1AA00E2BC27 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseEmailAuthUI;
+		};
 		7FFA0C71296BDE7200E2BC27 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7FFA0C70296BDE7200E2BC27 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
