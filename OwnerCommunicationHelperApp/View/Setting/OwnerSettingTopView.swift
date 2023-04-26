@@ -172,14 +172,6 @@ struct OwnerSettingTopView: View {
                 .navigationBarHidden(true)
             }
             .onAppear {
-                // TODO: ここのset、getの導線が曖昧なので要整理。
-                // TODO: 現状は、getとsetが二つ共存している。
-//                ownerSettingManager.setOwnerData(name: "ひろひろ")
-                // 最初にこの画面が表示されたタイミングでsetOwnerData()を行う。
-//                if let hasRegisterOwnerSetting = userDefault.hasRegisterOwnerSetting,
-//                   hasRegisterOwnerSetting == false {
-//                    ownerSettingManager.setOwnerData()
-//                }
                 ownerSettingManager.getOwnerData()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if ownerSettingManager.owner.id.isEmpty {
