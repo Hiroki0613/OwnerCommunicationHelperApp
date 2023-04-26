@@ -58,10 +58,10 @@ class OwnerSettingManager: ObservableObject {
         }
     }
 
-    func setOwnerData(name: String) {
+    func setOwnerData() {
         do {
             guard let auth = Auth.auth().currentUser?.uid else { return }
-            let newOwner = Owner(id: auth, ownerId: auth, startWorkTime: Double(Date().timeIntervalSince1970), endWorkTime: Double(Date().timeIntervalSince1970), numberOfPeopleCanRegister: 7)
+            let newOwner = Owner(id: auth, ownerId: auth, startWorkTime: Date().timeIntervalSince1970, endWorkTime: Date().timeIntervalSince1970, numberOfPeopleCanRegister: 7)
             try db.collection("OwnerList").document(auth).setData(from: newOwner)
         } catch {
             print("OwnerSettingManager / Error adding message to Firestore: \(error)")

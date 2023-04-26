@@ -13,11 +13,18 @@ struct OwnerTopView: View {
     @StateObject var workerSettingManager = WorkerSettingManager()
     @ObservedObject private var authState = FirebaseAuthStateObserver()
     @State var isShowSheet = false
+    var userDefault: UserDefaultDataStore = UserDefaultsDataStoreProvider.provide()
 
     var body: some View {
         WithViewStore(store) { viewStore in
             // FirebaseのinfoPlistを追加すること。そうするとログイン機能が実装できる。
-            if authState.isSignin && viewStore.hasRegisterOwnerSetting  {
+            let _ = print("hirohiro_OwnerTopView: ", userDefault.hasRegisterOwnerSetting, authState.isSignin)
+
+//            if let hasRegisterOwnerSetting = userDefault.hasRegisterOwnerSetting,
+//                authState.isSignin && hasRegisterOwnerSetting
+            
+            if authState.isSignin
+            {
                 TabView {
                     OwnerSettingTopView(
                         store: store.scope(
@@ -43,6 +50,17 @@ struct OwnerTopView: View {
                         Label("作業者", systemImage: "hammer.fill")
                     }
                 }
+            } else if let hasRegisterOwnerSetting = userDefault.hasRegisterOwnerSetting,
+                      authState.isSignin && !hasRegisterOwnerSetting {
+                // TODO: 名前、開始時間、終了時間の初期設定をする画面を用意する。
+                /*
+                 1. DatePickerView()を参考にして、初期設定をする。
+                 2. なにかviewStoreを発火させる方法を確認する。
+                 3. 現状はuserDefaultsを使っているため、変更しても発火しない可能性がある。
+                 */
+                
+                
+                
             } else {
                 ZStack {
                     PrimaryColor.backgroundGreen

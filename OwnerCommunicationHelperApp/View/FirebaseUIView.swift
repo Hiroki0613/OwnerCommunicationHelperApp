@@ -8,6 +8,7 @@
 import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
+import FirebaseEmailAuthUI
 import FirebaseOAuthUI
 import SwiftUI
 
@@ -26,7 +27,9 @@ struct FirebaseUIView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UINavigationController {
         let authUI = FUIAuth.defaultAuthUI()!
         let providers: [FUIAuthProvider] = [
-            FUIOAuth.appleAuthProvider()
+            FUIOAuth.appleAuthProvider(),
+            // TODO: 実際にリリースするときはEmailAuthを外すこと
+            FUIEmailAuth()
         ]
         authUI.providers = providers
         authUI.delegate = context.coordinator
