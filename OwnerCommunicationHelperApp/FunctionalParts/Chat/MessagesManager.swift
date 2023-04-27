@@ -49,7 +49,6 @@ class MessagesManager: ObservableObject {
         }
     }
 
-    // TODO: BPMを小数点を四捨五入する。
     // Add a message in Firestore
     func sendMessage(text: String, personalId: String, personalInformation: String) {
         do {

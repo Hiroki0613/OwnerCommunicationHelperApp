@@ -9,10 +9,8 @@ import SwiftUI
 
 struct MessageBubble: View {
     var message: Message
-    // TODO: MessageBubbleでのアライメント、色などはpersonalIdで判別すること。
     var isMessageReceived: Bool
 
-    // TODO: 身体情報を入れるUIを作成すること personalInformation
     var body: some View {
         if isMessageReceived {
             // 左側 自分以外
