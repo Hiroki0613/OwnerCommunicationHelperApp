@@ -13,6 +13,7 @@ import FirebaseFirestoreSwift
 struct Worker: Identifiable, Codable {
     var id: String
     var name: String
+    var ownerId: String
     var workerId: String
     var deviceId: String
     // ここのタイムスタンプを更新することで朝礼のスキャンが出来ているかを確認する。
@@ -48,6 +49,7 @@ class WorkerSettingManager: ObservableObject {
             let newWorker = Worker(
                 id: "\(UUID())",
                 name: name,
+                ownerId: "owner_\(auth)",
                 workerId: workerId,
                 deviceId: "777",
                 timestamp: Date()

@@ -14,11 +14,12 @@ import UIKit
 
 struct PulseView: UIViewControllerRepresentable {
     @Binding var messageText: String
+    @Binding var chatRoomId: String
     @Binding var personalId: String
 
     func makeUIViewController(context: Context) -> UIViewController {
         print("hirohiro_c_makeUIViewController: ", messageText,personalId)
-        return PulseViewController(messageText: messageText, personalId: personalId)
+        return PulseViewController(messageText: messageText, chatRoomId: chatRoomId, personalId: personalId)
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) { }
@@ -27,6 +28,7 @@ struct PulseView: UIViewControllerRepresentable {
 class PulseViewController: UIViewController {
     let db = Firestore.firestore()
     var messageText: String = ""
+    var chatRoomId: String = ""
     var personalID: String = ""
     private var validFrameCounter = 0
     var previewLayerShadowView = UIView()
@@ -41,8 +43,9 @@ class PulseViewController: UIViewController {
     private var timer = Timer()
     private var hasSendMessage = false
 
-    init(messageText: String, personalId: String) {
+    init(messageText: String, chatRoomId: String, personalId: String) {
         self.messageText = messageText
+        self.chatRoomId = chatRoomId
         self.personalID = personalId
         super.init(nibName: nil, bundle: nil)
     }
@@ -184,7 +187,7 @@ class PulseViewController: UIViewController {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                 guard let auth = Auth.auth().currentUser?.uid else { return }
                                 if self.hasSendMessage == false {
-                                    self.db.collection("OwnerList").document(auth).collection("ChatRoomId").document(self.personalID).collection("Chat").document().setData(
+                                    self.db.collection("OwnerList").document(auth).collection("ChatRoomId").document(self.chatRoomId).collection("Chat").document().setData(
                                         ["id": "\(UUID())" as Any,
                                          "personalId": self.personalID as Any,
                                          "personalInformation": "\(roundPulseString) BPM" as Any,

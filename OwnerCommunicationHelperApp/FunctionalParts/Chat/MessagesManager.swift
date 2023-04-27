@@ -19,9 +19,9 @@ class MessagesManager: ObservableObject {
     var pulseRate: Float = 0
 
     // Read message from Firestore in real-time with the addSnapShotListener
-    func getMessages(personalId: String) {
+    func getMessages(chatRoomId: String) {
         guard let auth = Auth.auth().currentUser?.uid else { return }
-        db.collection("OwnerList").document(auth).collection("ChatRoomId").document(personalId).collection("Chat").addSnapshotListener { querySnapshot, error in
+        db.collection("OwnerList").document(auth).collection("ChatRoomId").document(chatRoomId).collection("Chat").addSnapshotListener { querySnapshot, error in
             // If we don't have documents, exit the function
             guard let documents = querySnapshot?.documents else {
                 print("Error fetching documents: \(String(describing: error))")

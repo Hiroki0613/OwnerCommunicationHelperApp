@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MessageField: View {
     @State var personalId: String
+    @State var chatRoomId: String
     @EnvironmentObject var messagesManager: MessagesManager
     @State private var message = ""
     @State private var pulseRate: Float = 0
@@ -37,7 +38,7 @@ struct MessageField: View {
         .fullScreenCover(
             isPresented: $openView,
             content: {
-                PulseView(messageText: $message, personalId: $personalId)
+                PulseView(messageText: $message, chatRoomId: $chatRoomId, personalId: $personalId)
                     .onDisappear { message = "" }
             }
         )
@@ -51,7 +52,7 @@ struct MessageField: View {
 
 struct MessageField_Previews: PreviewProvider {
     static var previews: some View {
-        MessageField(personalId: "")
+        MessageField(personalId: "", chatRoomId: "")
             .environmentObject(MessagesManager())
     }
 }

@@ -5,6 +5,7 @@
 //  Created by 近藤宏輝 on 2023/01/18.
 //
 
+import FirebaseAuth
 import SwiftUI
 
 struct OwnerChatTalkListView: View {
@@ -30,7 +31,7 @@ struct OwnerChatTalkListView: View {
                     ForEach(workerSettingManager.workers, id: \.id) { worker in
                         NavigationLink(
                             destination: {
-                                OwnerChatTopView(personalId: worker.workerId)
+                                OwnerChatTopView(personalId: worker.ownerId, chatRoomId: worker.workerId)
                             },
                             label: {
                                 OwnerChatWorkerCellView(name: worker.name)

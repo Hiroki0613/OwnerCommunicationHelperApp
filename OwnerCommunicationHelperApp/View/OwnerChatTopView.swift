@@ -5,10 +5,12 @@
 //  Created by 近藤宏輝 on 2023/01/15.
 //
 
+import FirebaseAuth
 import SwiftUI
 
 struct OwnerChatTopView: View {
     var personalId: String
+    var chatRoomId: String
     @StateObject var messagesManager = MessagesManager()
 
     var body: some View {
@@ -24,8 +26,10 @@ struct OwnerChatTopView: View {
                         // TODO: ここに背景色を入れると、うまいこと背景が入ってくる。
                         PrimaryColor.backgroundGreen
                         ForEach(messagesManager.messages, id: \.id) { message in
-                            let _ = print("hirohiro_message: ", message)
-                            MessageBubble(message: message)
+                            let auth = Auth.auth().currentUser?.uid ?? ""
+                            let isMessageReceived = message.personalId == "owner_\(auth)"
+                            let _ = print("hirohiro_message: ", message, isMessageReceived, personalId)
+                            MessageBubble(message: message, isMessageReceived: isMessageReceived)
                         }
                     }
                     .padding(.top, 10)
@@ -37,18 +41,18 @@ struct OwnerChatTopView: View {
                         }
                     }
                 }
-                MessageField(personalId: personalId)
+                MessageField(personalId: personalId, chatRoomId: chatRoomId)
                     .environmentObject(messagesManager)
             }
         }
         .onAppear {
-            messagesManager.getMessages(personalId: personalId)
+            messagesManager.getMessages(chatRoomId: chatRoomId)
         }
     }
 }
 
 struct OwnerChatTopView_Previews: PreviewProvider {
     static var previews: some View {
-        OwnerChatTopView(personalId: "")
+        OwnerChatTopView(personalId: "", chatRoomId: "")
     }
 }
