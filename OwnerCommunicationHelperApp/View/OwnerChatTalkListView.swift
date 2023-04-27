@@ -60,7 +60,7 @@ struct OwnerChatTalkListView_Previews: PreviewProvider {
 
 struct OwnerChatWorkerCellView: View {
     var name: String
-    
+
     var body: some View {
         ZStack {
             PrimaryColor.buttonLavenderRose

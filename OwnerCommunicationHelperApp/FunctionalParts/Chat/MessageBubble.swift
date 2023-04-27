@@ -77,6 +77,7 @@ struct MessageBubble: View {
             }
             .padding(.horizontal, 10)
         }
+        Spacer().frame(height: 10)
     }
 }
 
