@@ -13,17 +13,10 @@ struct MessageBubble: View {
 
     var body: some View {
         if isMessageReceived {
-            // 左側 自分以外
+            // 右側 自分自身
             VStack {
                 HStack(spacing: .zero) {
-                    Text(message.text)
-                        .font(.caption2)
-                        .fontWeight(.thin)
-                        .padding(.all, 10)
-                        .foregroundColor(.black)
-                        .background(isMessageReceived ? PrimaryColor.buttonLightGray : PrimaryColor.buttonRed)
-                        .cornerRadius(10)
-                    Spacer().frame(width: 5)
+                    Spacer()
                     VStack {
                         Spacer()
                         Text("\(message.personalInformation)")
@@ -37,17 +30,31 @@ struct MessageBubble: View {
                             .padding(isMessageReceived ? .leading : .trailing, 10)
                         Spacer()
                     }
-                    Spacer()
+                    Spacer().frame(width: 5)
+                    Text(message.text)
+                        .font(.caption2)
+                        .fontWeight(.thin)
+                        .padding(.all, 10)
+                        .foregroundColor(.black)
+                        .background(isMessageReceived ? PrimaryColor.buttonLightGray : PrimaryColor.buttonRed)
+                        .cornerRadius(10)
+                    Spacer().frame(width: 5)
                 }
                 .frame(maxWidth: 300, alignment: isMessageReceived ? .leading : .trailing)
-                
             }
             .padding(.horizontal, 10)
         } else {
-            // 右側　自分自身
+            // 左側　自分以外
             VStack {
                 HStack(spacing: .zero) {
-                    Spacer()
+                    Text(message.text)
+                        .font(.caption2)
+                        .fontWeight(.thin)
+                        .padding(.all, 10)
+                        .foregroundColor(.black)
+                        .background(isMessageReceived ? PrimaryColor.buttonLightGray : PrimaryColor.buttonRed)
+                        .cornerRadius(10)
+                    Spacer().frame(width: 5)
                     VStack {
                         Spacer()
                         Text("\(message.personalInformation)")
@@ -61,15 +68,7 @@ struct MessageBubble: View {
                             .padding(isMessageReceived ? .leading : .trailing, 10)
                         Spacer()
                     }
-                    Spacer().frame(width: 5)
-                    Text(message.text)
-                        .font(.caption2)
-                        .fontWeight(.thin)
-                        .padding(.all, 10)
-                        .foregroundColor(.black)
-                        .background(isMessageReceived ? PrimaryColor.buttonLightGray : PrimaryColor.buttonRed)
-                        .cornerRadius(10)
-                    Spacer().frame(width: 5)
+                    Spacer()
                 }
                 .frame(maxWidth: 300, alignment: isMessageReceived ? .leading : .trailing)
             }
