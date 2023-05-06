@@ -14,6 +14,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
         // TODO: ここでPush通知のコードを書くこと。
+        /*
+         Kavsoftを参考にすること
+         */
         return true
     }
 }
