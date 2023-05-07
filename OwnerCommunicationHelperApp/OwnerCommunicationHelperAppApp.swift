@@ -16,6 +16,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         // TODO: ここでPush通知のコードを書くこと。
         /*
          Kavsoftを参考にすること
+         URLはCommunicationHelperAppを参照。
          */
         return true
     }
