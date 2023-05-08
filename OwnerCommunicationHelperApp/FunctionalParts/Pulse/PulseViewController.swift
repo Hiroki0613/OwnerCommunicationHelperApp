@@ -187,7 +187,11 @@ class PulseViewController: UIViewController {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                 guard let auth = Auth.auth().currentUser?.uid else { return }
                                 if self.hasSendMessage == false {
-                                    self.db.collection("OwnerList").document(auth).collection("ChatRoomId").document(self.chatRoomId).collection("Chat").document().setData(
+                                    self.db.collection("OwnerList")
+                                        .document(auth)
+                                        .collection("ChatRoomId")
+                                        .document(self.chatRoomId)
+                                        .collection("Chat").document().setData(
                                         ["id": "\(UUID())" as Any,
                                          "personalId": self.personalID as Any,
                                          "personalInformation": "\(roundPulseString) BPM" as Any,
