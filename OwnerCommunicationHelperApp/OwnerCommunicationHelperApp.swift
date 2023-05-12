@@ -44,13 +44,10 @@ extension AppDelegate: MessagingDelegate {
 // MARK: - AppDelegate Push Notification
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
-        let userInfo = notification.request.content.userInfo
-        return [.banner, .badge, .sound]
+        return [[.banner, .badge, .sound]]
     }
 
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
-        let userInfo = response.notification.request.content.userInfo
-    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async { }
 }
 
 @main
