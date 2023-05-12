@@ -10,6 +10,7 @@ import FirebaseAuthUI
 import SwiftUI
 
 struct OwnerSettingTopView: View {
+    let pushNotificationSender = PushNotificationSender()
     @StateObject var workerSettingManager = WorkerSettingManager()
     @StateObject var ownerSettingManager = OwnerSettingManager()
     let store: Store<OwnerSettingTopState, OwnerSettingTopAction>
@@ -60,7 +61,13 @@ struct OwnerSettingTopView: View {
                             Group {
                                 Button(
                                     action: {
-                                        
+                                        pushNotificationSender.sendPushNotification(
+                                            to: "dSSkiXY4qEbJlwFtb6qm38:APA91bFV_tB_c3ie6wjMaix8-yfkIq_lsJ_Y-KmrVgHmyQSaIxUlwQdH_HPZ-7jKkz-YHOIO19CQTZmH4pL3h1_tSU1hySGs4xU9EiZjC67_KOON74z-LCQbBN55VIxhN8JD9WlWEXsu",
+                                            userId: "\(UUID())",
+                                            title: "アプリ通信",
+                                            body: "iPadから") {
+                                                print("hirohiro_fcm完了だべ")
+                                            }
                                         // TODO: Worker,Staff,Deviceの追加を分岐させること。
 //                                        viewStore.send(.gotoRegisterWorkerView(true))
 //                                        viewStore.send(.gotoQrCodeReadView(true))
