@@ -18,6 +18,7 @@
 		7F6593F929990FDF006C2E61 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593F829990FDF006C2E61 /* ColorUtils.swift */; };
 		7F6593FB2999100F006C2E61 /* PulseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593FA2999100F006C2E61 /* PulseViewController.swift */; };
 		7F6593FD29991124006C2E61 /* AVCaptureDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593FC29991124006C2E61 /* AVCaptureDevice+Ext.swift */; };
+		7F83F6D32A0DD6AA007EA661 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F83F6D22A0DD6AA007EA661 /* Keys.swift */; };
 		7F84598729E4595500464BD9 /* OwnerSelectRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84598629E4595500464BD9 /* OwnerSelectRegisterView.swift */; };
 		7FFA0C63296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */; };
 		7FFA0C65296BDC2700E2BC27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C64296BDC2700E2BC27 /* ContentView.swift */; };
@@ -78,6 +79,7 @@
 		7F6593F829990FDF006C2E61 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		7F6593FA2999100F006C2E61 /* PulseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseViewController.swift; sourceTree = "<group>"; };
 		7F6593FC29991124006C2E61 /* AVCaptureDevice+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Ext.swift"; sourceTree = "<group>"; };
+		7F83F6D22A0DD6AA007EA661 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		7F84598629E4595500464BD9 /* OwnerSelectRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSelectRegisterView.swift; sourceTree = "<group>"; };
 		7FFA0C5F296BDC2700E2BC27 /* OwnerCommunicationHelperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OwnerCommunicationHelperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCommunicationHelperAppApp.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				7FFA0C7D296BE12000E2BC27 /* FunctionalParts */,
 				7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */,
 				7FFA0C64296BDC2700E2BC27 /* ContentView.swift */,
+				7F83F6D22A0DD6AA007EA661 /* Keys.swift */,
 				7FFA0CFA2978370D00E2BC27 /* Worker.swift */,
 				7FFA0D04298026B800E2BC27 /* Owner.swift */,
 				7FFA0C66296BDC3200E2BC27 /* Assets.xcassets */,
@@ -431,6 +434,7 @@
 				7FFA0CEC2972F1DC00E2BC27 /* MessageField.swift in Sources */,
 				7F2B229229AB8E1100618B4A /* DatePickerView.swift in Sources */,
 				7FFA0CF72976EBEB00E2BC27 /* OwnerManageWorkerCellView.swift in Sources */,
+				7F83F6D32A0DD6AA007EA661 /* Keys.swift in Sources */,
 				7F50FA1529F7E2A700CD3CA6 /* UserDefault+Ext.swift in Sources */,
 				7FFA0C76296BDF3300E2BC27 /* OwnerSettingTopView.swift in Sources */,
 				7FFA0CE82972EE8C00E2BC27 /* Message.swift in Sources */,
