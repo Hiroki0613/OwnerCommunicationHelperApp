@@ -18,6 +18,7 @@
 		7F6593F929990FDF006C2E61 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593F829990FDF006C2E61 /* ColorUtils.swift */; };
 		7F6593FB2999100F006C2E61 /* PulseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593FA2999100F006C2E61 /* PulseViewController.swift */; };
 		7F6593FD29991124006C2E61 /* AVCaptureDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6593FC29991124006C2E61 /* AVCaptureDevice+Ext.swift */; };
+		7F83F6D52A0DD85E007EA661 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F83F6D42A0DD85E007EA661 /* Key.swift */; };
 		7F84598729E4595500464BD9 /* OwnerSelectRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84598629E4595500464BD9 /* OwnerSelectRegisterView.swift */; };
 		7FFA0C63296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */; };
 		7FFA0C65296BDC2700E2BC27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C64296BDC2700E2BC27 /* ContentView.swift */; };
@@ -78,6 +79,7 @@
 		7F6593F829990FDF006C2E61 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		7F6593FA2999100F006C2E61 /* PulseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseViewController.swift; sourceTree = "<group>"; };
 		7F6593FC29991124006C2E61 /* AVCaptureDevice+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Ext.swift"; sourceTree = "<group>"; };
+		7F83F6D42A0DD85E007EA661 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		7F84598629E4595500464BD9 /* OwnerSelectRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSelectRegisterView.swift; sourceTree = "<group>"; };
 		7FFA0C5F296BDC2700E2BC27 /* OwnerCommunicationHelperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OwnerCommunicationHelperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCommunicationHelperAppApp.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				7FFA0C7D296BE12000E2BC27 /* FunctionalParts */,
 				7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift */,
 				7FFA0C64296BDC2700E2BC27 /* ContentView.swift */,
+				7F83F6D42A0DD85E007EA661 /* Key.swift */,
 				7FFA0CFA2978370D00E2BC27 /* Worker.swift */,
 				7FFA0D04298026B800E2BC27 /* Owner.swift */,
 				7FFA0C66296BDC3200E2BC27 /* Assets.xcassets */,
@@ -457,6 +460,7 @@
 				7FFA0CD0296BFB6600E2BC27 /* OwnerSettingTopCore.swift in Sources */,
 				7FFA0CD6296C01DC00E2BC27 /* CommonText.swift in Sources */,
 				7FFA0D05298026B800E2BC27 /* Owner.swift in Sources */,
+				7F83F6D52A0DD85E007EA661 /* Key.swift in Sources */,
 				7FFA0C63296BDC2700E2BC27 /* OwnerCommunicationHelperAppApp.swift in Sources */,
 				7FFA0C7F296BE1E100E2BC27 /* AltimatorManager.swift in Sources */,
 				7FFA0CD8296C03F800E2BC27 /* OwnerSettingPressureView.swift in Sources */,
