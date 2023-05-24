@@ -62,6 +62,9 @@ struct OwnerSettingTopView: View {
                                 Button(
                                     action: {
                                         // TODO: コマンド一つでpush通知が送れるように実装すること
+                                        /*
+                                         1. チャットメッセージが送られたときにpush通知を送信
+                                         */
                                         pushNotificationSender.sendPushNotification(
                                             to: "dSSkiXY4qEbJlwFtb6qm38:APA91bFV_tB_c3ie6wjMaix8-yfkIq_lsJ_Y-KmrVgHmyQSaIxUlwQdH_HPZ-7jKkz-YHOIO19CQTZmH4pL3h1_tSU1hySGs4xU9EiZjC67_KOON74z-LCQbBN55VIxhN8JD9WlWEXsu",
                                             userId: "\(UUID())",
