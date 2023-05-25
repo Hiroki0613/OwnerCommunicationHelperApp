@@ -65,6 +65,7 @@ struct OwnerSettingTopView: View {
                                         /*
                                          1. チャットメッセージが送られたときにpush通知を送信
                                          2. tokenの構造はどうするかを考える
+                                         3. push通知が正確に送られているかは、複数端末で確認する。
                                          */
                                         pushNotificationSender.sendPushNotification(
                                             to: "dSSkiXY4qEbJlwFtb6qm38:APA91bFV_tB_c3ie6wjMaix8-yfkIq_lsJ_Y-KmrVgHmyQSaIxUlwQdH_HPZ-7jKkz-YHOIO19CQTZmH4pL3h1_tSU1hySGs4xU9EiZjC67_KOON74z-LCQbBN55VIxhN8JD9WlWEXsu",
