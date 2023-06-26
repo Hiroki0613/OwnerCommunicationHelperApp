@@ -63,6 +63,8 @@ struct OwnerSettingTopView: View {
                                     action: {
                                         // TODO: コマンド一つでpush通知が送れるように実装すること
                                         /*
+                                         
+                                         push通知をJSON形式でfirestoreに保存しておくことで、まとめて通知を送ることも可能かも。あるいは、プロフィールはJSON形式にすることが良いかも。
                                          1. チャットメッセージが送られたときにpush通知を送信
                                          2. tokenの構造はどうするかを考える。stringを繋ぎ合わせる？
                                          3. push通知が正確に送られているかは、複数端末で確認する。
