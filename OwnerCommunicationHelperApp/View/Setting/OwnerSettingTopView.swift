@@ -68,7 +68,7 @@ struct OwnerSettingTopView: View {
                                          fcmTokenが影響する更新頻度は考えた方が良いかも。
                                          1. チャットメッセージが送られたときにpush通知を送信
                                          2. tokenの構造はどうするかを考える。stringを繋ぎ合わせる？
-                                         　　→ これよりもJSONのStringの方が良い。
+                                         　　→ これよりもJSONのStringの方が良い。構造をCodableで作成すること
                                          3. push通知が正確に送られているかは、複数端末で確認する。
                                          */
                                         pushNotificationSender.sendPushNotification(
