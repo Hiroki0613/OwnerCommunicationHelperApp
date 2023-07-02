@@ -30,6 +30,9 @@ struct OwnerSettingTopView: View {
                                 },
                                 label: {
                                     // TODO: 可能な限り通信を減らすために、更新しない限りは端末保存したデータで表示する。
+                                    /*
+                                     どこかのタイミングでPush通知を発信した相手に表示されるようにする。
+                                     */
                                     OwnerSettingOperatingTimeView(startTime: Date(timeIntervalSince1970: ownerSettingManager.owner.startWorkTime), endTime: Date(timeIntervalSince1970: ownerSettingManager.owner.endWorkTime))
                                         .cornerRadius(20)
                                 }
