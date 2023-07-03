@@ -69,6 +69,9 @@ struct OwnerSettingTopView: View {
                                          
                                          push通知をJSON形式でfirestoreに保存しておくことで、まとめて通知を送ることも可能かも。あるいは、プロフィールはJSON形式にすることが良いかも。
                                          fcmTokenが影響する更新頻度は考えた方が良いかも。
+                                         
+                                         staff一覧、ownerのそれぞれのJSONを用意して、通知するしないをworker一覧で編集できるようにしよう。
+                                         　その都度、JSONを更新してfirestoreに送信する形にする。
                                          1. チャットメッセージが送られたときにpush通知を送信
                                          2. tokenの構造はどうするかを考える。stringを繋ぎ合わせる？
                                          　　→ これよりもJSONのStringの方が良い。構造をCodableで作成すること
