@@ -70,7 +70,7 @@ let ownerQrScanReducer = Reducer<OwnerQrScanState, OwnerQrScanAction, OwnerQrSca
     case .afterFinishReadQrCode:
         // OwnerSettingTopCoreで処理
         // TODO: オーナー側でもQRコードを読み取ったことをダイアログなどで通知したほうが良いかもしれない。〇〇さん読みました。
-        // TODO: 画面を閉じる or 一人のWorkerさんの処理が終わったことをダイアログで示す。
+        // TODO: 画面を閉じる or 一人のWorkerさんの処理が終わったことをダイアログで示す。作業に支障が出ない方法を考えたい。
         return .none
     }
 }
