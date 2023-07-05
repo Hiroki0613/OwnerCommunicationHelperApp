@@ -64,6 +64,7 @@ struct OwnerSettingTopView: View {
                             Group {
                                 Button(
                                     action: {
+                                        // TODO: 追加は確認ダイアログが出るようにすること
                                         // TODO: コマンド一つでpush通知が送れるように実装すること
                                         /*
                                          
