@@ -15,6 +15,7 @@ struct OwnerSettingOperatingTimeView: View {
         ZStack {
             PrimaryColor.buttonLightGray
             VStack {
+                // TODO: 開始時刻、終了時刻はFirebase側で変更できるようにする。
                 CommonText(text: "支援者", alignment: .leading)
                 HStack {
                     Spacer()
