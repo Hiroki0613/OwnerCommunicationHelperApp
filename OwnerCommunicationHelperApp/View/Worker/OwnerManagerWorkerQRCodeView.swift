@@ -30,6 +30,7 @@ struct OwnerManagerWorkerQRCodeView: View {
                 Spacer().frame(height: 30)
                 Button(
                     action: {
+                        // TODO: ここで削除確認ダイアログを表示するようにする
                         workerSettingManager.deleteWorkerData(personalId: personalId) { error in
                             if let _ = error { return }
                             dismiss()
