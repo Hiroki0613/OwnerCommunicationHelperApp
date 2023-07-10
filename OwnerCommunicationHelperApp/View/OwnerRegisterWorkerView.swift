@@ -38,6 +38,7 @@ struct OwnerRegisterWorkerView: View {
                 Spacer().frame(height: 30)
                 Button(
                     action: {
+                        // TODO: ここで追加許可ダイアログを入れる
                         let id = generateRandomWorkerId()
                         workerSettingManager.setRegistrationData(name: workerName, workerId: id)
                         workerName = ""
