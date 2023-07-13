@@ -56,6 +56,7 @@ struct OwnerSelectRegisterView: View {
                         Button(
                             action: {
                                 // TODO: ここはスタッフ追加の画面を開くようにする。
+                                // TODO: ここで許可ダイアログを入れる。
                             }, label: {
                                 Text("スタッフ追加")
                                     .fontWeight(.semibold)
