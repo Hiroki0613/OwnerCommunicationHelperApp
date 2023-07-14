@@ -37,7 +37,7 @@ struct OwnerRegisterNewOwnerSettingView: View {
                 Spacer().frame(height: 30)
                 Button(
                     action: {
-                        // TODO: ここで許可ダイアログを入れる。
+                        // TODO: ここで許可ダイアログを入れる
 //                        ownerSettingManager.updateOperatingTime(startWorkTime: startDate, endWorkTime: endDate)
                         ownerSettingManager.setOwnerData()
                         print("hirohiro_a_updateOperatingTime: ", startDate, endDate)
