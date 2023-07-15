@@ -42,6 +42,7 @@ struct OwnerScanQrCodeView: View {
                         }
                         Spacer()
                         Button(action: {
+                            // TODO: ここで許可ダイアログを入れるかは検討する。
                             goBackAction()
                         }, label: {
                             Text("閉じる")
