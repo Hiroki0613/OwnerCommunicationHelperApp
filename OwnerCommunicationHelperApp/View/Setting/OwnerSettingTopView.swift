@@ -41,7 +41,7 @@ struct OwnerSettingTopView: View {
                             OwnerSettingPressureView(viewStore: viewStore)
                                 .cornerRadius(20)
                             Spacer().frame(height: 30)
-                            // TODO: 残り人数はFirebaseと連携させておく。Workerの数を読み出してカウントに入れるようにする。
+                            // TODO: 残り人数はFirebaseと連携させておく。Workerの数を読み出してカウントに入れるようにする。毎回呼び出すのではなく、アプリがキルされるまでキャッシュで持っておきたい。
                             // TODO: 課金方法については、後から検討する。ここで可能参加人数を変更できるようにする。
                             OwnerSettingSubscriptionView(numberOfPeopleCanRegister: ownerSettingManager.owner.numberOfPeopleCanRegister)
                                 .cornerRadius(20)
