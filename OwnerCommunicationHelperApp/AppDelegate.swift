@@ -14,7 +14,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
-        // Push通知許可のポップアップを表示。アプリを出すのに必須
+        // TODO: Push通知許可のポップアップを表示。アプリを出すのに必須
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { granted, _ in
             guard granted else { return }
