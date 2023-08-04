@@ -17,7 +17,6 @@ struct OwnerTopView: View {
 
     var body: some View {
         WithViewStore(store) { viewStore in
-            // FirebaseのinfoPlistを追加すること。そうするとログイン機能が実装できる。
             let _ = print("hirohiro_OwnerTopView: ", userDefault.hasRegisterOwnerSetting, authState.isSignin)
             if authState.isSignin {
                 TabView {
