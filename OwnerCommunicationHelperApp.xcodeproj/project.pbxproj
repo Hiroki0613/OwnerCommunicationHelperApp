@@ -23,12 +23,12 @@
 		7F83F6D92A0DDC68007EA661 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 7F83F6D82A0DDC68007EA661 /* FirebaseMessaging */; };
 		7F83F6DB2A0DF145007EA661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F83F6DA2A0DF145007EA661 /* AppDelegate.swift */; };
 		7F84598729E4595500464BD9 /* OwnerSelectRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84598629E4595500464BD9 /* OwnerSelectRegisterView.swift */; };
+		7FDCC83D2BE1CA1F007165E2 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7FDCC83C2BE1CA1F007165E2 /* ComposableArchitecture */; };
+		7FDCC83F2BE1CA1F007165E2 /* ComposableCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 7FDCC83E2BE1CA1F007165E2 /* ComposableCoreLocation */; };
 		7FFA0C63296BDC2700E2BC27 /* OwnerCommunicationHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C62296BDC2700E2BC27 /* OwnerCommunicationHelperApp.swift */; };
 		7FFA0C65296BDC2700E2BC27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C64296BDC2700E2BC27 /* ContentView.swift */; };
 		7FFA0C67296BDC3200E2BC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA0C66296BDC3200E2BC27 /* Assets.xcassets */; };
 		7FFA0C6A296BDC3200E2BC27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA0C69296BDC3200E2BC27 /* Preview Assets.xcassets */; };
-		7FFA0C72296BDE7200E2BC27 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7FFA0C71296BDE7200E2BC27 /* ComposableArchitecture */; };
-		7FFA0C74296BDE7200E2BC27 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 7FFA0C73296BDE7200E2BC27 /* Dependencies */; };
 		7FFA0C76296BDF3300E2BC27 /* OwnerSettingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C75296BDF3300E2BC27 /* OwnerSettingTopView.swift */; };
 		7FFA0C78296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C77296BDF5B00E2BC27 /* OwnerManageStaffTopView.swift */; };
 		7FFA0C7A296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA0C79296BDF7000E2BC27 /* OwnerManageWorkerTopView.swift */; };
@@ -129,7 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F50FA1729F8F1C800CD3CA6 /* FirebaseEmailAuthUI in Frameworks */,
-				7FFA0C72296BDE7200E2BC27 /* ComposableArchitecture in Frameworks */,
+				7FDCC83F2BE1CA1F007165E2 /* ComposableCoreLocation in Frameworks */,
 				7F83F6D92A0DDC68007EA661 /* FirebaseMessaging in Frameworks */,
 				7FFA0C8D296BF41400E2BC27 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				7FFA0C82296BF1AB00E2BC27 /* FirebaseAuthUI in Frameworks */,
@@ -140,7 +140,7 @@
 				7FFA0C86296BF1AB00E2BC27 /* FirebaseOAuthUI in Frameworks */,
 				7FFA0C89296BF41300E2BC27 /* FirebaseCrashlytics in Frameworks */,
 				7FFA0C84296BF1AB00E2BC27 /* FirebaseGoogleAuthUI in Frameworks */,
-				7FFA0C74296BDE7200E2BC27 /* Dependencies in Frameworks */,
+				7FDCC83D2BE1CA1F007165E2 /* ComposableArchitecture in Frameworks */,
 				7FFA0C8B296BF41300E2BC27 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,8 +357,6 @@
 			);
 			name = OwnerCommunicationHelperApp;
 			packageProductDependencies = (
-				7FFA0C71296BDE7200E2BC27 /* ComposableArchitecture */,
-				7FFA0C73296BDE7200E2BC27 /* Dependencies */,
 				7FFA0C81296BF1AA00E2BC27 /* FirebaseAuthUI */,
 				7FFA0C83296BF1AB00E2BC27 /* FirebaseGoogleAuthUI */,
 				7FFA0C85296BF1AB00E2BC27 /* FirebaseOAuthUI */,
@@ -371,6 +369,8 @@
 				7F50FA1629F8F1C800CD3CA6 /* FirebaseEmailAuthUI */,
 				7F83F6D62A0DDC5B007EA661 /* FirebaseAnalytics */,
 				7F83F6D82A0DDC68007EA661 /* FirebaseMessaging */,
+				7FDCC83C2BE1CA1F007165E2 /* ComposableArchitecture */,
+				7FDCC83E2BE1CA1F007165E2 /* ComposableCoreLocation */,
 			);
 			productName = OwnerCommunicationHelperApp;
 			productReference = 7FFA0C5F296BDC2700E2BC27 /* OwnerCommunicationHelperApp.app */;
@@ -401,9 +401,9 @@
 			);
 			mainGroup = 7FFA0C56296BDC2600E2BC27;
 			packageReferences = (
-				7FFA0C70296BDE7200E2BC27 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				7FFA0C80296BF1AA00E2BC27 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */,
 				7FFA0C87296BF41300E2BC27 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				7FDCC83B2BE1CA1F007165E2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 7FFA0C60296BDC2700E2BC27 /* Products */;
 			projectDirPath = "";
@@ -532,7 +532,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -586,7 +586,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -603,12 +603,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = OwnerCommunicationHelperApp/OwnerCommunicationHelperApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"OwnerCommunicationHelperApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = K6FA22KGKX;
+				DEVELOPMENT_TEAM = K6FA22KGKX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OwnerCommunicationHelperApp/Info.plist;
@@ -617,7 +615,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -626,7 +624,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.withios.OwnerCommunicationHelperApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = OwnerCommunicationHelperApp;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -643,12 +640,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = OwnerCommunicationHelperApp/OwnerCommunicationHelperApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"OwnerCommunicationHelperApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = K6FA22KGKX;
+				DEVELOPMENT_TEAM = K6FA22KGKX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OwnerCommunicationHelperApp/Info.plist;
@@ -657,7 +652,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -666,7 +661,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.withios.OwnerCommunicationHelperApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = OwnerCommunicationHelperApp;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -700,19 +694,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7FFA0C70296BDE7200E2BC27 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		7FDCC83B2BE1CA1F007165E2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = versionRange;
+				maximumVersion = 0.5.0;
+				minimumVersion = 0.4.0;
 			};
 		};
 		7FFA0C80296BF1AA00E2BC27 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/FirebaseUI-iOS.git";
 			requirement = {
-				branch = master;
+				branch = main;
 				kind = branch;
 			};
 		};
@@ -720,8 +715,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.24.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -742,15 +737,15 @@
 			package = 7FFA0C87296BF41300E2BC27 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
 		};
-		7FFA0C71296BDE7200E2BC27 /* ComposableArchitecture */ = {
+		7FDCC83C2BE1CA1F007165E2 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7FFA0C70296BDE7200E2BC27 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 7FDCC83B2BE1CA1F007165E2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
-		7FFA0C73296BDE7200E2BC27 /* Dependencies */ = {
+		7FDCC83E2BE1CA1F007165E2 /* ComposableCoreLocation */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7FFA0C70296BDE7200E2BC27 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = Dependencies;
+			package = 7FDCC83B2BE1CA1F007165E2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableCoreLocation;
 		};
 		7FFA0C81296BF1AA00E2BC27 /* FirebaseAuthUI */ = {
 			isa = XCSwiftPackageProductDependency;
